@@ -258,14 +258,14 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
               <span className="text-sm font-bold text-[#202C2C]">Accessories</span>
             </div>
 
-            {/* 3 Branches Pill */}
+            {/* 2 Branches Pill */}
             <div className="w-full sm:w-auto flex justify-center sm:justify-end mt-2 sm:mt-0">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-[#FFF9EF] text-[#087F75] font-bold text-xs sm:text-sm border border-[#DDD6CB] shadow-sm transition-colors"
               >
                 <MapPin className="w-4 h-4 text-[#087F75]" />
-                <span>3 Branches in Bengaluru</span>
+                <span>2 Branches in Bengaluru</span>
               </Link>
             </div>
           </div>

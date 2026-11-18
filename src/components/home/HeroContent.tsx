@@ -18,7 +18,7 @@ export default function HeroContent({ onOpenBooking }: HeroContentProps) {
         <Sparkles className="w-3.5 h-3.5 text-accent animate-pulse" />
         <span>{BUSINESS_CONFIG.brandName}</span>
         <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-        <span className="text-accent font-bold">3 Branches in Bengaluru</span>
+        <span className="text-accent font-bold">2 Branches in Bengaluru</span>
       </div>
 
       {/* Main Headline from User Specification */}

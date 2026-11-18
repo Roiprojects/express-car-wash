@@ -28,7 +28,7 @@ export default function AboutPreview() {
                 At {BUSINESS_CONFIG.brandName}, we see automotive care not as a rushed 10-minute wipe, but as a comprehensive sanctuary for your vehicle. From everyday foam washing to self-healing Paint Protection Film (PPF), 9H/10H ceramic coatings, color change wraps, audio installations, and body tinkering — we bring all essential vehicle services under one trusted roof.
               </p>
               <p>
-                Whether bringing in a daily commuter Swift or Baleno, a family Creta or Nexon, or a beloved Activa or Pulsar two-wheeler, our 3 branches in Bengaluru provide specialized bays, dust-controlled application rooms, and transparent pricing.
+                Whether bringing in a daily commuter Swift or Baleno, a family Creta or Nexon, or a beloved Activa or Pulsar two-wheeler, our 2 branches in Bengaluru provide specialized bays, dust-controlled application rooms, and transparent pricing.
               </p>
             </div>
 
@@ -38,7 +38,7 @@ export default function AboutPreview() {
                 'Self-healing PPF & 9H/10H ceramic coatings',
                 'Advertised 45m+ precision wash standards',
                 'Alloy wheels, tyres, audio & styling upgrades',
-                '3 branch network across Bengaluru',
+                '2 branch network across Bengaluru',
               ].map((point, idx) => (
                 <div key={idx} className="flex items-center gap-2.5 text-[#202C2C] font-semibold">
                   <CheckCircle2 className="w-4 h-4 text-[#087F75] flex-shrink-0" />

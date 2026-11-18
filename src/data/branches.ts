@@ -46,30 +46,13 @@ export const BRANCHES_DATA: BranchInfo[] = [
     addressPlaceholder: 'Bengaluru Express Bay (Exact GPS & address shared upon booking)',
     directionsHelp: 'Connect directly on WhatsApp to get the live location pin for Branch 02.',
   },
-  {
-    id: 'branch-3',
-    name: 'Branch 03 — Accessories, Tinkering & Styling Studio',
-    badge: 'Styling & Care',
-    role: 'Alloy Wheels, Audio Upgrades, Vehicle Wrapping, Sun Film & Bodywork',
-    features: [
-      'Automotive accessories fitting & consultation',
-      'Vehicle color change wrap & sun film application',
-      'Tinkering, dent restoration & panel touchups',
-      'Headlight buffing & optical clarity restoration',
-    ],
-    contactNumber: '+91 7022338693',
-    phoneFormatted: '+91 70223 38693',
-    status: 'active_claim_pending_address',
-    addressPlaceholder: 'Bengaluru Accessories Center (Exact GPS & address shared upon booking)',
-    directionsHelp: 'Connect directly on WhatsApp to get the live location pin for Branch 03.',
-  },
 ];
 
 export const BRANCHES_SECTION_CONFIG = {
   eyebrow: 'Workshop Network',
   title: 'FIND YOUR NEAREST BRANCH.',
   subtitle:
-    'Advertised across 3 branches in Bengaluru. Contact our team to confirm current bay availability and obtain the nearest verified location pin.',
+    'Operating across 2 branches in Bengaluru. Contact our team to confirm current bay availability and obtain the nearest verified location pin.',
   verificationNotice:
     'Notice: Branch addresses are pending formal physical signboard GPS confirmation. Please connect with our team before visiting to ensure bay readiness.',
 };

@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm sm:text-base leading-relaxed text-[#445452] max-w-sm">
-              Professional car and bike washing, detailing, ceramic coating, PPF, wrapping, and accessories — all under one roof across 3 branches in Bengaluru.
+              Professional car and bike washing, detailing, ceramic coating, PPF, wrapping, and accessories — all under one roof across 2 branches in Bengaluru.
             </p>
 
             <div className="p-4 rounded-2xl bg-white border border-[#DDD6CB] space-y-2 text-xs sm:text-sm shadow-sm">
@@ -158,7 +158,7 @@ export default function Footer() {
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-[#202C2C] font-bold">3 Branches in Bengaluru</span>
+                  <span className="block text-[#202C2C] font-bold">2 Branches in Bengaluru</span>
                   <span className="text-xs text-[#52615E]">Live GPS location pins shared on WhatsApp</span>
                 </div>
               </li>

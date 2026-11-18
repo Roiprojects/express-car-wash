@@ -15,7 +15,7 @@ export const FAQ_CATEGORIES = [
   { id: 'wrapping-films', label: 'Wrapping & Sun Films' },
   { id: 'bodywork', label: 'Tinkering & Painting' },
   { id: 'accessories', label: 'Accessories' },
-  { id: 'branches', label: '3 Branch Network' },
+  { id: 'branches', label: '2 Branch Network' },
   { id: 'pricing', label: 'Pricing & Categories' },
   { id: 'duration', label: 'Duration & Timeline' },
 ];
@@ -120,7 +120,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: 'faq-17',
     category: 'branches',
-    question: 'Where are the 3 Express Car Wash branches located?',
-    answer: 'Our promotional posters advertise 3 operational branches across Bengaluru: Branch 01 (Main Detailing Studio & Coatings), Branch 02 (Express Wash & Two-Wheeler Bay), and Branch 03 (Accessories, Alloys & Audio Studio). Please connect with us on WhatsApp or call +91 7022338693 to verify exact landmark directions and bay availability before driving in.',
+    question: 'Where are the 2 Express Car Wash branches located in Bengaluru?',
+    answer: 'We operate 2 specialized branches across Bengaluru: Branch 01 (Main Detailing Studio & Paint Protection Coatings) and Branch 02 (Express Wash & Maintenance Bay). Please connect with us on WhatsApp or call +91 70223 38693 to verify exact landmark directions and current bay availability before driving in.',
   },
 ];

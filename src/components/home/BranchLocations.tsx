@@ -23,8 +23,8 @@ export default function BranchLocations() {
           </p>
         </div>
 
-        {/* 3 Branches Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 2 Branches Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
           {BRANCHES_DATA.map((branch) => (
             <div
               key={branch.id}

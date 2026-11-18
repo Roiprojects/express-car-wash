@@ -73,9 +73,9 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   whatsapp: "917022338693",
   whatsappSecondary: "917406322238",
   email: null,
-  branchCountAdvertised: 3,
+  branchCountAdvertised: 2,
   branchCountNote:
-    "Promotional poster advertises 3 branches ('WE HAVE 3 BRANCHES'). Individual branch addresses and locations are pending business confirmation.",
+    "Operating across 2 branches in Bengaluru. Contact our team for current bay availability and nearest location pins.",
   address: {
     display: "Branch network across Bengaluru (Contact for exact bay locations & directions)",
     city: "Bengaluru",

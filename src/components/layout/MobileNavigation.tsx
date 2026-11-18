@@ -99,7 +99,7 @@ export default function MobileNavigation({
             </div>
             <div className="flex items-start gap-2">
               <ShieldCheck className="w-3.5 h-3.5 text-[#087F75] flex-shrink-0 mt-0.5" />
-              <span>Advertised 45m+ precision wash. 3 Branches across Bengaluru.</span>
+              <span>Advertised 45m+ precision wash. 2 Branches across Bengaluru.</span>
             </div>
           </div>
         </div>

@@ -51,8 +51,8 @@ export default function WhyChooseUs() {
     },
     {
       id: 'branches',
-      title: '3 Bengaluru Branches',
-      description: 'Three convenient workshop bays across the city with real-time WhatsApp coordination and live pins.',
+      title: '2 Bengaluru Branches',
+      description: 'Two convenient workshop bays across the city with real-time WhatsApp coordination and live pins.',
       icon: MapPin,
     },
   ];

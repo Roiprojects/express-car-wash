@@ -15,7 +15,7 @@ export default function ConversionCTA({ onOpenBooking }: ConversionCTAProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF9EF] border border-[#DDD6CB] text-[#087F75] font-mono text-xs uppercase tracking-widest mb-6 shadow-sm font-bold">
           <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
-          <span>{BUSINESS_CONFIG.brandName} • 3 Branches in Bengaluru</span>
+          <span>{BUSINESS_CONFIG.brandName} • 2 Branches in Bengaluru</span>
         </div>
 
         <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-[#202C2C] max-w-3xl mx-auto leading-tight">
@@ -63,7 +63,7 @@ export default function ConversionCTA({ onOpenBooking }: ConversionCTAProps) {
             +91 97410 74019
           </a>
           <span className="mx-2">•</span>
-          <span>We have 3 branches across Bengaluru</span>
+          <span>We have 2 branches across Bengaluru</span>
         </div>
 
         {/* Workshop reassurance badges */}

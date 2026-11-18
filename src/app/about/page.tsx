@@ -52,7 +52,7 @@ export default function AboutPage() {
               <span className="text-[#087F75] italic font-serif">{BUSINESS_CONFIG.brandName}.</span>
             </h1>
             <p className="mt-6 text-base sm:text-lg text-[#445452] leading-relaxed">
-              Founded in 2015, we began with a single conviction: vehicle care should not scratch paint or rush through dirty panels. Today, across 3 advertised branches in Bengaluru, we have evolved into a comprehensive automotive hub spanning precision foam washes, self-healing PPF, ceramic shields, vehicle wrapping, bodywork (tinkering &amp; painting), and styling accessories.
+              Founded in 2015, we began with a single conviction: vehicle care should not scratch paint or rush through dirty panels. Today, across 2 branches in Bengaluru, we have evolved into a comprehensive automotive hub spanning precision foam washes, self-healing PPF, ceramic shields, vehicle wrapping, bodywork (tinkering &amp; painting), and styling accessories.
             </p>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function AboutPage() {
                 <div className="pt-3 border-t border-[#DDD6CB] flex flex-wrap gap-4 text-xs font-mono text-[#52615E]">
                   <span>Primary: <strong className="text-[#087F75] font-bold">{BUSINESS_CONFIG.primaryPhone}</strong></span>
                   <span>Secondary: <strong className="text-[#202C2C] font-bold">{BUSINESS_CONFIG.secondaryPhone}</strong></span>
-                  <span>Network: <strong className="text-[#087F75] font-bold">3 Advertised Branches</strong></span>
+                  <span>Network: <strong className="text-[#087F75] font-bold">2 Branches in Bengaluru</strong></span>
                 </div>
               </div>
             </div>
