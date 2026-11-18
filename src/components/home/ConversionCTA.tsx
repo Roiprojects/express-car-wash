@@ -3,7 +3,7 @@
 import React from 'react';
 import { BUSINESS_CONFIG } from '@/data/business';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
-import { MessageSquare, Phone, Calendar, Sparkles, Clock, ShieldCheck } from 'lucide-react';
+import { MessageSquare, Phone, Calendar, Sparkles, Clock, ShieldCheck, MapPin } from 'lucide-react';
 
 interface ConversionCTAProps {
   onOpenBooking: () => void;
@@ -18,16 +18,16 @@ export default function ConversionCTA({ onOpenBooking }: ConversionCTAProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#13171D] border border-[#252B34] text-accent font-mono text-xs uppercase tracking-widest mb-6 shadow-sm font-semibold">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Drive In or Book in Advance</span>
+          <span>{BUSINESS_CONFIG.brandName} • 3 Branches in Bengaluru</span>
         </div>
 
         <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white max-w-3xl mx-auto leading-tight">
-          YOUR NEXT WASH <br />
+          YOUR COMPLETE AUTO CARE <br />
           <span className="text-gradient-cyan">STARTS HERE.</span>
         </h2>
 
         <p className="mt-6 text-base sm:text-lg text-[#738CAC] max-w-xl mx-auto leading-relaxed">
-          Choose your service and get in touch to arrange your visit. Experience the difference of dedicated detailing bays and paint-safe treatments.
+          From quick foam washes to multi-year ceramic shields, PPF wraps, and automotive accessories. Connect with our bays to schedule your visit.
         </p>
 
         {/* CTAs */}
@@ -47,16 +47,26 @@ export default function ConversionCTA({ onOpenBooking }: ConversionCTAProps) {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-[#13171D] border border-[#252B34] text-white font-bold text-sm uppercase tracking-wider hover:border-accent hover:text-accent transition-colors shadow-sm"
           >
             <Calendar className="w-4 h-4 text-accent" />
-            <span>Interactive Booking Tool</span>
+            <span>Interactive Planner</span>
           </button>
 
           <a
-            href={`tel:${BUSINESS_CONFIG.phone}`}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-transparent border border-[#252B34] text-[#738CAC] hover:text-white hover:border-white/20 transition-colors font-bold text-sm uppercase tracking-wider"
+            href={`tel:${BUSINESS_CONFIG.primaryPhone}`}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-[#13171D] border border-[#252B34] text-[#738CAC] hover:text-white hover:border-accent transition-colors font-bold text-sm uppercase tracking-wider"
           >
             <Phone className="w-4 h-4 text-accent" />
-            <span>Call Now</span>
+            <span>Call {BUSINESS_CONFIG.primaryPhoneFormatted}</span>
           </a>
+        </div>
+
+        {/* Secondary Contact Line & Branch reassurance */}
+        <div className="mt-6 text-xs text-[#738CAC]">
+          <span>Secondary Line: </span>
+          <a href={`tel:${BUSINESS_CONFIG.secondaryPhone}`} className="text-white hover:text-accent font-semibold transition-colors">
+            {BUSINESS_CONFIG.secondaryPhoneFormatted}
+          </a>
+          <span className="mx-2">•</span>
+          <span>We have 3 branches across Bengaluru</span>
         </div>
 
         {/* Workshop reassurance badges */}
@@ -67,11 +77,11 @@ export default function ConversionCTA({ onOpenBooking }: ConversionCTAProps) {
           </div>
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-accent" />
-            <span>No advance payment needed to schedule</span>
+            <span>Dust-controlled bays for PPF & Coatings</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-accent" />
-            <span>Open: {BUSINESS_CONFIG.operatingHours.days}</span>
+            <MapPin className="w-4 h-4 text-accent" />
+            <span>Open: {BUSINESS_CONFIG.operatingHours.days} ({BUSINESS_CONFIG.operatingHours.timing})</span>
           </div>
         </div>
       </div>

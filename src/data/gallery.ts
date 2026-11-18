@@ -1,7 +1,7 @@
 export interface GalleryItem {
   id: string;
   title: string;
-  category: 'car-washing' | 'bike-washing' | 'interior-detailing' | 'polishing-ceramic';
+  category: 'car-washing' | 'bike-washing' | 'interior-detailing' | 'polishing-ceramic' | 'ppf-protection' | 'wrapping-films' | 'accessories' | 'tinkering-painting';
   categoryLabel: string;
   vehicle: string;
   service: string;
@@ -31,6 +31,10 @@ export const GALLERY_CATEGORIES = [
   { id: 'bike-washing', label: 'Bike Washing' },
   { id: 'interior-detailing', label: 'Interior Detailing' },
   { id: 'polishing-ceramic', label: 'Polishing & Ceramic' },
+  { id: 'ppf-protection', label: 'PPF Protection' },
+  { id: 'wrapping-films', label: 'Wrapping & Films' },
+  { id: 'accessories', label: 'Accessories' },
+  { id: 'tinkering-painting', label: 'Tinkering & Painting' },
 ];
 
 export const BEFORE_AFTER_ITEMS: BeforeAfterItem[] = [
@@ -170,6 +174,54 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     image: '/images/hyundai-i20.jpg',
     aspectRatio: 'portrait',
     description: 'Restoring fuel tank luster, jacket zipper scratch reduction, and applying hydrophobic wax to fairings.',
+    isAuthenticWorkshopAsset: false,
+  },
+  {
+    id: 'g-9',
+    title: 'Self-Healing TPU Paint Protection Film',
+    category: 'ppf-protection',
+    categoryLabel: 'PPF Protection',
+    vehicle: 'Hyundai Creta (Family SUV)',
+    service: 'Paint Protection Film (PPF)',
+    image: '/images/hyundai-creta.jpg',
+    aspectRatio: 'landscape',
+    description: 'Bumper-to-bumper 180-200 micron TPU film shielding against gravel chips, scratches, and harsh sun fading.',
+    isAuthenticWorkshopAsset: false,
+  },
+  {
+    id: 'g-10',
+    title: 'Custom Dual-Tone Vehicle Wrap',
+    category: 'wrapping-films',
+    categoryLabel: 'Wrapping & Films',
+    vehicle: 'Maruti Suzuki Baleno (Hatchback)',
+    service: 'Vehicle Wrapping & Styling',
+    image: '/images/maruti-baleno.jpg',
+    aspectRatio: 'square',
+    description: 'Cast vinyl wrap with edge-wrapping precision and chrome-delete satin accents.',
+    isAuthenticWorkshopAsset: false,
+  },
+  {
+    id: 'g-11',
+    title: 'High-Lumen Projector Headlight Upgrades',
+    category: 'accessories',
+    categoryLabel: 'Accessories',
+    vehicle: 'Kia Sonet (Compact SUV)',
+    service: 'Automotive Accessories & Fitment',
+    image: '/images/kia-sonet.jpg',
+    aspectRatio: 'portrait',
+    description: 'Precision projector retrofit and plug-and-play wiring harnesses for enhanced nighttime illumination.',
+    isAuthenticWorkshopAsset: false,
+  },
+  {
+    id: 'g-12',
+    title: 'Precision Dent Tinkering & Panel Painting',
+    category: 'tinkering-painting',
+    categoryLabel: 'Tinkering & Painting',
+    vehicle: 'Maruti Suzuki Brezza (Sub-Compact SUV)',
+    service: 'Tinkering & Painting',
+    image: '/images/maruti-brezza.jpg',
+    aspectRatio: 'landscape',
+    description: 'Sheet metal straightening, primer leveling, computerised color matching, and heated oven finish.',
     isAuthenticWorkshopAsset: false,
   },
 ];

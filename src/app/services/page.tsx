@@ -39,14 +39,14 @@ export default function ServicesPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent mb-4 font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Full Detailing Catalog & Signboard Pricing</span>
+              <span>Kousalya's Express — Complete Automotive Menu</span>
             </div>
             <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
-              EVERY DETAIL. <br />
-              <span className="text-gradient-cyan">EVERY DRIVE.</span>
+              EVERY SERVICE. <br />
+              <span className="text-gradient-cyan">ONE DESTINATION.</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg text-[#738CAC] leading-relaxed">
-              Find the right wash, interior restoration, machine polish, or ceramic defense package for your automobile or two-wheeler.
+              From everyday foam washes to self-healing PPF, 9H/10H ceramic shields, vehicle wrapping, bodywork tinkering & painting, and performance accessories.
             </p>
           </div>
         </div>

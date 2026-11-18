@@ -15,30 +15,30 @@ export default function AboutPreview() {
           <div className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>The Detailing Philosophy</span>
+              <span>Complete Automotive Care Hub</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
-              DETAILING IS IN <br />
-              <span className="text-gradient-cyan">THE DETAILS.</span>
+              MORE THAN A WASH. <br />
+              <span className="text-gradient-cyan">COMPLETE CRAFT.</span>
             </h2>
 
             <div className="space-y-4 text-[#738CAC] text-sm sm:text-base leading-relaxed">
               <p>
-                At {BUSINESS_CONFIG.brandName}, we see automotive cleaning not as a rushed assembly line, but as a deliberate craft. From microscopic brake dust embedded in alloy barrels to light clear coat swirls that rob your paint of its showroom luster, true finish requires calculated technique.
+                At {BUSINESS_CONFIG.brandName}, we see automotive care not as a rushed 10-minute wipe, but as a comprehensive sanctuary for your vehicle. From everyday foam washing to self-healing Paint Protection Film (PPF), 9H/10H ceramic coatings, color change wraps, audio installations, and body tinkering — we bring all essential vehicle services under one trusted roof.
               </p>
               <p>
-                Whether bringing in a daily commuter hatchback, a rugged compact SUV, or a fine two-wheeler scooter, our dedicated bays provide calibrated water pressures, pH-balanced snow foam baths, and meticulous hand drying to safeguard your finish.
+                Whether bringing in a daily commuter Swift or Baleno, a family Creta or Nexon, or a beloved Activa or Pulsar two-wheeler, our 3 branches in Bengaluru provide specialized bays, dust-controlled application rooms, and transparent pricing.
               </p>
             </div>
 
             {/* Key Differentiators */}
             <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               {[
-                'Advertised 45m+ care timeline',
-                'Dual-bucket grit-guard hand washing',
-                'Emulsified chassis diesel cleaning',
-                'Dedicated two-wheeler detailing protocols',
+                'Self-healing PPF & 9H/10H ceramic coatings',
+                'Advertised 45m+ precision wash standards',
+                'Alloy wheels, tyres, audio & styling upgrades',
+                '3 branch network across Bengaluru',
               ].map((point, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-white font-medium">
                   <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
@@ -53,7 +53,7 @@ export default function AboutPreview() {
                 href="/about"
                 className="inline-flex items-center gap-2 text-sm font-bold text-accent uppercase tracking-wider group hover:text-[#10B6C5] transition-colors"
               >
-                <span>Read Full Brand Story & Workflow</span>
+                <span>Read Our Story & Workshop Standards</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
               </Link>
             </div>
@@ -85,7 +85,7 @@ export default function AboutPreview() {
                       Paint Safe Assurance
                     </h4>
                     <p className="text-[11px] text-[#738CAC] mt-0.5">
-                      pH-neutral foam formulas safe for ceramic & factory coats
+                      Dust-controlled booths for coatings and PPF installation
                     </p>
                   </div>
                 </div>

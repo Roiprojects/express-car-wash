@@ -47,14 +47,14 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent mb-4 font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Brand Heritage & Detailing Standards</span>
+              <span>Brand Heritage & Detailing Standards — Est. 2015</span>
             </div>
             <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
               THE STORY BEHIND <br />
               <span className="text-gradient-cyan">{BUSINESS_CONFIG.brandName.toUpperCase()}.</span>
             </h1>
             <p className="mt-6 text-base sm:text-lg text-[#738CAC] leading-relaxed">
-              We started with a single conviction: automotive washing should not scratch your vehicle or rush through dirty panels. We created a dedicated detailing sanctuary for drivers who love their machines.
+              Founded in 2015, we began with a single conviction: vehicle care should not scratch paint or rush through dirty panels. Today, across 3 advertised branches in Bengaluru, we have evolved into a comprehensive automotive hub spanning precision foam washes, self-healing PPF, ceramic shields, vehicle wrapping, bodywork (tinkering & painting), and styling accessories.
             </p>
           </div>
         </div>
@@ -77,15 +77,20 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Transparent Signboard note */}
-              <div className="p-4 rounded-2xl bg-[#13171D] border border-[#252B34] space-y-2 text-xs shadow-sm">
+              {/* Transparent Signboard & Posters note */}
+              <div className="p-4 rounded-2xl bg-[#13171D] border border-[#252B34] space-y-3 text-xs shadow-sm">
                 <div className="flex items-center gap-2 text-white font-bold">
                   <ShieldCheck className="w-4 h-4 text-accent" />
-                  <span>Workshop Signage & Legal Transparency</span>
+                  <span>Branding, Branches & Physical Verification Note</span>
                 </div>
                 <p className="text-[#738CAC] leading-relaxed">
                   {BUSINESS_CONFIG.legalEntityNotice}
                 </p>
+                <div className="pt-2 border-t border-[#252B34] flex flex-wrap gap-4 text-[11px] font-mono text-white/80">
+                  <span>Primary: <strong className="text-accent">{BUSINESS_CONFIG.primaryPhone}</strong></span>
+                  <span>Secondary: <strong className="text-white">{BUSINESS_CONFIG.secondaryPhone}</strong></span>
+                  <span>Network: <strong className="text-accent">3 Advertised Branches</strong></span>
+                </div>
               </div>
             </div>
 

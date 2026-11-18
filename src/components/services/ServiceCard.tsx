@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ServiceItem, CarCategory } from '@/data/services';
 import { formatINR } from '@/lib/formatting';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
-import { Clock, Check, Sparkles, MessageSquare, Calendar, ChevronDown, ChevronUp, AlertCircle } from 'lucide-react';
+import { Clock, Check, MessageSquare, Calendar, ChevronDown, ChevronUp, AlertCircle, ShieldAlert } from 'lucide-react';
 
 interface ServiceCardProps {
   service: ServiceItem;
@@ -27,9 +27,10 @@ export default function ServiceCard({
       : service.pricing[selectedCarCategory];
 
   const isVerified = service.pricing.isVerified;
+  const isCustomQuote = service.pricing.isCustomQuote;
 
   return (
-    <div className="group rounded-3xl bg-[#13171D] border border-[#252B34] hover:border-accent flex flex-col justify-between overflow-hidden shadow-xl transition-all duration-300">
+    <div className="group rounded-3xl bg-[#13171D] border border-[#252B34] hover:border-accent flex flex-col justify-between overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(6,157,173,0.12)]">
       {/* Top Image Banner */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#19212A]">
         <Image
@@ -43,7 +44,7 @@ export default function ServiceCard({
 
         {/* Badges */}
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-          <span className="px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase bg-[#0C1016]/85 backdrop-blur-md border border-[#252B34] text-white font-semibold">
+          <span className="px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase bg-[#0C1016]/90 backdrop-blur-md border border-[#252B34] text-white font-semibold">
             {service.category.replace('-', ' ')}
           </span>
           {service.badge && (
@@ -54,7 +55,7 @@ export default function ServiceCard({
         </div>
 
         {/* Time duration floating badge */}
-        <div className="absolute bottom-3 left-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0C1016]/85 backdrop-blur-md text-white font-mono text-[11px] border border-[#252B34] font-medium shadow-sm">
+        <div className="absolute bottom-3 left-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0C1016]/90 backdrop-blur-md text-white font-mono text-[11px] border border-[#252B34] font-medium shadow-sm">
           <Clock className="w-3.5 h-3.5 text-accent" />
           <span>{service.estimatedDuration}</span>
         </div>
@@ -64,17 +65,25 @@ export default function ServiceCard({
       <div className="p-6 flex flex-col flex-grow justify-between">
         <div>
           <div className="flex items-start justify-between gap-2">
-            <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors">
+            <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors leading-snug">
               {service.name}
             </h3>
-            <span className="text-[11px] font-mono text-[#738CAC] uppercase px-2.5 py-1 rounded-md bg-[#19212A] whitespace-nowrap font-medium">
-              {service.vehicleType === 'bike' ? 'Motorcycle' : 'Automobile'}
+            <span className="text-[10px] font-mono text-[#738CAC] uppercase px-2 py-0.5 rounded bg-[#19212A] whitespace-nowrap font-medium">
+              {service.vehicleType === 'bike' ? 'Two-Wheeler' : service.vehicleType === 'both' ? 'Car & Bike' : 'Automobile'}
             </span>
           </div>
 
           <p className="mt-2.5 text-xs sm:text-sm text-[#738CAC] leading-relaxed">
             {service.shortDescription}
           </p>
+
+          {/* Regulatory / Service notice if present */}
+          {service.notice && (
+            <div className="mt-3 p-2.5 rounded-xl bg-accent/10 border border-accent/20 text-accent text-[11px] flex items-start gap-2">
+              <ShieldAlert className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
+              <span>{service.notice}</span>
+            </div>
+          )}
 
           {/* Expandable full description */}
           {isExpanded && (
@@ -111,15 +120,17 @@ export default function ServiceCard({
           <div className="flex items-end justify-between">
             <div>
               <span className="text-[10px] font-mono uppercase tracking-wider text-[#738CAC] block">
-                {service.vehicleType === 'bike'
+                {isCustomQuote
+                  ? 'Quotation'
+                  : service.vehicleType === 'bike'
                   ? 'Bike Rate'
                   : `Car Rate (${selectedCarCategory.replace('_', ' ').toUpperCase()})`}
               </span>
-              <div className="text-2xl font-black text-white tracking-tight flex items-center gap-2">
-                <span>{price ? formatINR(price) : 'Enquire'}</span>
-                {!isVerified && (
+              <div className="text-xl font-black text-white tracking-tight flex items-center gap-2">
+                <span>{isCustomQuote ? 'Custom Quote' : price ? formatINR(price) : 'Enquire'}</span>
+                {!isVerified && !isCustomQuote && (
                   <span className="text-[10px] font-mono text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 font-normal">
-                    To confirm
+                    Signboard ref
                   </span>
                 )}
               </div>
@@ -127,7 +138,7 @@ export default function ServiceCard({
 
             <div className="flex items-center gap-2">
               <a
-                href={generateQuickWhatsAppUrl(`Booking Enquiry for ${service.name}`)}
+                href={generateQuickWhatsAppUrl(`Enquiry for ${service.name}`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-xl bg-[#19212A] hover:bg-[#252B34] text-accent border border-[#252B34] hover:border-accent transition-colors"
@@ -136,19 +147,31 @@ export default function ServiceCard({
                 <MessageSquare className="w-4 h-4 fill-current" />
               </a>
 
-              <button
-                onClick={() => onOpenBooking(service.id)}
-                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-sm shadow-accent/20"
-              >
-                <Calendar className="w-3.5 h-3.5" />
-                <span>Book Bay</span>
-              </button>
+              {isCustomQuote ? (
+                <a
+                  href={generateQuickWhatsAppUrl(`Quote enquiry for ${service.name}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-sm shadow-accent/20"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 fill-current" />
+                  <span>Enquire</span>
+                </a>
+              ) : (
+                <button
+                  onClick={() => onOpenBooking(service.id)}
+                  className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-sm shadow-accent/20"
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Book Bay</span>
+                </button>
+              )}
             </div>
           </div>
 
           {!isVerified && service.pricing.statusNote && (
-            <div className="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-200 text-[11px] flex items-start gap-2">
-              <AlertCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-amber-400" />
+            <div className="p-2.5 rounded-lg bg-[#0C1016] border border-[#252B34] text-[#738CAC] text-[11px] flex items-start gap-2">
+              <AlertCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-accent" />
               <span>{service.pricing.statusNote}</span>
             </div>
           )}

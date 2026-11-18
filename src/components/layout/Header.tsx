@@ -45,7 +45,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
-                  <span className="font-extrabold text-lg md:text-xl tracking-tight text-white group-hover:text-accent transition-colors">
+                  <span className="font-extrabold text-base md:text-lg tracking-tight text-white group-hover:text-accent transition-colors leading-tight">
                     {BUSINESS_CONFIG.brandName}
                   </span>
                   <span className="hidden sm:inline-block text-[10px] tracking-widest uppercase font-mono px-2 py-0.5 rounded-full bg-[#0C1016] text-accent font-bold border border-[#252B34]">
@@ -53,7 +53,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   </span>
                 </div>
                 <span className="text-[10px] md:text-[11px] text-[#738CAC] tracking-wider uppercase font-medium">
-                  Car & Bike Detailing
+                  Car, Bike, PPF & Detailing
                 </span>
               </div>
             </Link>
@@ -78,15 +78,15 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               })}
             </nav>
 
-            {/* Actions: Direct WhatsApp / Call / Book */}
+            {/* Actions: Direct Phone & Book Wash */}
             <div className="hidden sm:flex items-center gap-3">
               <a
-                href={`tel:${BUSINESS_CONFIG.phone}`}
+                href={`tel:${BUSINESS_CONFIG.primaryPhone}`}
                 className="flex items-center gap-2 text-xs font-semibold text-[#738CAC] hover:text-white px-3.5 py-2 md:py-2.5 rounded-xl border border-[#252B34] bg-[#0C1016] hover:bg-[#19212A] transition-colors"
-                title="Call Workshop"
+                title={`Call Workshop (${BUSINESS_CONFIG.primaryPhoneFormatted})`}
               >
                 <Phone className="w-3.5 h-3.5 text-accent" />
-                <span className="hidden xl:inline">{BUSINESS_CONFIG.phone}</span>
+                <span className="hidden xl:inline">{BUSINESS_CONFIG.primaryPhoneFormatted}</span>
                 <span className="xl:hidden">Call</span>
               </a>
 

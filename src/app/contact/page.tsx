@@ -53,32 +53,46 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="text-[10px] font-mono uppercase tracking-widest text-accent group-hover:text-white block font-semibold">
-                      Primary Channel
+                      Primary Channel (WhatsApp)
                     </span>
-                    <span className="text-base font-bold text-white">WhatsApp Booking</span>
+                    <span className="text-base font-bold text-white">Chat & Book Slots</span>
                     <span className="text-xs text-[#738CAC] group-hover:text-white/90 block">
-                      {BUSINESS_CONFIG.phone}
+                      {BUSINESS_CONFIG.primaryPhone}
                     </span>
                   </div>
                 </a>
 
-                <a
-                  href={`tel:${BUSINESS_CONFIG.phone}`}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#0C1016] hover:bg-[#19212A] text-white border border-[#252B34] transition-all shadow-sm"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#19212A] text-accent flex items-center justify-center font-bold flex-shrink-0">
-                    <Phone className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#738CAC] block">
-                      Direct Voice Line
-                    </span>
-                    <span className="text-base font-bold text-white">Call Workshop</span>
-                    <span className="text-xs text-[#738CAC] block">
-                      {BUSINESS_CONFIG.phone}
-                    </span>
-                  </div>
-                </a>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <a
+                    href={`tel:${BUSINESS_CONFIG.primaryPhone}`}
+                    className="flex items-center gap-3 p-4 rounded-2xl bg-[#0C1016] hover:bg-[#19212A] text-white border border-[#252B34] transition-all shadow-sm"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-[#19212A] text-accent flex items-center justify-center font-bold flex-shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#738CAC] block">
+                        Primary (Posters)
+                      </span>
+                      <span className="text-sm font-bold text-white">{BUSINESS_CONFIG.primaryPhone}</span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={`tel:${BUSINESS_CONFIG.secondaryPhone}`}
+                    className="flex items-center gap-3 p-4 rounded-2xl bg-[#0C1016] hover:bg-[#19212A] text-white border border-[#252B34] transition-all shadow-sm"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-[#19212A] text-accent flex items-center justify-center font-bold flex-shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#738CAC] block">
+                        Secondary (Signboard)
+                      </span>
+                      <span className="text-sm font-bold text-white">{BUSINESS_CONFIG.secondaryPhone}</span>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -135,10 +149,10 @@ export default function ContactPage() {
                   <Navigation className="w-5 h-5 animate-pulse" />
                 </div>
                 <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  Precise GPS Pin On Appointment
+                  3 Advertised Branches in Bengaluru
                 </h4>
                 <p className="text-[11px] text-[#738CAC] max-w-xs leading-normal">
-                  Exact Google Maps pin and bay entry directions are immediately dispatched to your WhatsApp upon booking your slot.
+                  Branch 01 (Detailing & PPF), Branch 02 (Express Wash), and Branch 03 (Accessories & Styling). Exact Google Maps pins and bay availability are confirmed via WhatsApp upon booking.
                 </p>
               </div>
             </div>

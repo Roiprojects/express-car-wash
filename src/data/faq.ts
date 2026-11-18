@@ -1,6 +1,6 @@
 export interface FAQItem {
   id: string;
-  category: 'general' | 'car-wash' | 'bike-wash' | 'ceramic' | 'pricing' | 'duration';
+  category: 'general' | 'car-wash' | 'bike-wash' | 'ceramic' | 'ppf' | 'wrapping-films' | 'bodywork' | 'accessories' | 'branches' | 'pricing' | 'duration';
   question: string;
   answer: string;
 }
@@ -10,7 +10,12 @@ export const FAQ_CATEGORIES = [
   { id: 'general', label: 'General & Booking' },
   { id: 'car-wash', label: 'Car Wash & Spa' },
   { id: 'bike-wash', label: 'Bike Washing' },
-  { id: 'ceramic', label: 'Ceramic & Detailing' },
+  { id: 'ceramic', label: 'Ceramic & Graphene' },
+  { id: 'ppf', label: 'Paint Protection Film (PPF)' },
+  { id: 'wrapping-films', label: 'Wrapping & Sun Films' },
+  { id: 'bodywork', label: 'Tinkering & Painting' },
+  { id: 'accessories', label: 'Accessories' },
+  { id: 'branches', label: '3 Branch Network' },
   { id: 'pricing', label: 'Pricing & Categories' },
   { id: 'duration', label: 'Duration & Timeline' },
 ];
@@ -75,5 +80,47 @@ export const FAQ_DATA: FAQItem[] = [
     category: 'general',
     question: 'What payment methods do you accept at the detailing center?',
     answer: 'We accept all major UPI payment apps (Google Pay, PhonePe, Paytm), cash, and digital bank transfers. Payment is only settled after you inspect your vehicle and are 100% satisfied with the finish.',
+  },
+  {
+    id: 'faq-11',
+    category: 'ppf',
+    question: 'What is Paint Protection Film (PPF) and how does self-healing work?',
+    answer: 'PPF is an optically clear, heavy-duty thermoplastic polyurethane (TPU) film (180–200 microns thick) installed over high-impact body panels or the entire car. It acts as a physical barrier against highway gravel chips, keys, road debris, and swirl marks. Its elastomeric topcoat self-heals swirl marks automatically under engine warmth or ambient sunlight.',
+  },
+  {
+    id: 'faq-12',
+    category: 'ceramic',
+    question: 'What is the difference between Ceramic and Graphene Coating?',
+    answer: 'While ceramic coating utilizes nano-SiO2 to create an ultra-glossy glass layer, graphene coating introduces an atom-thin honeycomb carbon matrix. Graphene offers superior heat dissipation, exceptional resistance to mineral water spotting, lower surface friction, and extended longevity under severe tropical sunlight.',
+  },
+  {
+    id: 'faq-13',
+    category: 'wrapping-films',
+    question: 'Are window films and sun tints legal in India?',
+    answer: 'Under the Indian Motor Vehicles Act and Supreme Court directives, dark blackout sun films that block required visibility are restricted. Safety glass must maintain at least 70% Visual Light Transmission (VLT) on front and rear windshields, and 50% on side windows. We install certified high-rejection solar films compliant with applicable regulations to block infrared heat and UV without violating legal visibility norms.',
+  },
+  {
+    id: 'faq-14',
+    category: 'wrapping-films',
+    question: 'How long does a vehicle wrap last, and will it damage original paint?',
+    answer: 'Premium cast vinyl vehicle wraps typically last 3 to 5 years when properly cared for. Premium wraps protect the original OEM clear coat from sun fading and minor scuffs. When removed professionally, high-grade wrap vinyl leaves no adhesive residue or clear coat damage.',
+  },
+  {
+    id: 'faq-15',
+    category: 'bodywork',
+    question: 'What is Tinkering & Painting and how are dents repaired?',
+    answer: 'Tinkering involves precision metal realignment, paintless dent repair (where feasible), or panel reshaping for accident or collision damage. Painting involves computerised spectrophotometer color matching, anti-rust epoxy priming, multi-stage base coating, and high-solid clear coat curing inside a pressurized bake booth.',
+  },
+  {
+    id: 'faq-16',
+    category: 'accessories',
+    question: 'Do aftermarket electrical accessories void my car’s manufacturer warranty?',
+    answer: 'We prioritize OEM-standard coupler-to-coupler, plug-and-play wiring harnesses with dedicated fuses for all lighting, audio, and camera installations. By avoiding splicing or cutting original factory wires, your vehicle\'s electrical architecture and warranty eligibility remain protected.',
+  },
+  {
+    id: 'faq-17',
+    category: 'branches',
+    question: 'Where are the 3 Kousalya’s Express Car Wash branches located?',
+    answer: 'Our promotional posters advertise 3 operational branches across Bengaluru: Branch 01 (Main Detailing Studio & Coatings), Branch 02 (Express Wash & Two-Wheeler Bay), and Branch 03 (Accessories, Alloys & Audio Studio). Please connect with us on WhatsApp or call +91 7022338693 to verify exact landmark directions and bay availability before driving in.',
   },
 ];

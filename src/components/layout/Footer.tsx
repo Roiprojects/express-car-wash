@@ -23,26 +23,26 @@ export default function Footer() {
                 EX
               </div>
               <div>
-                <span className="font-extrabold text-2xl text-white tracking-tight block">
+                <span className="font-extrabold text-xl text-white tracking-tight block">
                   {BUSINESS_CONFIG.brandName}
                 </span>
                 <span className="text-xs text-[#738CAC] uppercase tracking-wider block font-medium">
-                  Car & Bike Detailing Spa
+                  Car, Bike, PPF & Accessories Spa
                 </span>
               </div>
             </Link>
 
             <p className="text-sm leading-relaxed text-[#738CAC] max-w-sm">
-              {BUSINESS_CONFIG.tagline}
+              {BUSINESS_CONFIG.tagline} Advertised across 3 branches in Bengaluru with dust-free bays for ceramic coating and PPF application.
             </p>
 
             <div className="p-4 rounded-2xl bg-[#13171D] border border-[#252B34] space-y-2 text-xs shadow-sm">
               <div className="flex items-center gap-2 text-white font-semibold">
                 <Shield className="w-4 h-4 text-accent flex-shrink-0" />
-                <span>Notice on Brand & Signboard</span>
+                <span>Notice on Brand & Network</span>
               </div>
               <p className="text-[11px] text-[#738CAC] leading-normal">
-                {BUSINESS_CONFIG.legalEntityNotice}
+                {BUSINESS_CONFIG.legalEntityNotice} Established year 2015 and branch addresses are subject to business confirmation.
               </p>
             </div>
 
@@ -53,15 +53,15 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-wide hover:bg-accent-hover transition-colors shadow-sm shadow-accent/20"
               >
-                <MessageSquare className="w-3.5 h-3.5" />
+                <MessageSquare className="w-3.5 h-3.5 fill-current" />
                 <span>WhatsApp Us</span>
               </a>
               <a
-                href={`tel:${BUSINESS_CONFIG.phone}`}
+                href={`tel:${BUSINESS_CONFIG.primaryPhone}`}
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#13171D] border border-[#252B34] text-white font-semibold text-xs hover:border-accent hover:text-accent transition-colors shadow-sm"
               >
                 <Phone className="w-3.5 h-3.5 text-accent" />
-                <span>Call Directly</span>
+                <span>Call {BUSINESS_CONFIG.primaryPhoneFormatted}</span>
               </a>
             </div>
           </div>
@@ -94,21 +94,23 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Core Services */}
+          {/* Extended Service Catalog */}
           <div className="space-y-4">
             <h4 className="text-xs font-mono uppercase tracking-widest text-white font-bold">
-              Core Treatments
+              Specialized Care
             </h4>
             <ul className="space-y-2.5 text-sm">
               {[
                 { name: 'Full Car Foam Wash', category: 'car-wash' },
-                { name: 'Deep Car Foam Wash', category: 'car-wash' },
-                { name: 'Full Car Diesel Wash', category: 'car-wash' },
-                { name: 'Deep Interior Cleaning', category: 'interior' },
-                { name: 'Rubbing Polish / Teflon', category: 'polishing-waxing' },
-                { name: 'Ceramic Wash & Wax', category: 'ceramic' },
-                { name: 'Ceramic Coating 9H / 10H', category: 'ceramic' },
-                { name: 'Superbike Foam Wash', category: 'bike-wash' },
+                { name: 'Bike Foam Wash & Chain Care', category: 'bike-wash' },
+                { name: 'Deep Interior Steam Cleaning', category: 'interior' },
+                { name: 'Rubbing & Paint Correction', category: 'polishing-waxing' },
+                { name: 'Ceramic Coating (9H/10H)', category: 'ceramic' },
+                { name: 'Graphene Matrix Shield', category: 'ceramic' },
+                { name: 'Paint Protection Film (PPF)', category: 'ppf' },
+                { name: 'Vehicle Wrapping & Sun Film', category: 'wrapping-films' },
+                { name: 'Car Accessories & Fitments', category: 'accessories' },
+                { name: 'Tinkering & Bodywork Painting', category: 'bodywork' },
               ].map((service) => (
                 <li key={service.name}>
                   <Link
@@ -122,17 +124,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Hours */}
+          {/* Contact, Phone Lines & Hours */}
           <div className="space-y-4">
             <h4 className="text-xs font-mono uppercase tracking-widest text-white font-bold">
-              Workshop Contact
+              Contact & Branches
             </h4>
             <ul className="space-y-3 text-xs">
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-white font-bold">{BUSINESS_CONFIG.phone}</span>
-                  <span className="text-[11px] text-[#738CAC]">Direct phone line & WhatsApp booking</span>
+                  <span className="block text-white font-bold">
+                    Primary: {BUSINESS_CONFIG.primaryPhoneFormatted}
+                  </span>
+                  <span className="block text-white/90 font-medium">
+                    Secondary: {BUSINESS_CONFIG.secondaryPhoneFormatted}
+                  </span>
+                  <span className="text-[11px] text-[#738CAC]">Direct calls & WhatsApp booking</span>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
@@ -146,14 +153,14 @@ export default function Footer() {
                 <Sparkles className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="block text-white font-bold">{BUSINESS_CONFIG.serviceNotice.minimumWashTime}</span>
-                  <span className="text-[11px] text-[#738CAC]">Advisable baseline for safe detailing</span>
+                  <span className="text-[11px] text-[#738CAC]">Advertised standard for thorough cleaning</span>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-white font-bold">{BUSINESS_CONFIG.address.display}</span>
-                  <span className="text-[11px] text-[#738CAC]">Specific workshop coordinates shared on booking</span>
+                  <span className="block text-white font-bold">3 Branches in Bengaluru</span>
+                  <span className="text-[11px] text-[#738CAC]">Live GPS location pins shared on WhatsApp</span>
                 </div>
               </li>
             </ul>
@@ -163,7 +170,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#738CAC]">
           <p>
-            © {currentYear} {BUSINESS_CONFIG.brandName}. All rights reserved. Professional Automotive Care.
+            © {currentYear} {BUSINESS_CONFIG.brandName}. All rights reserved. Car & Bike Detailing, Paint Protection & Accessories.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/services" className="hover:text-accent transition-colors">

@@ -13,7 +13,11 @@ import {
   Play,
   MoveHorizontal,
   CheckCircle2,
+  ShieldAlert,
+  Car,
+  MapPin,
 } from 'lucide-react';
+import { BUSINESS_CONFIG } from '@/data/business';
 
 interface Pillar {
   num: string;
@@ -29,7 +33,7 @@ export default function WhyChooseUs() {
       num: '01',
       title: 'Dedicated Two-Wheeler & Four-Wheeler Detailing',
       description:
-        'Unlike ordinary car washes that treat two-wheelers as an afterthought, we offer tailored protocols: safe low pressures around motorcycle & scooter wiring, chain degreasing, compressed air drying, and precision polish for Activa, Jupiter, Pulsar, Splendor and all daily rides.',
+        'Unlike ordinary washes that treat two-wheelers as an afterthought, we offer tailored protocols: safe low pressures around motorcycle switchgear and wiring, chain degreasing, compressed air drying, and precision polish for Activa, Jupiter, Pulsar, Splendor and all daily rides.',
       icon: Bike,
       highlight: 'Tailored bays for bikes, scooters and cars',
     },
@@ -37,36 +41,52 @@ export default function WhyChooseUs() {
       num: '02',
       title: 'Transparent Vehicle-Tier Pricing System',
       description:
-        'Clear pricing calibrated directly to your car size (Swift / i20 hatchbacks, Creta / Nexon compact SUVs, or full family XL). You know the baseline investment before booking, with clear notification for any handwritten signboard revisions.',
+        'Clear pricing calibrated directly to your car size (Swift / i20 hatchbacks, Creta / Nexon compact SUVs, or full family XL). You know the baseline investment before booking, with no hidden surprises.',
       icon: Sliders,
       highlight: 'Transparent vehicle size tiers',
     },
     {
       num: '03',
-      title: 'Diverse Detailing & Restoration Spectrum',
+      title: 'Self-Healing PPF & 9H/10H Ceramic Armor',
       description:
-        'From swift 30-minute outer washes to intensive underbody diesel grease baths, hot-water interior steam extraction, Teflon glazes, and long-lasting 9H/10H/12H ceramic coating treatments.',
-      icon: Layers,
-      highlight: 'Washes, interior, polish & ceramic',
+        'Dust-controlled clean application booths for optical TPU Paint Protection Film (PPF), hard quartz ceramic coatings, and graphene matrix heat dispersion shields that defend against gravel, keys, and acid rain.',
+      icon: ShieldAlert,
+      highlight: 'Physical film & molecular nano-shields',
     },
     {
       num: '04',
+      title: 'Accessories, Wrapping & Audio Upgrades',
+      description:
+        'One-stop styling upgrades: alloy wheels, performance tyres, Android touchscreens, speaker setups, ambient cabin lighting, and sun-protection window films fitted with warranty-safe coupler wiring.',
+      icon: Layers,
+      highlight: 'Alloys, audio, tints & cabin styling',
+    },
+    {
+      num: '05',
       title: 'Advertised 45-Minute Minimum Attention',
       description:
-        'As marked on our service board, we uphold a minimum washing duration of 45 minutes for cars and bikes. We deliberately avoid rushed conveyor-belt cleans to ensure thorough decontamination.',
+        'As marked on our service signboard, we uphold a minimum washing duration of 45 minutes for cars and bikes. We deliberately avoid rushed conveyor-belt cleans to ensure thorough crevice decontamination.',
       icon: ShieldCheck,
       highlight: 'Never a rushed 10-minute wipe',
     },
+    {
+      num: '06',
+      title: '3-Branch Network Across Bengaluru',
+      description:
+        'Convenient workshop bays across 3 branches. Direct WhatsApp coordination gives you instant bay availability, live location pins, and prompt turnaround updates for your vehicle.',
+      icon: MapPin,
+      highlight: '3 branches & direct WhatsApp booking',
+    },
   ];
 
-  // Quadruple items to ensure seamless, glitch-free infinite wrapping
+  // Duplicate items to ensure seamless, glitch-free infinite wrapping
   const repeatedPillars = [...pillars, ...pillars, ...pillars, ...pillars];
 
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const firstSetRef = useRef<HTMLDivElement>(null);
 
-  // Animation & Drag state refs (keep in refs for 60fps / 120fps performance)
+  // Animation & Drag state refs (keep in refs for 60fps performance)
   const posRef = useRef(0);
   const velocityRef = useRef(0);
   const isDraggingRef = useRef(false);
@@ -82,16 +102,16 @@ export default function WhyChooseUs() {
   const [isPausedByUser, setIsPausedByUser] = useState(false);
   const [isDraggingState, setIsDraggingState] = useState(false);
 
-  // Measure full set width (width of 4 cards including gap)
+  // Measure full set width (width of 6 cards including gap)
   const measure = useCallback(() => {
     if (!trackRef.current) return;
     const cards = trackRef.current.children;
-    if (cards.length >= 8) {
+    if (cards.length >= 12) {
       const card0 = cards[0] as HTMLElement;
-      const card4 = cards[4] as HTMLElement;
+      const card6 = cards[6] as HTMLElement;
       const card1 = cards[1] as HTMLElement;
-      if (card0 && card4) {
-        const measuredSetWidth = card4.offsetLeft - card0.offsetLeft;
+      if (card0 && card6) {
+        const measuredSetWidth = card6.offsetLeft - card0.offsetLeft;
         if (measuredSetWidth > 0) {
           setWidthRef.current = measuredSetWidth;
         }
@@ -112,7 +132,7 @@ export default function WhyChooseUs() {
   // Main animation frame loop
   useEffect(() => {
     let animationFrameId: number;
-    const baseSpeed = 0.85; // pixels per frame (~50px/sec at 60fps)
+    const baseSpeed = 0.85; // pixels per frame
 
     const tick = () => {
       // Check prefers-reduced-motion
@@ -123,7 +143,7 @@ export default function WhyChooseUs() {
       const isPaused = isHovered || isPausedByUser || prefersReducedMotion;
 
       if (!isDraggingRef.current) {
-        // If momentum exists, decay it smoothly
+        // If momentum exists, decay smoothly
         if (Math.abs(velocityRef.current) > 0.05) {
           posRef.current += velocityRef.current;
           velocityRef.current *= 0.94; // friction
@@ -157,7 +177,6 @@ export default function WhyChooseUs() {
 
   // Pointer drag & touch swipe handlers
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    // Only respond to main button
     if (e.button !== 0 && e.pointerType === 'mouse') return;
 
     isDraggingRef.current = true;
@@ -171,7 +190,7 @@ export default function WhyChooseUs() {
     try {
       e.currentTarget.setPointerCapture(e.pointerId);
     } catch {
-      // Ignore capture fallback
+      // Ignore
     }
   };
 
@@ -187,7 +206,6 @@ export default function WhyChooseUs() {
     }
 
     if (dt > 0) {
-      // Calculate instantaneous velocity scaled to ~60fps
       velocityRef.current = (deltaX / dt) * 16.6;
     }
 
@@ -195,7 +213,6 @@ export default function WhyChooseUs() {
     lastXRef.current = e.clientX;
     lastTimeRef.current = now;
 
-    // Apply wrap check during active drag
     const setWidth = setWidthRef.current;
     if (setWidth > 0) {
       while (posRef.current <= -setWidth) posRef.current += setWidth;
@@ -218,15 +235,13 @@ export default function WhyChooseUs() {
       // Ignore
     }
 
-    // Clamp velocity so high-speed flicks stay smooth
     velocityRef.current = Math.max(-18, Math.min(18, velocityRef.current));
   };
 
-  // Step buttons (Prev / Next)
   const step = (direction: 'prev' | 'next') => {
     const cardStep = cardWidthRef.current || 380;
     const targetDelta = direction === 'next' ? -cardStep : cardStep;
-    velocityRef.current = (targetDelta / 20); // create a smooth impulse
+    velocityRef.current = targetDelta / 20;
   };
 
   return (
@@ -244,10 +259,10 @@ export default function WhyChooseUs() {
             </div>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-[1.1]">
               ENGINEERED FOR{' '}
-              <span className="text-gradient-cyan">UNCOMPROMISING CLEAN.</span>
+              <span className="text-gradient-cyan">UNCOMPROMISING CARE.</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-[#738CAC] leading-relaxed">
-              Our workshop is organized around transparent standards, vehicle-specific care, and thorough detailing techniques.
+              Our workshops across Bengaluru are organized around transparent standards, vehicle-specific care, dust-free application booths, and authentic accessories.
             </p>
           </div>
 
@@ -321,7 +336,7 @@ export default function WhyChooseUs() {
         >
           {repeatedPillars.map((pillar, index) => {
             const IconComponent = pillar.icon;
-            const isFirstSet = index < 4;
+            const isFirstSet = index < 6;
 
             return (
               <div
@@ -329,11 +344,11 @@ export default function WhyChooseUs() {
                 ref={isFirstSet && index === 0 ? firstSetRef : undefined}
                 className="group relative w-[82vw] max-w-[340px] sm:w-[360px] md:w-[400px] lg:w-[420px] shrink-0 p-7 sm:p-8 rounded-[24px] bg-[#13171D] border border-[#252B34] hover:border-accent hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(6,157,173,0.12)] transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xl"
               >
-                {/* Glow accent in top corner on hover */}
+                {/* Glow accent */}
                 <div className="absolute -top-16 -right-16 w-32 h-32 bg-accent/10 rounded-full blur-2xl group-hover:bg-accent/20 transition-all duration-500 pointer-events-none" />
 
                 <div>
-                  {/* Top Badge & Pillar Number */}
+                  {/* Top Badge & Number */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-[#0C1016] border border-[#252B34] text-accent flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-inner">
                       <IconComponent className="w-6 h-6" />
@@ -367,7 +382,7 @@ export default function WhyChooseUs() {
         </div>
       </div>
 
-      {/* Mobile Instruction Hint */}
+      {/* Mobile Swipe Hint */}
       <div className="max-w-7xl mx-auto px-4 mt-6 sm:hidden flex items-center justify-center gap-2 text-xs text-[#738CAC]">
         <MoveHorizontal className="w-3.5 h-3.5 text-accent" />
         <span>Swipe horizontally to browse features</span>
