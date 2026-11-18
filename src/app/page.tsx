@@ -7,7 +7,6 @@ import AboutPreview from '@/components/home/AboutPreview';
 import PaintProtectionSection from '@/components/home/PaintProtectionSection';
 import FeaturedServices from '@/components/home/FeaturedServices';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
-import AccessoriesPreview from '@/components/home/AccessoriesPreview';
 import PricingPreview from '@/components/home/PricingPreview';
 import BranchLocations from '@/components/home/BranchLocations';
 import InteractiveBeforeAfter from '@/components/home/InteractiveBeforeAfter';
@@ -20,7 +19,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* 01: Light-Theme Hero Section matching user design reference */}
+      {/* 01: Light-Theme Hero Section */}
       <LightHeroSection onOpenBooking={() => openBooking()} />
 
       {/* 02: Subtle Secondary Everyday Cars Counter-Scrolling Rows */}
@@ -35,25 +34,22 @@ export default function HomePage() {
       {/* 05: Featured Services Grid */}
       <FeaturedServices onOpenBookingWithService={(id) => openBooking(id)} />
 
-      {/* 06: Why Vehicle Owners Choose Us Carousel */}
+      {/* 06: Why Vehicle Owners Choose Us Marquee */}
       <WhyChooseUs />
 
-      {/* 07: Automotive Accessories Preview */}
-      <AccessoriesPreview />
-
-      {/* 08: Pricing Preview & Vehicle Tiers */}
+      {/* 07: Pricing Preview & Vehicle Tiers */}
       <PricingPreview onOpenBookingWithService={(id) => openBooking(id)} />
 
-      {/* 09: 3-Branch Network Section */}
+      {/* 08: 3-Branch Network Section */}
       <BranchLocations />
 
-      {/* 10: Before / After Transformations */}
+      {/* 09: Before / After Transformations */}
       <InteractiveBeforeAfter />
 
-      {/* 11: Infinite Scrolling Customer Testimonials */}
+      {/* 10: Infinite Scrolling Customer Testimonials */}
       <TestimonialsPreview />
 
-      {/* 12: Final Conversion CTA */}
+      {/* 11: Final Conversion CTA */}
       <ConversionCTA onOpenBooking={() => openBooking()} />
     </>
   );
