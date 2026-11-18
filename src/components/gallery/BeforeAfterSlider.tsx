@@ -11,7 +11,7 @@ interface BeforeAfterSliderProps {
 }
 
 export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterSliderProps) {
-  const [sliderPosition, setSliderPosition] = useState<number>(50); // percentage 0 - 100
+  const [sliderPosition, setSliderPosition] = useState<number>(50);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -65,7 +65,7 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
         data-cursor-text="DRAG"
-        className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-3xl overflow-hidden cursor-ew-resize select-none border border-[#252B34] shadow-2xl bg-[#0C1016] group"
+        className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-3xl overflow-hidden cursor-ew-resize select-none border border-[#E3EBE7] shadow-xl bg-white group"
       >
         {/* AFTER Image (Full background) */}
         <div className="absolute inset-0 w-full h-full">
@@ -77,8 +77,8 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
             className="object-cover"
             priority
           />
-          <div className="absolute bottom-4 right-4 z-10 px-3.5 py-1.5 rounded-full bg-[#0C1016]/85 backdrop-blur-md border border-[#252B34] text-accent font-bold text-xs uppercase tracking-wider shadow-md flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="absolute bottom-4 right-4 z-10 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#E3EBE7] text-[#438E88] font-bold text-xs uppercase tracking-wider shadow-md flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
             <span>{item.afterLabel}</span>
           </div>
         </div>
@@ -96,27 +96,26 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
             className="object-cover"
             priority
           />
-          <div className="absolute bottom-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-[#0C1016]/85 backdrop-blur-md border border-[#252B34] text-white font-bold text-xs uppercase tracking-wider shadow-md">
+          <div className="absolute bottom-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white font-bold text-xs uppercase tracking-wider shadow-md">
             {item.beforeLabel}
           </div>
         </div>
 
         {/* Dividing Vertical Line & Central Draggable Pill */}
         <div
-          className="absolute top-0 bottom-0 z-20 w-0.5 bg-accent pointer-events-none"
+          className="absolute top-0 bottom-0 z-20 w-0.5 bg-[#438E88] pointer-events-none"
           style={{ left: `${sliderPosition}%` }}
         >
-          {/* Subtle line glow */}
-          <div className="absolute inset-0 w-1 -translate-x-0.5 bg-accent/60 blur-[2px]" />
+          <div className="absolute inset-0 w-1 -translate-x-0.5 bg-[#438E88]/40 blur-[2px]" />
 
           {/* Draggable central handle */}
-          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center shadow-xl shadow-accent/40 border-2 border-[#13171D] pointer-events-auto cursor-ew-resize transition-transform duration-150 group-hover:scale-110 active:scale-95">
+          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#438E88] text-white flex items-center justify-center shadow-lg shadow-[#438E88]/30 border-2 border-white pointer-events-auto cursor-ew-resize transition-transform duration-150 group-hover:scale-110 active:scale-95">
             <MoveHorizontal className="w-5 h-5 stroke-[2.5]" />
           </div>
         </div>
 
         {/* Top Floating Service Badge */}
-        <div className="absolute top-4 left-4 z-20 px-3.5 py-1 rounded-full bg-[#0C1016]/85 backdrop-blur-md border border-[#252B34] text-white font-mono text-[11px] tracking-wide font-medium shadow-sm">
+        <div className="absolute top-4 left-4 z-20 px-3.5 py-1 rounded-full bg-white/90 backdrop-blur-md border border-[#E3EBE7] text-[#253C42] font-mono text-[11px] tracking-wide font-bold shadow-sm">
           {item.service} • {item.vehicle}
         </div>
       </div>
@@ -124,14 +123,14 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
       {/* Caption & Asset Honesty Notice */}
       <div className="mt-4 px-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
         <div>
-          <h4 className="font-extrabold text-white text-base">{item.title}</h4>
-          <p className="text-[#738CAC] mt-0.5">{item.transformationDetails}</p>
+          <h4 className="font-serif font-bold text-[#253C42] text-base">{item.title}</h4>
+          <p className="text-[#62747A] mt-0.5">{item.transformationDetails}</p>
         </div>
 
         {!item.isAuthenticWorkshopAsset && (
-          <div className="flex items-center gap-1.5 text-[#738CAC] text-[11px] font-mono bg-[#13171D] px-3 py-1 rounded-md border border-[#252B34]">
-            <AlertCircle className="w-3.5 h-3.5 text-accent" />
-            <span>Interactive Visual Demonstration Placeholder</span>
+          <div className="flex items-center gap-1.5 text-[#62747A] text-[11px] font-mono bg-white px-3 py-1 rounded-full border border-[#E3EBE7]">
+            <AlertCircle className="w-3.5 h-3.5 text-[#438E88]" />
+            <span>Interactive Visual Demonstration</span>
           </div>
         )}
       </div>

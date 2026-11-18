@@ -3,28 +3,27 @@
 import React from 'react';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import { useBooking } from '@/components/layout/AppShell';
-import { Sparkles, Clock, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Sparkles, Clock } from 'lucide-react';
 import ConversionCTA from '@/components/home/ConversionCTA';
 
 export default function FAQPage() {
   const { openBooking } = useBooking();
 
   return (
-    <div className="bg-[#0C1016]">
+    <div className="bg-white">
       {/* Page Hero */}
-      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#252B34]">
-        <div className="absolute inset-0 automotive-grid pointer-events-none opacity-40" />
+      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#E3EBE7] bg-[#F1F7F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent mb-4 font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Clarity, Timelines & Procedures</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-4 font-semibold border border-[#438E88]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
+              <span>Clarity, Timelines &amp; Procedures</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
-              FREQUENTLY ASKED <br />
-              <span className="text-gradient-cyan">QUESTIONS.</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
+              Frequently Asked <br />
+              <span className="text-[#438E88] italic font-serif">Questions.</span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-[#738CAC] leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-[#62747A] leading-relaxed">
               Find transparent answers regarding vehicle turnaround durations, paint-safe chemistry, vehicle classifications, and appointment scheduling.
             </p>
           </div>
@@ -34,13 +33,13 @@ export default function FAQPage() {
       {/* Accordion Section */}
       <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Signboard Notice Callout */}
-        <div className="p-6 rounded-3xl bg-[#13171D] border border-[#252B34] space-y-3 shadow-xl">
-          <div className="flex items-center gap-2.5 text-accent font-bold text-sm">
-            <Clock className="w-5 h-5" />
-            <span>Advertised Workshop Notice: 45-Minute Minimum Standard</span>
+        <div className="p-6 rounded-3xl bg-[#F1F7F3] border border-[#E3EBE7] space-y-3 shadow-sm">
+          <div className="flex items-center gap-2.5 text-[#438E88] font-bold text-sm">
+            <Clock className="w-5 h-5 text-[#438E88]" />
+            <span className="text-[#253C42]">Advertised Workshop Notice: 45-Minute Minimum Standard</span>
           </div>
-          <p className="text-xs sm:text-sm text-[#738CAC] leading-relaxed">
-            Our physical workshop signboard advertises: <em>&ldquo;Minimum car & bike washing time — 45 minutes.&rdquo;</em> Please understand this is an advertised baseline minimum to ensure that safe pre-rinsing, wheel arch degreasing, and dual-bucket washing are never rushed. Total duration varies depending on surface dirt, tar accumulation, and specialized treatments chosen.
+          <p className="text-xs sm:text-sm text-[#62747A] leading-relaxed">
+            Our physical workshop signboard advertises: <em>&ldquo;Minimum car &amp; bike washing time — 45 minutes.&rdquo;</em> Please understand this is an advertised baseline minimum to ensure that safe pre-rinsing, wheel arch degreasing, and dual-bucket washing are never rushed. Total duration varies depending on surface dirt, tar accumulation, and specialized treatments chosen.
           </p>
         </div>
 

@@ -1,7 +1,20 @@
 import type { Metadata } from 'next';
+import { Playfair_Display, Manrope } from 'next/font/google';
 import './globals.css';
 import AppShell from '@/components/layout/AppShell';
 import { BUSINESS_CONFIG } from '@/data/business';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+});
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://express-detailing.in'),
@@ -111,14 +124,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#0C1016] text-white font-sans antialiased selection:bg-accent selection:text-white">
+      <body className="bg-white text-[#253C42] font-sans antialiased selection:bg-[#E4F2EF] selection:text-[#438E88]">
         <AppShell>{children}</AppShell>
       </body>
     </html>

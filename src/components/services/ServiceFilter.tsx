@@ -22,14 +22,13 @@ interface ServiceFilterProps {
 }
 
 export default function ServiceFilter({ activeCategory, onSelectCategory, vehicleType = 'car' }: ServiceFilterProps) {
-  // Only display categories relevant to the selected vehicle type
   const availableCategories = SERVICE_CATEGORIES.filter((cat) => {
     if (vehicleType === 'bike') {
       return cat.id === 'all' || cat.id === 'bike-wash' || cat.id === 'ceramic';
     }
-    // For car: show car categories (exclude bike-wash)
     return cat.id !== 'bike-wash' && (cat.id as string) !== 'bike-washing';
   });
+
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Car':
@@ -65,8 +64,8 @@ export default function ServiceFilter({ activeCategory, onSelectCategory, vehicl
             onClick={() => onSelectCategory(cat.id)}
             className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
               isActive
-                ? 'bg-accent text-white shadow-sm shadow-accent/25'
-                : 'bg-[#13171D] text-[#738CAC] hover:text-white border border-[#252B34] hover:border-accent/40 shadow-sm'
+                ? 'bg-[#438E88] text-white shadow-sm'
+                : 'bg-[#F1F7F3] text-[#62747A] hover:text-[#253C42] border border-[#E3EBE7] hover:border-[#438E88]/40 shadow-sm'
             }`}
           >
             {getIcon(cat.iconName)}

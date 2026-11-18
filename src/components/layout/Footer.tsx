@@ -3,72 +3,72 @@
 import React from 'react';
 import Link from 'next/link';
 import { BUSINESS_CONFIG } from '@/data/business';
-import { Phone, MessageSquare, MapPin, Clock, ArrowUpRight, Shield, Sparkles } from 'lucide-react';
+import { Phone, MessageSquare, MapPin, Clock, ArrowUpRight, ShieldCheck, Sparkles, Car } from 'lucide-react';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#0C1016] text-[#738CAC] border-t border-[#252B34] overflow-hidden">
-      {/* Subtle top cyan line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent pointer-events-none" />
+    <footer className="relative bg-[#F1F7F3] text-[#62747A] border-t border-[#E3EBE7] overflow-hidden">
+      {/* Subtle top teal accent line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-[2px] bg-gradient-to-r from-transparent via-[#438E88]/40 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#252B34]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#E3EBE7]">
           {/* Brand & Overview */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center font-black text-white text-xl shadow-md shadow-accent/20">
-                EX
+              <div className="w-10 h-10 rounded-2xl bg-[#438E88] flex items-center justify-center text-white shadow-md shadow-[#438E88]/20">
+                <Car className="w-5 h-5 text-white" />
               </div>
               <div>
-                <span className="font-extrabold text-xl text-white tracking-tight block">
+                <span className="font-serif font-bold text-xl text-[#253C42] tracking-tight block">
                   {BUSINESS_CONFIG.brandName}
                 </span>
-                <span className="text-xs text-[#738CAC] uppercase tracking-wider block font-medium">
-                  Car, Bike, PPF & Accessories Spa
+                <span className="text-xs text-[#62747A] uppercase tracking-wider block font-medium">
+                  Car, Bike, PPF &amp; Accessories Spa
                 </span>
               </div>
             </Link>
 
-            <p className="text-sm leading-relaxed text-[#738CAC] max-w-sm">
-              {BUSINESS_CONFIG.tagline} Advertised across 3 branches in Bengaluru with dust-free bays for ceramic coating and PPF application.
+            <p className="text-sm leading-relaxed text-[#62747A] max-w-sm">
+              Professional car and bike washing, detailing, ceramic coating, PPF, wrapping, and accessories — all under one roof across 3 branches in Bengaluru.
             </p>
 
-            <div className="p-4 rounded-2xl bg-[#13171D] border border-[#252B34] space-y-2 text-xs shadow-sm">
-              <div className="flex items-center gap-2 text-white font-semibold">
-                <Shield className="w-4 h-4 text-accent flex-shrink-0" />
-                <span>Notice on Brand & Network</span>
+            <div className="p-4 rounded-2xl bg-white border border-[#E3EBE7] space-y-2 text-xs shadow-sm">
+              <div className="flex items-center gap-2 text-[#253C42] font-semibold">
+                <ShieldCheck className="w-4 h-4 text-[#438E88] flex-shrink-0" />
+                <span>Notice on Brand &amp; Network</span>
               </div>
-              <p className="text-[11px] text-[#738CAC] leading-normal">
+              <p className="text-[11px] text-[#62747A] leading-normal">
                 {BUSINESS_CONFIG.legalEntityNotice} Established year 2015 and branch addresses are subject to business confirmation.
               </p>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
-                href={generateQuickWhatsAppUrl()}
+                href={generateQuickWhatsAppUrl('Hello from website footer!')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-wide hover:bg-accent-hover transition-colors shadow-sm shadow-accent/20"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#438E88] text-white font-bold text-xs uppercase tracking-wide hover:bg-[#32766F] transition-colors shadow-sm shadow-[#438E88]/20"
               >
                 <MessageSquare className="w-3.5 h-3.5 fill-current" />
                 <span>WhatsApp Us</span>
               </a>
               <a
-                href={`tel:${BUSINESS_CONFIG.primaryPhone}`}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#13171D] border border-[#252B34] text-white font-semibold text-xs hover:border-accent hover:text-accent transition-colors shadow-sm"
+                href="tel:7022338693"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-[#E3EBE7] text-[#253C42] font-semibold text-xs hover:border-[#438E88] hover:text-[#438E88] transition-colors shadow-sm"
               >
-                <Phone className="w-3.5 h-3.5 text-accent" />
-                <span>Call {BUSINESS_CONFIG.primaryPhoneFormatted}</span>
+                <Phone className="w-3.5 h-3.5 text-[#438E88]" />
+                <span>Call +91 70223 38693</span>
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-bold">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#253C42]">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -84,7 +84,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="hover:text-accent transition-colors flex items-center gap-1 group text-[#738CAC]"
+                    className="hover:text-[#438E88] transition-colors flex items-center gap-1 group text-[#62747A]"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -96,7 +96,7 @@ export default function Footer() {
 
           {/* Extended Service Catalog */}
           <div className="space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-bold">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#253C42]">
               Specialized Care
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -115,7 +115,7 @@ export default function Footer() {
                 <li key={service.name}>
                   <Link
                     href="/services"
-                    className="hover:text-accent transition-colors block text-xs py-0.5 text-[#738CAC]"
+                    className="hover:text-[#438E88] transition-colors block text-xs py-0.5 text-[#62747A]"
                   >
                     {service.name}
                   </Link>
@@ -126,41 +126,41 @@ export default function Footer() {
 
           {/* Contact, Phone Lines & Hours */}
           <div className="space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-bold">
-              Contact & Branches
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#253C42]">
+              Contact &amp; Branches
             </h4>
             <ul className="space-y-3 text-xs">
               <li className="flex items-start gap-2.5">
-                <Phone className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-white font-bold">
-                    Primary: {BUSINESS_CONFIG.primaryPhoneFormatted}
+                  <span className="block text-[#253C42] font-bold">
+                    Primary: +91 70223 38693
                   </span>
-                  <span className="block text-white/90 font-medium">
-                    Secondary: {BUSINESS_CONFIG.secondaryPhoneFormatted}
+                  <span className="block text-[#253C42]/90 font-medium">
+                    Secondary: +91 97410 74019
                   </span>
-                  <span className="text-[11px] text-[#738CAC]">Direct calls & WhatsApp booking</span>
+                  <span className="text-[11px] text-[#62747A]">Direct calls &amp; WhatsApp booking</span>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-white font-bold">{BUSINESS_CONFIG.operatingHours.days}</span>
-                  <span className="text-[11px] text-[#738CAC]">{BUSINESS_CONFIG.operatingHours.timing}</span>
+                  <span className="block text-[#253C42] font-bold">{BUSINESS_CONFIG.operatingHours.days}</span>
+                  <span className="text-[11px] text-[#62747A]">{BUSINESS_CONFIG.operatingHours.timing}</span>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <Sparkles className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                <Sparkles className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-white font-bold">{BUSINESS_CONFIG.serviceNotice.minimumWashTime}</span>
-                  <span className="text-[11px] text-[#738CAC]">Advertised standard for thorough cleaning</span>
+                  <span className="block text-[#253C42] font-bold">{BUSINESS_CONFIG.serviceNotice.minimumWashTime}</span>
+                  <span className="text-[11px] text-[#62747A]">Advertised standard for thorough cleaning</span>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-white font-bold">3 Branches in Bengaluru</span>
-                  <span className="text-[11px] text-[#738CAC]">Live GPS location pins shared on WhatsApp</span>
+                  <span className="block text-[#253C42] font-bold">3 Branches in Bengaluru</span>
+                  <span className="text-[11px] text-[#62747A]">Live GPS location pins shared on WhatsApp</span>
                 </div>
               </li>
             </ul>
@@ -168,18 +168,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#738CAC]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#62747A]">
           <p>
-            © {currentYear} {BUSINESS_CONFIG.brandName}. All rights reserved. Car & Bike Detailing, Paint Protection & Accessories.
+            © {currentYear} {BUSINESS_CONFIG.brandName}. All rights reserved. Car &amp; Bike Detailing, Paint Protection &amp; Accessories.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/services" className="hover:text-accent transition-colors">
+            <Link href="/services" className="hover:text-[#438E88] transition-colors">
               Pricing Transparency
             </Link>
-            <Link href="/faq" className="hover:text-accent transition-colors">
+            <Link href="/faq" className="hover:text-[#438E88] transition-colors">
               Service FAQ
             </Link>
-            <Link href="/contact" className="hover:text-accent transition-colors">
+            <Link href="/contact" className="hover:text-[#438E88] transition-colors">
               Book Appointment
             </Link>
           </div>

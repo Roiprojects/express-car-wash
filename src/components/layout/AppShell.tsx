@@ -39,7 +39,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <Preloader />
       <CustomCursor />
       
-      <div className="min-h-screen flex flex-col bg-[#0C1016] text-white">
+      <div className="min-h-screen flex flex-col bg-white text-[#253C42]">
         <Header onOpenBooking={() => openBooking()} />
         <main className="flex-grow">{children}</main>
         <Footer />

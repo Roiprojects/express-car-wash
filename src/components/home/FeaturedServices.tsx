@@ -13,7 +13,6 @@ interface FeaturedServicesProps {
 }
 
 export default function FeaturedServices({ onOpenBookingWithService }: FeaturedServicesProps) {
-  // Highlight full spectrum: Washing, Coatings, PPF, Interior, Polishing, Wrapping, Accessories
   const featuredIds = [
     'full-car-foam-wash',
     'ceramic-coating',
@@ -28,29 +27,29 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
   const featuredServices = SERVICES_DATA.filter((s) => featuredIds.includes(s.id));
 
   return (
-    <section className="py-24 bg-[#0C1016] border-t border-[#252B34] relative">
+    <section className="py-20 lg:py-28 bg-white border-t border-[#E3EBE7] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent mb-3 font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-3 font-semibold border border-[#438E88]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
               <span>Comprehensive Automotive Care Spectrum</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
-              FEATURED SERVICES & <br />
-              <span className="text-gradient-cyan">DETAILING PACKAGES.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
+              Featured Services &amp; <br />
+              <span className="text-[#438E88] italic font-serif">Detailing Packages.</span>
             </h2>
-            <p className="mt-3 text-sm text-[#738CAC] leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-[#62747A] leading-relaxed">
               Explore specialized treatments for daily hatchbacks, sedans, SUVs, and commuter two-wheelers.
             </p>
           </div>
 
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm font-bold text-accent uppercase tracking-wider hover:text-[#10B6C5] transition-colors group self-start md:self-end"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#438E88] uppercase tracking-wider hover:text-[#32766F] transition-colors group self-start md:self-end"
           >
-            <span>View All Services & Category Explorer</span>
+            <span>View All Services &amp; Category Explorer</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -66,10 +65,10 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
             return (
               <div
                 key={service.id}
-                className="group relative flex flex-col justify-between rounded-3xl bg-[#13171D] border border-[#252B34] hover:border-accent overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(6,157,173,0.12)]"
+                className="group relative flex flex-col justify-between rounded-3xl bg-white border border-[#E3EBE7] hover:border-[#438E88] overflow-hidden shadow-[0_4px_20px_rgba(37,60,66,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 {/* Service Card Image */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#19212A]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F1F7F3]">
                   <Image
                     src={service.image}
                     alt={service.name}
@@ -77,15 +76,15 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#13171D] via-[#13171D]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
 
                   {/* Top Badges */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 rounded-full text-[9px] font-mono tracking-widest uppercase bg-[#0C1016]/90 backdrop-blur-md border border-[#252B34] text-white font-semibold">
+                    <span className="px-2.5 py-0.5 rounded-full text-[9px] font-mono tracking-widest uppercase bg-white/95 backdrop-blur-md border border-[#E3EBE7] text-[#253C42] font-semibold">
                       {service.category.replace('-', ' ')}
                     </span>
                     {service.badge && (
-                      <span className="px-2 py-0.5 rounded-full text-[9px] font-bold bg-accent text-white shadow-sm">
+                      <span className="px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#438E88] text-white shadow-sm">
                         {service.badge}
                       </span>
                     )}
@@ -95,32 +94,32 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
                 {/* Service Details */}
                 <div className="p-5 flex flex-col flex-grow justify-between">
                   <div>
-                    <h3 className="text-base font-bold text-white group-hover:text-accent transition-colors leading-snug">
+                    <h3 className="text-base font-serif font-bold text-[#253C42] group-hover:text-[#438E88] transition-colors leading-snug">
                       {service.name}
                     </h3>
-                    <p className="mt-2 text-xs text-[#738CAC] line-clamp-3 leading-relaxed">
+                    <p className="mt-2 text-xs text-[#62747A] line-clamp-3 leading-relaxed">
                       {service.shortDescription}
                     </p>
 
-                    <div className="mt-3 flex items-center gap-2 text-[11px] text-[#738CAC]">
+                    <div className="mt-3 flex items-center gap-2 text-[11px] text-[#62747A]">
                       <span className="flex items-center gap-1 font-medium">
-                        <Clock className="w-3 h-3 text-accent" />
+                        <Clock className="w-3 h-3 text-[#438E88]" />
                         {service.estimatedDuration}
                       </span>
                       <span>•</span>
-                      <span className="text-white/80 font-medium capitalize">
+                      <span className="text-[#253C42] font-medium capitalize">
                         {service.vehicleType === 'bike' ? 'Two-Wheeler' : service.vehicleType === 'both' ? 'Car & Bike' : 'Car & SUV'}
                       </span>
                     </div>
                   </div>
 
                   {/* Price & Action Row */}
-                  <div className="mt-5 pt-3 border-t border-[#252B34] flex items-center justify-between gap-2">
+                  <div className="mt-5 pt-3 border-t border-[#E3EBE7] flex items-center justify-between gap-2">
                     <div>
-                      <span className="block text-[9px] uppercase font-mono tracking-wider text-[#738CAC] font-medium">
+                      <span className="block text-[9px] uppercase font-mono tracking-wider text-[#62747A] font-medium">
                         Baseline
                       </span>
-                      <div className="text-base font-extrabold text-white">
+                      <div className="text-base font-extrabold text-[#253C42]">
                         {service.pricing.isCustomQuote
                           ? 'Quote on Req.'
                           : startingPrice
@@ -132,7 +131,7 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
                     <div className="flex items-center gap-1.5">
                       <Link
                         href={`/services?highlight=${service.id}`}
-                        className="p-2 rounded-lg bg-[#19212A] hover:bg-[#252B34] text-white transition-colors"
+                        className="p-2 rounded-xl bg-[#F1F7F3] hover:bg-[#E4F2EF] text-[#253C42] transition-colors"
                         title="View Full Details"
                       >
                         <ChevronRight className="w-4 h-4" />
@@ -143,7 +142,7 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
                           href={generateQuickWhatsAppUrl(`Quote enquiry for ${service.name}`)}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-3 py-2 rounded-lg bg-accent text-white font-bold text-[11px] uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-sm flex items-center gap-1"
+                          className="px-3.5 py-2 rounded-xl bg-[#438E88] text-white font-bold text-[11px] uppercase tracking-wider hover:bg-[#32766F] transition-colors shadow-sm flex items-center gap-1"
                         >
                           <MessageSquare className="w-3 h-3 fill-current" />
                           <span>Quote</span>
@@ -151,7 +150,7 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
                       ) : (
                         <button
                           onClick={() => onOpenBookingWithService && onOpenBookingWithService(service.id)}
-                          className="px-3 py-2 rounded-lg bg-accent text-white font-bold text-[11px] uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-sm flex items-center gap-1"
+                          className="px-3.5 py-2 rounded-xl bg-[#438E88] text-white font-bold text-[11px] uppercase tracking-wider hover:bg-[#32766F] transition-colors shadow-sm flex items-center gap-1"
                         >
                           <Calendar className="w-3 h-3" />
                           <span>Book</span>

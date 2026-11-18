@@ -14,10 +14,8 @@ import {
   MoveHorizontal,
   CheckCircle2,
   ShieldAlert,
-  Car,
   MapPin,
 } from 'lucide-react';
-import { BUSINESS_CONFIG } from '@/data/business';
 
 interface Pillar {
   num: string;
@@ -79,14 +77,14 @@ export default function WhyChooseUs() {
     },
   ];
 
-  // Duplicate items to ensure seamless, glitch-free infinite wrapping
+  // Duplicate items to ensure seamless infinite wrapping
   const repeatedPillars = [...pillars, ...pillars, ...pillars, ...pillars];
 
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const firstSetRef = useRef<HTMLDivElement>(null);
 
-  // Animation & Drag state refs (keep in refs for 60fps performance)
+  // Animation & Drag state refs
   const posRef = useRef(0);
   const velocityRef = useRef(0);
   const isDraggingRef = useRef(false);
@@ -95,14 +93,13 @@ export default function WhyChooseUs() {
   const lastTimeRef = useRef(0);
   const setWidthRef = useRef(0);
   const cardWidthRef = useRef(380);
-  const hasMovedRef = useRef(false);
 
   // React state for UI feedback
   const [isHovered, setIsHovered] = useState(false);
   const [isPausedByUser, setIsPausedByUser] = useState(false);
   const [isDraggingState, setIsDraggingState] = useState(false);
 
-  // Measure full set width (width of 6 cards including gap)
+  // Measure full set width
   const measure = useCallback(() => {
     if (!trackRef.current) return;
     const cards = trackRef.current.children;
@@ -132,10 +129,9 @@ export default function WhyChooseUs() {
   // Main animation frame loop
   useEffect(() => {
     let animationFrameId: number;
-    const baseSpeed = 0.85; // pixels per frame
+    const baseSpeed = 0.85;
 
     const tick = () => {
-      // Check prefers-reduced-motion
       const prefersReducedMotion =
         typeof window !== 'undefined' &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -143,25 +139,18 @@ export default function WhyChooseUs() {
       const isPaused = isHovered || isPausedByUser || prefersReducedMotion;
 
       if (!isDraggingRef.current) {
-        // If momentum exists, decay smoothly
         if (Math.abs(velocityRef.current) > 0.05) {
           posRef.current += velocityRef.current;
-          velocityRef.current *= 0.94; // friction
+          velocityRef.current *= 0.94;
         } else if (!isPaused) {
-          // Continuous right-to-left drift
           posRef.current -= baseSpeed;
         }
       }
 
-      // Seamless infinite wrapping
       const setWidth = setWidthRef.current;
       if (setWidth > 0) {
-        while (posRef.current <= -setWidth) {
-          posRef.current += setWidth;
-        }
-        while (posRef.current > 0) {
-          posRef.current -= setWidth;
-        }
+        while (posRef.current <= -setWidth) posRef.current += setWidth;
+        while (posRef.current > 0) posRef.current -= setWidth;
       }
 
       if (trackRef.current) {
@@ -180,7 +169,6 @@ export default function WhyChooseUs() {
     if (e.button !== 0 && e.pointerType === 'mouse') return;
 
     isDraggingRef.current = true;
-    hasMovedRef.current = false;
     startXRef.current = e.clientX;
     lastXRef.current = e.clientX;
     lastTimeRef.current = performance.now();
@@ -200,10 +188,6 @@ export default function WhyChooseUs() {
     const deltaX = e.clientX - lastXRef.current;
     const now = performance.now();
     const dt = now - lastTimeRef.current;
-
-    if (Math.abs(e.clientX - startXRef.current) > 6) {
-      hasMovedRef.current = true;
-    }
 
     if (dt > 0) {
       velocityRef.current = (deltaX / dt) * 16.6;
@@ -246,30 +230,30 @@ export default function WhyChooseUs() {
 
   return (
     <section
-      className="py-20 sm:py-24 bg-[#0C1016] border-t border-[#252B34] relative overflow-hidden select-none"
+      className="py-20 sm:py-24 bg-[#F1F7F3] border-t border-[#E3EBE7] relative overflow-hidden select-none"
       aria-label="Why Vehicle Owners Choose Us"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
         {/* Section Heading & Control Bar */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent mb-3 font-semibold">
-              <Sparkles className="w-3.5 h-3.5 text-accent animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-3 font-semibold border border-[#438E88]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
               <span>Why Vehicle Owners Choose Us</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-[1.1]">
-              ENGINEERED FOR{' '}
-              <span className="text-gradient-cyan">UNCOMPROMISING CARE.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#253C42] leading-[1.1] tracking-tight">
+              Engineered for{' '}
+              <span className="text-[#438E88] italic font-serif">Uncompromising Care.</span>
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-[#738CAC] leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-[#62747A] leading-relaxed">
               Our workshops across Bengaluru are organized around transparent standards, vehicle-specific care, dust-free application booths, and authentic accessories.
             </p>
           </div>
 
           {/* Interactive Navigation & Playback Controls */}
           <div className="flex items-center gap-3 self-start lg:self-end">
-            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#13171D] border border-[#252B34] text-xs text-[#738CAC]">
-              <MoveHorizontal className="w-3.5 h-3.5 text-accent" />
+            <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E3EBE7] text-xs text-[#62747A] shadow-sm">
+              <MoveHorizontal className="w-3.5 h-3.5 text-[#438E88]" />
               <span>Drag or hover to pause</span>
             </div>
 
@@ -277,11 +261,11 @@ export default function WhyChooseUs() {
               type="button"
               onClick={() => setIsPausedByUser((prev) => !prev)}
               aria-label={isPausedByUser ? 'Resume auto-scroll' : 'Pause auto-scroll'}
-              className="p-2.5 rounded-xl bg-[#13171D] border border-[#252B34] text-[#738CAC] hover:text-white hover:border-accent transition-all duration-200"
+              className="p-2.5 rounded-xl bg-white border border-[#E3EBE7] text-[#62747A] hover:text-[#438E88] hover:border-[#438E88]/40 transition-all duration-200 shadow-sm"
               title={isPausedByUser ? 'Resume auto-scroll' : 'Pause auto-scroll'}
             >
               {isPausedByUser ? (
-                <Play className="w-4 h-4 text-accent" />
+                <Play className="w-4 h-4 text-[#438E88]" />
               ) : (
                 <Pause className="w-4 h-4" />
               )}
@@ -291,7 +275,7 @@ export default function WhyChooseUs() {
               type="button"
               onClick={() => step('prev')}
               aria-label="Previous card"
-              className="p-2.5 rounded-xl bg-[#13171D] border border-[#252B34] text-[#738CAC] hover:text-white hover:border-accent transition-all duration-200 active:scale-95"
+              className="p-2.5 rounded-xl bg-white border border-[#E3EBE7] text-[#62747A] hover:text-[#438E88] hover:border-[#438E88]/40 transition-all duration-200 active:scale-95 shadow-sm"
               title="Previous card"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -301,7 +285,7 @@ export default function WhyChooseUs() {
               type="button"
               onClick={() => step('next')}
               aria-label="Next card"
-              className="p-2.5 rounded-xl bg-[#13171D] border border-[#252B34] text-[#738CAC] hover:text-white hover:border-accent transition-all duration-200 active:scale-95"
+              className="p-2.5 rounded-xl bg-white border border-[#E3EBE7] text-[#62747A] hover:text-[#438E88] hover:border-[#438E88]/40 transition-all duration-200 active:scale-95 shadow-sm"
               title="Next card"
             >
               <ChevronRight className="w-4 h-4" />
@@ -325,8 +309,8 @@ export default function WhyChooseUs() {
         style={{ touchAction: 'pan-y' }}
       >
         {/* Soft edge blur/fade gradients */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-[#0C1016] to-transparent z-10" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-[#0C1016] to-transparent z-10" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-[#F1F7F3] to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-[#F1F7F3] to-transparent z-10" />
 
         {/* Scrolling Track */}
         <div
@@ -342,37 +326,34 @@ export default function WhyChooseUs() {
               <div
                 key={`${pillar.num}-${index}`}
                 ref={isFirstSet && index === 0 ? firstSetRef : undefined}
-                className="group relative w-[82vw] max-w-[340px] sm:w-[360px] md:w-[400px] lg:w-[420px] shrink-0 p-7 sm:p-8 rounded-[24px] bg-[#13171D] border border-[#252B34] hover:border-accent hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(6,157,173,0.12)] transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xl"
+                className="group relative w-[82vw] max-w-[340px] sm:w-[360px] md:w-[400px] lg:w-[420px] shrink-0 p-7 sm:p-8 rounded-[24px] bg-white border border-[#E3EBE7] hover:border-[#438E88] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_8px_30px_rgba(37,60,66,0.06)]"
               >
-                {/* Glow accent */}
-                <div className="absolute -top-16 -right-16 w-32 h-32 bg-accent/10 rounded-full blur-2xl group-hover:bg-accent/20 transition-all duration-500 pointer-events-none" />
-
                 <div>
                   {/* Top Badge & Number */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-[#0C1016] border border-[#252B34] text-accent flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-inner">
+                    <div className="w-12 h-12 rounded-2xl bg-[#E4F2EF] text-[#438E88] flex items-center justify-center group-hover:bg-[#438E88] group-hover:text-white transition-all duration-300 shadow-sm">
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <span className="font-mono text-xl font-bold text-[#252B34] group-hover:text-accent transition-colors duration-300">
+                    <span className="font-mono text-xl font-bold text-[#E3EBE7] group-hover:text-[#438E88] transition-colors duration-300">
                       {pillar.num}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-accent transition-colors duration-300 leading-snug">
+                  <h3 className="text-lg sm:text-xl font-serif font-bold text-[#253C42] group-hover:text-[#438E88] transition-colors duration-300 leading-snug">
                     {pillar.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3.5 text-sm text-[#738CAC] leading-relaxed line-clamp-4">
+                  <p className="mt-3.5 text-sm text-[#62747A] leading-relaxed line-clamp-4">
                     {pillar.description}
                   </p>
                 </div>
 
                 {/* Footer Highlight */}
-                <div className="mt-6 pt-4 border-t border-[#252B34] flex items-center gap-2 text-xs">
-                  <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
-                  <span className="text-accent font-semibold tracking-wide">
+                <div className="mt-6 pt-4 border-t border-[#E3EBE7] flex items-center gap-2 text-xs">
+                  <CheckCircle2 className="w-4 h-4 text-[#438E88] shrink-0" />
+                  <span className="text-[#438E88] font-bold tracking-wide">
                     {pillar.highlight}
                   </span>
                 </div>
@@ -383,8 +364,8 @@ export default function WhyChooseUs() {
       </div>
 
       {/* Mobile Swipe Hint */}
-      <div className="max-w-7xl mx-auto px-4 mt-6 sm:hidden flex items-center justify-center gap-2 text-xs text-[#738CAC]">
-        <MoveHorizontal className="w-3.5 h-3.5 text-accent" />
+      <div className="max-w-7xl mx-auto px-4 mt-6 sm:hidden flex items-center justify-center gap-2 text-xs text-[#62747A]">
+        <MoveHorizontal className="w-3.5 h-3.5 text-[#438E88]" />
         <span>Swipe horizontally to browse features</span>
       </div>
     </section>

@@ -2,10 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { BUSINESS_CONFIG } from '@/data/business';
 import { useBooking } from '@/components/layout/AppShell';
-import { Sparkles, CheckCircle2, ShieldCheck, Clock, ArrowRight, Layers, Award, Droplets } from 'lucide-react';
+import { Sparkles, CheckCircle2, ShieldCheck, Clock, Award, Droplets } from 'lucide-react';
 import ConversionCTA from '@/components/home/ConversionCTA';
 
 export default function AboutPage() {
@@ -39,36 +38,35 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="bg-[#0C1016]">
+    <div className="bg-white">
       {/* Editorial Page Hero */}
-      <section className="relative py-20 overflow-hidden border-b border-[#252B34]">
-        <div className="absolute inset-0 automotive-grid pointer-events-none opacity-40" />
+      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#E3EBE7] bg-[#F1F7F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent mb-4 font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Brand Heritage & Detailing Standards — Est. 2015</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-4 font-semibold border border-[#438E88]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
+              <span>Brand Heritage &amp; Detailing Standards — Est. 2015</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
-              THE STORY BEHIND <br />
-              <span className="text-gradient-cyan">{BUSINESS_CONFIG.brandName.toUpperCase()}.</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
+              The Story Behind <br />
+              <span className="text-[#438E88] italic font-serif">{BUSINESS_CONFIG.brandName}.</span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-[#738CAC] leading-relaxed">
-              Founded in 2015, we began with a single conviction: vehicle care should not scratch paint or rush through dirty panels. Today, across 3 advertised branches in Bengaluru, we have evolved into a comprehensive automotive hub spanning precision foam washes, self-healing PPF, ceramic shields, vehicle wrapping, bodywork (tinkering & painting), and styling accessories.
+            <p className="mt-6 text-base sm:text-lg text-[#62747A] leading-relaxed">
+              Founded in 2015, we began with a single conviction: vehicle care should not scratch paint or rush through dirty panels. Today, across 3 advertised branches in Bengaluru, we have evolved into a comprehensive automotive hub spanning precision foam washes, self-healing PPF, ceramic shields, vehicle wrapping, bodywork (tinkering &amp; painting), and styling accessories.
             </p>
           </div>
         </div>
       </section>
 
       {/* Brand Clarification & Story */}
-      <section className="py-20 bg-[#10151D]">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
-                CRAFTED FOR PASSIONATE AUTOMOTIVE OWNERS
+              <h2 className="text-2xl sm:text-4xl font-serif font-bold text-[#253C42] leading-snug">
+                Crafted for Passionate Automotive Owners
               </h2>
-              <div className="space-y-4 text-sm sm:text-base text-[#738CAC] leading-relaxed">
+              <div className="space-y-4 text-sm sm:text-base text-[#62747A] leading-relaxed">
                 <p>
                   At {BUSINESS_CONFIG.brandName}, every wash bay is engineered around vehicle preservation. Road salt, brake iron filings, industrial fallout, and acidic bird droppings constantly degrade factory clear coats.
                 </p>
@@ -78,24 +76,24 @@ export default function AboutPage() {
               </div>
 
               {/* Transparent Signboard & Posters note */}
-              <div className="p-4 rounded-2xl bg-[#13171D] border border-[#252B34] space-y-3 text-xs shadow-sm">
-                <div className="flex items-center gap-2 text-white font-bold">
-                  <ShieldCheck className="w-4 h-4 text-accent" />
-                  <span>Branding, Branches & Physical Verification Note</span>
+              <div className="p-5 rounded-2xl bg-[#F1F7F3] border border-[#E3EBE7] space-y-3 text-xs shadow-sm">
+                <div className="flex items-center gap-2 text-[#253C42] font-serif font-bold text-sm">
+                  <ShieldCheck className="w-4 h-4 text-[#438E88]" />
+                  <span>Branding, Branches &amp; Physical Verification Note</span>
                 </div>
-                <p className="text-[#738CAC] leading-relaxed">
+                <p className="text-[#62747A] leading-relaxed">
                   {BUSINESS_CONFIG.legalEntityNotice}
                 </p>
-                <div className="pt-2 border-t border-[#252B34] flex flex-wrap gap-4 text-[11px] font-mono text-white/80">
-                  <span>Primary: <strong className="text-accent">{BUSINESS_CONFIG.primaryPhone}</strong></span>
-                  <span>Secondary: <strong className="text-white">{BUSINESS_CONFIG.secondaryPhone}</strong></span>
-                  <span>Network: <strong className="text-accent">3 Advertised Branches</strong></span>
+                <div className="pt-3 border-t border-[#E3EBE7] flex flex-wrap gap-4 text-[11px] font-mono text-[#62747A]">
+                  <span>Primary: <strong className="text-[#438E88] font-bold">{BUSINESS_CONFIG.primaryPhone}</strong></span>
+                  <span>Secondary: <strong className="text-[#253C42] font-bold">{BUSINESS_CONFIG.secondaryPhone}</strong></span>
+                  <span>Network: <strong className="text-[#438E88] font-bold">3 Advertised Branches</strong></span>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-[#252B34] shadow-2xl bg-[#13171D]">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-[#E3EBE7] shadow-xl bg-[#F1F7F3]">
                 <Image
                   src="/images/maruti-swift.jpg"
                   alt="Detailed snow foam application on passenger car"
@@ -103,10 +101,10 @@ export default function AboutPage() {
                   sizes="(max-width: 768px) 100vw, 600px"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1016]/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-mono text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-mono text-white bg-black/60 backdrop-blur-md px-4 py-2 rounded-full">
                   <span>Precision Active Snow Foam</span>
-                  <span className="text-accent font-bold">pH-Balanced 7.0</span>
+                  <span className="text-white font-bold">pH-Balanced 7.0</span>
                 </div>
               </div>
             </div>
@@ -115,44 +113,44 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-20 bg-[#0C1016] border-t border-[#252B34]">
+      <section className="py-20 bg-[#F1F7F3] border-t border-[#E3EBE7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
-              OUR DETAILING CORE VALUES
+            <h2 className="text-2xl sm:text-4xl font-serif font-bold text-[#253C42]">
+              Our Detailing Core Values
             </h2>
-            <p className="mt-2 text-sm text-[#738CAC]">
+            <p className="mt-2 text-sm text-[#62747A]">
               The operational rules that govern every vehicle in our workshop.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-3xl bg-[#13171D] border border-[#252B34] space-y-3 shadow-xl">
-              <div className="w-10 h-10 rounded-xl bg-[#0C1016] border border-[#252B34] flex items-center justify-center text-accent">
-                <Clock className="w-5 h-5" />
+            <div className="p-6 rounded-3xl bg-white border border-[#E3EBE7] space-y-3 shadow-[0_8px_30px_rgba(37,60,66,0.06)]">
+              <div className="w-10 h-10 rounded-2xl bg-[#E4F2EF] flex items-center justify-center text-[#438E88]">
+                <Clock className="w-5 h-5 text-[#438E88]" />
               </div>
-              <h3 className="text-lg font-bold text-white">No Rushed Washing</h3>
-              <p className="text-xs text-[#738CAC] leading-relaxed">
+              <h3 className="text-lg font-serif font-bold text-[#253C42]">No Rushed Washing</h3>
+              <p className="text-xs text-[#62747A] leading-relaxed">
                 As advertised on our workshop board, we honor a minimum 45-minute washing standard. Clean work takes deliberate time.
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-[#13171D] border border-[#252B34] space-y-3 shadow-xl">
-              <div className="w-10 h-10 rounded-xl bg-[#0C1016] border border-[#252B34] flex items-center justify-center text-accent">
-                <Droplets className="w-5 h-5" />
+            <div className="p-6 rounded-3xl bg-white border border-[#E3EBE7] space-y-3 shadow-[0_8px_30px_rgba(37,60,66,0.06)]">
+              <div className="w-10 h-10 rounded-2xl bg-[#E4F2EF] flex items-center justify-center text-[#438E88]">
+                <Droplets className="w-5 h-5 text-[#438E88]" />
               </div>
-              <h3 className="text-lg font-bold text-white">Paint-Safe Chemistry</h3>
-              <p className="text-xs text-[#738CAC] leading-relaxed">
+              <h3 className="text-lg font-serif font-bold text-[#253C42]">Paint-Safe Chemistry</h3>
+              <p className="text-xs text-[#62747A] leading-relaxed">
                 We strictly avoid aggressive industrial acids or caustic sodas that strip waxes, stain rubber mouldings, or etch chrome accents.
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-[#13171D] border border-[#252B34] space-y-3 shadow-xl">
-              <div className="w-10 h-10 rounded-xl bg-[#0C1016] border border-[#252B34] flex items-center justify-center text-accent">
-                <Award className="w-5 h-5" />
+            <div className="p-6 rounded-3xl bg-white border border-[#E3EBE7] space-y-3 shadow-[0_8px_30px_rgba(37,60,66,0.06)]">
+              <div className="w-10 h-10 rounded-2xl bg-[#E4F2EF] flex items-center justify-center text-[#438E88]">
+                <Award className="w-5 h-5 text-[#438E88]" />
               </div>
-              <h3 className="text-lg font-bold text-white">Honest Pricing</h3>
-              <p className="text-xs text-[#738CAC] leading-relaxed">
+              <h3 className="text-lg font-serif font-bold text-[#253C42]">Honest Pricing</h3>
+              <p className="text-xs text-[#62747A] leading-relaxed">
                 Clear vehicle-size matrices. If any handwritten revision exists on our workshop board, we inform you upfront before starting.
               </p>
             </div>
@@ -161,17 +159,17 @@ export default function AboutPage() {
       </section>
 
       {/* 4-Stage Process Timeline */}
-      <section className="py-24 bg-[#10151D] border-t border-[#252B34]">
+      <section className="py-24 bg-white border-t border-[#E3EBE7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent mb-3 font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-3 font-semibold border border-[#438E88]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
               <span>Standard Operational Workflow</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
-              THE 4-STAGE <span className="text-gradient-cyan">TREATMENT PROCESS.</span>
+            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#253C42]">
+              The 4-Stage <span className="text-[#438E88] italic font-serif">Treatment Process.</span>
             </h2>
-            <p className="mt-3 text-sm text-[#738CAC]">
+            <p className="mt-3 text-sm text-[#62747A]">
               A systematic approach ensuring no corner, wheel rim, or interior seam is overlooked.
             </p>
           </div>
@@ -180,23 +178,23 @@ export default function AboutPage() {
             {processStages.map((stage) => (
               <div
                 key={stage.step}
-                className="relative p-6 rounded-3xl bg-[#13171D] border border-[#252B34] flex flex-col justify-between shadow-xl"
+                className="relative p-6 rounded-3xl bg-[#F1F7F3] border border-[#E3EBE7] flex flex-col justify-between shadow-sm"
               >
                 <div>
-                  <div className="font-mono text-3xl font-black text-accent mb-4">
+                  <div className="font-mono text-3xl font-black text-[#438E88] mb-4">
                     {stage.step}
                   </div>
-                  <h3 className="text-lg font-bold text-white">{stage.title}</h3>
-                  <div className="text-[11px] font-mono text-accent font-semibold mt-0.5 mb-3">
+                  <h3 className="text-lg font-serif font-bold text-[#253C42]">{stage.title}</h3>
+                  <div className="text-[11px] font-mono text-[#438E88] font-bold mt-0.5 mb-3">
                     {stage.subtitle}
                   </div>
-                  <p className="text-xs text-[#738CAC] leading-relaxed">
+                  <p className="text-xs text-[#62747A] leading-relaxed">
                     {stage.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#252B34] flex items-center gap-1.5 text-[11px] text-white/80 font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-accent" />
+                <div className="mt-6 pt-4 border-t border-[#E3EBE7] flex items-center gap-1.5 text-[11px] text-[#253C42] font-semibold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#438E88]" />
                   <span>Workshop Standard</span>
                 </div>
               </div>

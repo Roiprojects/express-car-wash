@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FAQ_DATA, FAQ_CATEGORIES, FAQItem } from '@/data/faq';
-import { ChevronDown, Sparkles, MessageSquare, Search } from 'lucide-react';
+import { FAQ_DATA, FAQ_CATEGORIES } from '@/data/faq';
+import { ChevronDown, MessageSquare, Search } from 'lucide-react';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function FAQAccordion() {
@@ -36,8 +36,8 @@ export default function FAQAccordion() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
                   isActive
-                    ? 'bg-accent text-white shadow-sm shadow-accent/25'
-                    : 'bg-[#13171D] text-[#738CAC] hover:text-white border border-[#252B34]'
+                    ? 'bg-[#438E88] text-white shadow-sm'
+                    : 'bg-[#F1F7F3] text-[#62747A] hover:text-[#253C42] border border-[#E3EBE7]'
                 }`}
               >
                 {cat.label}
@@ -48,13 +48,13 @@ export default function FAQAccordion() {
 
         {/* Search Input */}
         <div className="relative w-full md:w-72">
-          <Search className="w-4 h-4 text-[#738CAC] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <Search className="w-4 h-4 text-[#62747A] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             placeholder="Search questions..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 rounded-full bg-[#13171D] border border-[#252B34] text-white text-xs placeholder:text-[#738CAC] focus:outline-none focus:border-accent"
+            className="w-full pl-10 pr-4 py-2.5 rounded-full bg-[#F1F7F3] border border-[#E3EBE7] text-[#253C42] text-xs placeholder:text-[#62747A]/60 focus:outline-none focus:border-[#438E88] focus:bg-white"
           />
         </div>
       </div>
@@ -70,8 +70,8 @@ export default function FAQAccordion() {
                 key={faq.id}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'bg-[#13171D] border-accent shadow-lg'
-                    : 'bg-[#13171D] border-[#252B34] hover:border-white/20'
+                    ? 'bg-white border-[#438E88] shadow-md'
+                    : 'bg-[#F1F7F3] border-[#E3EBE7] hover:border-[#438E88]/40'
                 }`}
               >
                 <button
@@ -80,14 +80,14 @@ export default function FAQAccordion() {
                   aria-expanded={isOpen}
                   className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
                 >
-                  <span className="font-bold text-sm sm:text-base text-white">
+                  <span className="font-serif font-bold text-sm sm:text-base text-[#253C42]">
                     {faq.question}
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-200 ${
                       isOpen
-                        ? 'bg-accent text-white rotate-180'
-                        : 'bg-[#0C1016] text-accent border border-[#252B34]'
+                        ? 'bg-[#438E88] text-white rotate-180'
+                        : 'bg-white text-[#438E88] border border-[#E3EBE7]'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -95,7 +95,7 @@ export default function FAQAccordion() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#738CAC] leading-relaxed border-t border-[#252B34] animate-in fade-in duration-200">
+                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#62747A] leading-relaxed border-t border-[#E3EBE7] animate-in fade-in duration-200">
                     <p>{faq.answer}</p>
                   </div>
                 )}
@@ -103,8 +103,8 @@ export default function FAQAccordion() {
             );
           })
         ) : (
-          <div className="p-12 text-center rounded-2xl bg-[#13171D] border border-[#252B34]">
-            <p className="text-[#738CAC] text-sm">
+          <div className="p-12 text-center rounded-2xl bg-[#F1F7F3] border border-[#E3EBE7]">
+            <p className="text-[#62747A] text-sm">
               No matching questions found for &ldquo;{searchQuery}&rdquo;.
             </p>
           </div>
@@ -112,12 +112,12 @@ export default function FAQAccordion() {
       </div>
 
       {/* Bottom WhatsApp Help Banner */}
-      <div className="p-6 rounded-3xl bg-[#13171D] border border-[#252B34] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
+      <div className="p-6 rounded-3xl bg-[#F1F7F3] border border-[#E3EBE7] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
         <div>
-          <h4 className="text-base font-bold text-white">
+          <h4 className="text-base font-serif font-bold text-[#253C42]">
             Have a question not listed above?
           </h4>
-          <p className="text-xs text-[#738CAC] mt-1">
+          <p className="text-xs text-[#62747A] mt-1">
             Our workshop staff is available on WhatsApp to answer specific queries regarding your vehicle model and detailing requirements.
           </p>
         </div>
@@ -126,7 +126,7 @@ export default function FAQAccordion() {
           href={generateQuickWhatsAppUrl('FAQ question enquiry')}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-sm shadow-accent/20 whitespace-nowrap"
+          className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#438E88] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#32766F] transition-colors shadow-sm whitespace-nowrap"
         >
           <MessageSquare className="w-4 h-4 fill-current" />
           <span>Ask on WhatsApp</span>

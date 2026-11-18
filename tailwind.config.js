@@ -8,6 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        mint: {
+          DEFAULT: "#E4F2EF",
+          soft: "#F1F7F3",
+          border: "#E3EBE7",
+        },
+        teal: {
+          brand: "#438E88",
+          hover: "#32766F",
+          soft: "#E4F2EF",
+        },
+        heading: "#253C42",
+        body: "#62747A",
         background: {
           DEFAULT: "#0C1016",
           secondary: "#10151D",
@@ -39,7 +51,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
         display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
       },
       keyframes: {

@@ -8,22 +8,22 @@ import { BUSINESS_CONFIG } from '@/data/business';
 
 export default function AboutPreview() {
   return (
-    <section className="py-24 bg-[#0C1016] border-t border-[#252B34] relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-white border-t border-[#E3EBE7] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Editorial & Story */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest font-semibold border border-[#438E88]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
               <span>Complete Automotive Care Hub</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
-              MORE THAN A WASH. <br />
-              <span className="text-gradient-cyan">COMPLETE CRAFT.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
+              More Than a Wash. <br />
+              <span className="text-[#438E88] italic font-serif">Complete Craft.</span>
             </h2>
 
-            <div className="space-y-4 text-[#738CAC] text-sm sm:text-base leading-relaxed">
+            <div className="space-y-4 text-[#62747A] text-sm sm:text-base leading-relaxed">
               <p>
                 At {BUSINESS_CONFIG.brandName}, we see automotive care not as a rushed 10-minute wipe, but as a comprehensive sanctuary for your vehicle. From everyday foam washing to self-healing Paint Protection Film (PPF), 9H/10H ceramic coatings, color change wraps, audio installations, and body tinkering — we bring all essential vehicle services under one trusted roof.
               </p>
@@ -33,15 +33,15 @@ export default function AboutPreview() {
             </div>
 
             {/* Key Differentiators */}
-            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
               {[
                 'Self-healing PPF & 9H/10H ceramic coatings',
                 'Advertised 45m+ precision wash standards',
                 'Alloy wheels, tyres, audio & styling upgrades',
                 '3 branch network across Bengaluru',
               ].map((point, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-white font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
+                <div key={idx} className="flex items-center gap-2.5 text-[#253C42] font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-[#438E88] flex-shrink-0" />
                   <span>{point}</span>
                 </div>
               ))}
@@ -51,9 +51,9 @@ export default function AboutPreview() {
             <div className="pt-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-bold text-accent uppercase tracking-wider group hover:text-[#10B6C5] transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#438E88] uppercase tracking-wider group hover:text-[#32766F] transition-colors"
               >
-                <span>Read Our Story & Workshop Standards</span>
+                <span>Read Our Story &amp; Workshop Standards</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
               </Link>
             </div>
@@ -63,7 +63,7 @@ export default function AboutPreview() {
           <div className="lg:col-span-6">
             <div className="relative">
               {/* Main Image */}
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-[#252B34] shadow-2xl bg-[#13171D]">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-[#E3EBE7] shadow-xl bg-[#F1F7F3]">
                 <Image
                   src="/images/tata-punch.jpg"
                   alt="Precision detailing by hand on passenger car"
@@ -71,20 +71,20 @@ export default function AboutPreview() {
                   sizes="(max-width: 768px) 100vw, 600px"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1016]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Inset Secondary Detail Card */}
-              <div className="absolute -bottom-6 -left-6 sm:bottom-6 sm:-left-8 max-w-xs p-5 rounded-2xl bg-[#13171D] border border-[#252B34] backdrop-blur-xl shadow-2xl">
+              <div className="absolute -bottom-6 -left-6 sm:bottom-6 sm:-left-8 max-w-xs p-5 rounded-2xl bg-white/95 border border-[#E3EBE7] backdrop-blur-xl shadow-xl">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-accent text-white flex items-center justify-center font-bold">
-                    <ShieldCheck className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl bg-[#E4F2EF] text-[#438E88] flex items-center justify-center font-bold">
+                    <ShieldCheck className="w-5 h-5 text-[#438E88]" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wide">
+                    <h4 className="text-xs font-bold text-[#253C42] uppercase tracking-wide">
                       Paint Safe Assurance
                     </h4>
-                    <p className="text-[11px] text-[#738CAC] mt-0.5">
+                    <p className="text-[11px] text-[#62747A] mt-0.5">
                       Dust-controlled booths for coatings and PPF installation
                     </p>
                   </div>

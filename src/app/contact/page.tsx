@@ -11,21 +11,20 @@ export default function ContactPage() {
   const { openBooking } = useBooking();
 
   return (
-    <div className="bg-[#0C1016]">
+    <div className="bg-white">
       {/* Page Hero */}
-      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#252B34]">
-        <div className="absolute inset-0 automotive-grid pointer-events-none opacity-40" />
+      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#E3EBE7] bg-[#F1F7F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-accent mb-4 font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Workshop Access & Bay Booking</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-4 font-semibold border border-[#438E88]/20">
+              <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
+              <span>Workshop Access &amp; Bay Booking</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
-              GET IN TOUCH. <br />
-              <span className="text-gradient-cyan">VISIT OUR BAYS.</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
+              Get in Touch. <br />
+              <span className="text-[#438E88] italic font-serif">Visit Our Bays.</span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-[#738CAC] leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-[#62747A] leading-relaxed">
               Connect directly with our detailing master technicians via WhatsApp, telephone, or schedule your vehicle visit using our interactive planner.
             </p>
           </div>
@@ -33,63 +32,63 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content: Info & Form */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Direct Info & Location */}
           <div className="lg:col-span-5 space-y-8">
             {/* Quick Contact Cards */}
-            <div className="p-6 rounded-3xl bg-[#13171D] border border-[#252B34] space-y-6 shadow-xl">
-              <h3 className="text-xl font-bold text-white">Direct Communications</h3>
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E3EBE7] space-y-6 shadow-[0_8px_30px_rgba(37,60,66,0.06)]">
+              <h3 className="text-xl font-serif font-bold text-[#253C42]">Direct Communications</h3>
 
               <div className="space-y-4">
                 <a
                   href={generateQuickWhatsAppUrl('General contact page enquiry')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#0C1016] hover:bg-accent text-white border border-[#252B34] transition-all group shadow-sm"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#E4F2EF] hover:bg-[#d8ece8] text-[#253C42] border border-[#438E88]/20 transition-all group shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center font-bold flex-shrink-0 group-hover:bg-[#0C1016] group-hover:text-accent transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#438E88] text-white flex items-center justify-center font-bold flex-shrink-0">
                     <MessageSquare className="w-6 h-6 fill-current" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-accent group-hover:text-white block font-semibold">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#438E88] block font-bold">
                       Primary Channel (WhatsApp)
                     </span>
-                    <span className="text-base font-bold text-white">Chat & Book Slots</span>
-                    <span className="text-xs text-[#738CAC] group-hover:text-white/90 block">
-                      {BUSINESS_CONFIG.primaryPhone}
+                    <span className="text-base font-bold text-[#253C42]">Chat &amp; Book Slots</span>
+                    <span className="text-xs text-[#62747A] block font-medium">
+                      +91 70223 38693
                     </span>
                   </div>
                 </a>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <a
-                    href={`tel:${BUSINESS_CONFIG.primaryPhone}`}
-                    className="flex items-center gap-3 p-4 rounded-2xl bg-[#0C1016] hover:bg-[#19212A] text-white border border-[#252B34] transition-all shadow-sm"
+                    href="tel:7022338693"
+                    className="flex items-center gap-3 p-4 rounded-2xl bg-[#F1F7F3] hover:bg-[#E4F2EF] text-[#253C42] border border-[#E3EBE7] transition-all shadow-sm"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#19212A] text-accent flex items-center justify-center font-bold flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white text-[#438E88] border border-[#E3EBE7] flex items-center justify-center font-bold flex-shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#738CAC] block">
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#62747A] block font-medium">
                         Primary (Posters)
                       </span>
-                      <span className="text-sm font-bold text-white">{BUSINESS_CONFIG.primaryPhone}</span>
+                      <span className="text-sm font-bold text-[#253C42]">70223 38693</span>
                     </div>
                   </a>
 
                   <a
-                    href={`tel:${BUSINESS_CONFIG.secondaryPhone}`}
-                    className="flex items-center gap-3 p-4 rounded-2xl bg-[#0C1016] hover:bg-[#19212A] text-white border border-[#252B34] transition-all shadow-sm"
+                    href="tel:9741074019"
+                    className="flex items-center gap-3 p-4 rounded-2xl bg-[#F1F7F3] hover:bg-[#E4F2EF] text-[#253C42] border border-[#E3EBE7] transition-all shadow-sm"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#19212A] text-accent flex items-center justify-center font-bold flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white text-[#438E88] border border-[#E3EBE7] flex items-center justify-center font-bold flex-shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#738CAC] block">
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#62747A] block font-medium">
                         Secondary (Signboard)
                       </span>
-                      <span className="text-sm font-bold text-white">{BUSINESS_CONFIG.secondaryPhone}</span>
+                      <span className="text-sm font-bold text-[#253C42]">97410 74019</span>
                     </div>
                   </a>
                 </div>
@@ -97,29 +96,29 @@ export default function ContactPage() {
             </div>
 
             {/* Hours & Minimum Time */}
-            <div className="p-6 rounded-3xl bg-[#13171D] border border-[#252B34] space-y-4 shadow-xl">
-              <h3 className="text-lg font-bold text-white">Workshop Operating Hours</h3>
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#F1F7F3] border border-[#E3EBE7] space-y-4 shadow-sm">
+              <h3 className="text-lg font-serif font-bold text-[#253C42]">Workshop Operating Hours</h3>
 
               <div className="space-y-3 text-xs sm:text-sm">
                 <div className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                  <Clock className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-white font-medium">
+                    <span className="block text-[#253C42] font-semibold">
                       {BUSINESS_CONFIG.operatingHours.days}
                     </span>
-                    <span className="text-xs text-[#738CAC]">
+                    <span className="text-xs text-[#62747A]">
                       {BUSINESS_CONFIG.operatingHours.timing}
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 pt-2 border-t border-[#252B34]">
-                  <ShieldCheck className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 pt-2 border-t border-[#E3EBE7]">
+                  <ShieldCheck className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-white font-medium">
+                    <span className="block text-[#253C42] font-semibold">
                       {BUSINESS_CONFIG.serviceNotice.minimumWashTime}
                     </span>
-                    <span className="text-xs text-[#738CAC]">
+                    <span className="text-xs text-[#62747A]">
                       {BUSINESS_CONFIG.serviceNotice.disclaimer}
                     </span>
                   </div>

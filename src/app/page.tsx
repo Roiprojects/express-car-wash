@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import ScrollingCarsHero from '@/components/home/ScrollingCarsHero';
+import LightHeroSection from '@/components/home/LightHeroSection';
+import EverydayCarsStrip from '@/components/home/EverydayCarsStrip';
 import AboutPreview from '@/components/home/AboutPreview';
 import PaintProtectionSection from '@/components/home/PaintProtectionSection';
 import FeaturedServices from '@/components/home/FeaturedServices';
@@ -19,37 +20,40 @@ export default function HomePage() {
 
   return (
     <>
-      {/* 01: Hero with Counter-Scrolling Everyday Indian Cars */}
-      <ScrollingCarsHero onOpenBooking={() => openBooking()} />
+      {/* 01: Light-Theme Hero Section matching user design reference */}
+      <LightHeroSection onOpenBooking={() => openBooking()} />
 
-      {/* 02: Brand Overview & Philosophy */}
+      {/* 02: Subtle Secondary Everyday Cars Counter-Scrolling Rows */}
+      <EverydayCarsStrip />
+
+      {/* 03: Brand Overview & Philosophy */}
       <AboutPreview />
 
-      {/* 03: Dedicated Paint Protection Section (PPF, Ceramic, Graphene) */}
+      {/* 04: Dedicated Paint Protection Section (PPF, Ceramic, Graphene) */}
       <PaintProtectionSection />
 
-      {/* 04: Featured Services Grid */}
+      {/* 05: Featured Services Grid */}
       <FeaturedServices onOpenBookingWithService={(id) => openBooking(id)} />
 
-      {/* 05: Why Vehicle Owners Choose Us Carousel */}
+      {/* 06: Why Vehicle Owners Choose Us Carousel */}
       <WhyChooseUs />
 
-      {/* 06: Automotive Accessories Preview */}
+      {/* 07: Automotive Accessories Preview */}
       <AccessoriesPreview />
 
-      {/* 07: Pricing Preview & Vehicle Tiers */}
+      {/* 08: Pricing Preview & Vehicle Tiers */}
       <PricingPreview onOpenBookingWithService={(id) => openBooking(id)} />
 
-      {/* 08: 3-Branch Network Section */}
+      {/* 09: 3-Branch Network Section */}
       <BranchLocations />
 
-      {/* 09: Before / After Transformations */}
+      {/* 10: Before / After Transformations */}
       <InteractiveBeforeAfter />
 
-      {/* 10: Infinite Scrolling Customer Testimonials */}
+      {/* 11: Infinite Scrolling Customer Testimonials */}
       <TestimonialsPreview />
 
-      {/* 11: Final Conversion CTA */}
+      {/* 12: Final Conversion CTA */}
       <ConversionCTA onOpenBooking={() => openBooking()} />
     </>
   );
