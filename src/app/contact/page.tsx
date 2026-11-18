@@ -3,7 +3,7 @@
 import React from 'react';
 import { BUSINESS_CONFIG } from '@/data/business';
 import ContactForm from '@/components/contact/ContactForm';
-import { Phone, MessageSquare, MapPin, Clock, ShieldCheck, Sparkles, Navigation } from 'lucide-react';
+import { Phone, MessageSquare, Clock, ShieldCheck, Sparkles } from 'lucide-react';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
 import { useBooking } from '@/components/layout/AppShell';
 
@@ -124,36 +124,6 @@ export default function ContactPage() {
                     </span>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Location & Map Card */}
-            <div className="p-6 rounded-3xl bg-[#13171D] border border-[#252B34] space-y-4 shadow-xl">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-bold text-white">Workshop Location</h3>
-                <span className="text-[10px] font-mono text-accent bg-[#0C1016] px-2.5 py-0.5 rounded border border-[#252B34] font-semibold">
-                  Bay Access
-                </span>
-              </div>
-
-              <div className="flex items-start gap-3 text-xs text-[#738CAC]">
-                <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-                <p>
-                  {BUSINESS_CONFIG.address.display}, {BUSINESS_CONFIG.address.city}, {BUSINESS_CONFIG.address.state}
-                </p>
-              </div>
-
-              {/* Map Placeholder with Honest Pin */}
-              <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-[#0C1016] border border-[#252B34] flex flex-col items-center justify-center p-6 text-center space-y-2">
-                <div className="w-10 h-10 rounded-full bg-[#13171D] border border-[#252B34] flex items-center justify-center text-accent">
-                  <Navigation className="w-5 h-5 animate-pulse" />
-                </div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  3 Advertised Branches in Bengaluru
-                </h4>
-                <p className="text-[11px] text-[#738CAC] max-w-xs leading-normal">
-                  Branch 01 (Detailing & PPF), Branch 02 (Express Wash), and Branch 03 (Accessories & Styling). Exact Google Maps pins and bay availability are confirmed via WhatsApp upon booking.
-                </p>
               </div>
             </div>
           </div>

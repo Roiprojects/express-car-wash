@@ -22,7 +22,15 @@ export default function ServicesPage() {
     setActiveCategory(cat);
     if (cat === 'bike-wash' || (cat as string) === 'bike-washing') {
       setVehicleType('bike');
-    } else if (cat === 'car-wash') {
+    } else if (
+      cat === 'car-wash' ||
+      cat === 'interior' ||
+      cat === 'polishing-waxing' ||
+      cat === 'wrapping-films' ||
+      cat === 'bodywork' ||
+      cat === 'accessories' ||
+      cat === 'ppf'
+    ) {
       setVehicleType('car');
     }
   };
@@ -30,38 +38,46 @@ export default function ServicesPage() {
   // Intelligent vehicle selector with auto-switch
   const handleSelectVehicleType = (type: VehicleType) => {
     setVehicleType(type);
-    if (type === 'bike' && activeCategory === 'car-wash') {
-      setActiveCategory('bike-wash');
-    } else if (type === 'car' && (activeCategory === 'bike-wash' || (activeCategory as string) === 'bike-washing')) {
-      setActiveCategory('car-wash');
+    if (type === 'bike') {
+      // If currently on a car-only category, reset to 'all'
+      if (
+        activeCategory === 'car-wash' ||
+        activeCategory === 'interior' ||
+        activeCategory === 'polishing-waxing' ||
+        activeCategory === 'wrapping-films' ||
+        activeCategory === 'bodywork' ||
+        activeCategory === 'accessories' ||
+        activeCategory === 'ppf'
+      ) {
+        setActiveCategory('all');
+      }
+    } else if (type === 'car') {
+      // If currently on bike-wash, switch to 'car-wash'
+      if (activeCategory === 'bike-wash' || (activeCategory as string) === 'bike-washing') {
+        setActiveCategory('car-wash');
+      }
     }
   };
 
-  // Robust filtering logic ensuring bike washing is NEVER empty
-  const isBikeCategory = activeCategory === 'bike-wash' || (activeCategory as string) === 'bike-washing';
-  const isCarCategory = activeCategory === 'car-wash';
-
+  // Strict, crystal-clear filtering:
+  // When Motorcycle is active: ONLY motorcycle services appear!
+  // When Automobile is active: ONLY car services appear!
   const filteredServices = SERVICES_DATA.filter((service) => {
-    // 1. If Bike Washing category is selected, match all bike services
-    if (isBikeCategory) {
-      return service.category === 'bike-wash' || (service.category as string) === 'bike-washing' || service.vehicleType === 'bike';
+    // 1. Vehicle compatibility check (Strict separation)
+    if (service.vehicleType !== vehicleType) {
+      return false;
     }
 
-    // 2. If Car Washing category is selected, match car wash services
-    if (isCarCategory) {
-      return (service.category === 'car-wash' || (service.category as string) === 'car-washing') && (service.vehicleType === 'car' || service.vehicleType === 'both');
+    // 2. Category matching
+    if (activeCategory === 'all') {
+      return true;
     }
 
-    // 3. Category matching for other tabs
-    const matchesCategory =
-      activeCategory === 'all' || service.category === activeCategory;
+    if (activeCategory === 'bike-wash' || (activeCategory as string) === 'bike-washing') {
+      return service.category === 'bike-wash' || (service.category as string) === 'bike-washing';
+    }
 
-    // 4. Vehicle type matching
-    const matchesVehicle =
-      service.vehicleType === 'both' ||
-      (vehicleType === 'bike' ? service.vehicleType === 'bike' : service.vehicleType === 'car');
-
-    return matchesCategory && matchesVehicle;
+    return service.category === activeCategory;
   });
 
   return (
@@ -101,6 +117,7 @@ export default function ServicesPage() {
           <ServiceFilter
             activeCategory={activeCategory}
             onSelectCategory={handleSelectCategory}
+            vehicleType={vehicleType}
           />
 
           <div className="flex items-center gap-2 self-start md:self-auto p-1 rounded-xl bg-[#13171D] border border-[#252B34]">

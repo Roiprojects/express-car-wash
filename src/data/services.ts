@@ -226,7 +226,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
 
   // ==========================================
-  // CATEGORY B — BIKE WASHING
+  // CATEGORY B — BIKE WASHING & TWO-WHEELER CARE
   // ==========================================
   {
     id: 'bike-foam-wash',
@@ -251,7 +251,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Silicone polish on painted tank, mirrors & exhaust shield',
     ],
     recommendedFor: 'Honda Activa, TVS Jupiter, Hero Splendor, Bajaj Pulsar, TVS Apache, Royal Enfield & all daily commuter two-wheelers.',
-    image: '/images/honda-activa.jpg',
+    image: '/images/bikes/hero-splendor-foam.jpg',
   },
   {
     id: 'bike-diesel-wash',
@@ -274,11 +274,11 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Fresh chain lube application recommendation',
     ],
     recommendedFor: 'Motorcycles after touring, rainy season riding, or heavily greased drive chains.',
-    image: '/images/commuter-bike.jpg',
+    image: '/images/bikes/bajaj-pulsar-cleaning.jpg',
   },
   {
     id: 'bike-waxing',
-    name: 'Bike Waxing',
+    name: 'Bike Waxing & Gloss Polish',
     slug: 'bike-waxing',
     category: 'bike-wash',
     vehicleType: 'bike',
@@ -296,7 +296,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Matte paint / satin safe trim conditioner',
     ],
     recommendedFor: 'Cruisers, commuters, and scooters wanting high paint gloss and UV protection.',
-    image: '/images/honda-activa.jpg',
+    image: '/images/bikes/tvs-apache-polishing.jpg',
   },
   {
     id: 'motorcycle-detailing',
@@ -320,7 +320,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Teflon / ceramic spray paint protection',
     ],
     recommendedFor: 'Royal Enfield Classic / Hunter, KTM, Yamaha R15, Pulsar NS & premium commuter bikes.',
-    image: '/images/commuter-bike.jpg',
+    image: '/images/bikes/honda-shine-detailing.jpg',
   },
   {
     id: 'scooter-cleaning',
@@ -343,7 +343,32 @@ export const SERVICES_DATA: ServiceItem[] = [
       'UV protective black dressing on faded plastic aprons',
     ],
     recommendedFor: 'All daily family scooters (Activa, Jupiter, Access, Fascino, Dio, Burgman).',
-    image: '/images/honda-activa.jpg',
+    image: '/images/bikes/honda-activa-cleaning.jpg',
+  },
+  {
+    id: 'bike-ceramic-coating',
+    name: 'Motorcycle Ceramic Coating Shield',
+    slug: 'bike-ceramic-coating',
+    category: 'ceramic',
+    vehicleType: 'bike',
+    badge: 'Two-Wheeler Armor',
+    shortDescription: 'Nano-ceramic SiO2 glass shield protecting motorcycle petrol tank, fairings, and engine fins from UV fade and fuel marks.',
+    fullDescription: 'Dedicated two-wheeler ceramic defense: chemically bonds with fuel tank clear coat, mudguards, and fairing panels to produce 9H scratch resistance, intense mirror reflection, and hydrophobic fuel-resistant slickness.',
+    estimatedDuration: '1 day (including prep & infrared curing)',
+    pricing: {
+      bike: 2499,
+      isVerified: false,
+      statusNote: 'Two-wheeler ceramic coating baseline quote.',
+    },
+    features: [
+      'Paint swirl correction & machine jewel polish on petrol tank',
+      'Dual-layer 9H quartz nano-ceramic application',
+      'High-heat ceramic protection on engine crankcase & chrome exhaust',
+      'Extreme water-beading contact angle (>110°)',
+      'Protection against petrol drips around filler cap & acidic bird droppings',
+    ],
+    recommendedFor: 'Royal Enfield, Pulsar, Apache, Shine, and all motorcycles wanting mirror gloss and scratch defense.',
+    image: '/images/bikes/bike-ceramic-coating.jpg',
   },
 
   // ==========================================
@@ -539,7 +564,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     name: 'Headlight Buffing & Oxidation Restoration',
     slug: 'headlight-buffing',
     category: 'polishing-waxing',
-    vehicleType: 'both',
+    vehicleType: 'car',
     badge: 'Safety Upgrade',
     shortDescription: 'Restores cloudy, yellowed, fogged polycarbonate headlamps to crystal clear optical transparency.',
     fullDescription: 'Multi-stage wet sanding and optical compounding to remove oxidized UV coating on headlights and fog lamps, dramatically improving nighttime beam throw and vehicle appearance.',
@@ -680,7 +705,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     name: 'Vehicle Wrapping & Color Change Vinyl',
     slug: 'vehicle-wrapping',
     category: 'wrapping-films',
-    vehicleType: 'both',
+    vehicleType: 'car',
     badge: 'Custom Styling',
     shortDescription: 'Full vehicle color change wraps, dual-tone roof blackening, chrome delete, and personalized aesthetic transformations.',
     fullDescription: 'Transform your vehicle without repainting. Premium cast vinyl wraps protect original factory paint underneath while providing unique matte, satin, gloss, or metallic finishes.',
@@ -733,7 +758,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     name: 'Tinkering & Paintless Dent Repair',
     slug: 'tinkering-dent-repair',
     category: 'bodywork',
-    vehicleType: 'both',
+    vehicleType: 'car',
     shortDescription: 'Expert sheet metal tinkering, panel realignment, and dent pulling to restore body contours.',
     fullDescription: 'Restorative metalwork for daily fender benders, door dings, bumper misalignments, and fender creases before paint touchups or complete resprays.',
     estimatedDuration: '1 – 3 days (depending on panel damage)',
@@ -756,7 +781,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     name: 'Automotive Painting & Scratch Touchups',
     slug: 'automotive-painting',
     category: 'bodywork',
-    vehicleType: 'both',
+    vehicleType: 'car',
     shortDescription: 'Color-matched booth painting, panel touchups, scratch blending, and 2K clear coat gloss finish.',
     fullDescription: 'Professional computerized color matching to your vehicle OEM paint code. Ensures seamless blending between repainted panels and factory paint with durable 2K clear coat.',
     estimatedDuration: '2 – 4 days',
@@ -783,7 +808,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     name: 'Automotive Accessories & Styling Fitments',
     slug: 'automotive-accessories-fitment',
     category: 'accessories',
-    vehicleType: 'both',
+    vehicleType: 'car',
     badge: 'Fitment Center',
     shortDescription: 'Alloy wheels, tyres, Android touchscreen systems, speakers, LED headlights, seat covers, and styling parts.',
     fullDescription: 'One-stop automotive accessories fitting service. We source and professionally install high-quality upgrades tailored to your car model with safe, coupler-based wiring.',

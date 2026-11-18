@@ -17,12 +17,11 @@ export default function PricingTable({
   activeCategory = 'all',
   vehicleType = 'car',
 }: PricingTableProps) {
-  const isBikeWash = activeCategory === 'bike-wash' || (activeCategory as string) === 'bike-washing';
-  const showCarTable = !isBikeWash;
-  const showBikeTable = activeCategory === 'all' || isBikeWash || vehicleType === 'bike';
+  const showCarTable = vehicleType === 'car';
+  const showBikeTable = vehicleType === 'bike';
 
-  const carServices = SERVICES_DATA.filter((s) => s.vehicleType === 'car' || s.vehicleType === 'both');
-  const bikeServices = SERVICES_DATA.filter((s) => s.vehicleType === 'bike' || s.category === 'bike-wash' || (s.category as string) === 'bike-washing');
+  const carServices = SERVICES_DATA.filter((s) => s.vehicleType === 'car' && (activeCategory === 'all' || s.category === activeCategory));
+  const bikeServices = SERVICES_DATA.filter((s) => s.vehicleType === 'bike' && (activeCategory === 'all' || s.category === activeCategory));
 
   return (
     <div className="space-y-12">

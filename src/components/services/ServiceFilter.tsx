@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { SERVICE_CATEGORIES, ServiceCategory } from '@/data/services';
+import { SERVICE_CATEGORIES, ServiceCategory, VehicleType } from '@/data/services';
 import {
   Sparkles,
   Car,
@@ -18,9 +18,18 @@ import {
 interface ServiceFilterProps {
   activeCategory: ServiceCategory;
   onSelectCategory: (cat: ServiceCategory) => void;
+  vehicleType?: VehicleType;
 }
 
-export default function ServiceFilter({ activeCategory, onSelectCategory }: ServiceFilterProps) {
+export default function ServiceFilter({ activeCategory, onSelectCategory, vehicleType = 'car' }: ServiceFilterProps) {
+  // Only display categories relevant to the selected vehicle type
+  const availableCategories = SERVICE_CATEGORIES.filter((cat) => {
+    if (vehicleType === 'bike') {
+      return cat.id === 'all' || cat.id === 'bike-wash' || cat.id === 'ceramic';
+    }
+    // For car: show car categories (exclude bike-wash)
+    return cat.id !== 'bike-wash' && (cat.id as string) !== 'bike-washing';
+  });
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Car':
@@ -48,7 +57,7 @@ export default function ServiceFilter({ activeCategory, onSelectCategory }: Serv
 
   return (
     <div className="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar">
-      {SERVICE_CATEGORIES.map((cat) => {
+      {availableCategories.map((cat) => {
         const isActive = activeCategory === cat.id;
         return (
           <button
