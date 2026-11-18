@@ -104,37 +104,57 @@ export default function ServicesPage() {
           onSelectCarCategory={(cat) => setCarCategory(cat)}
         />
 
-        {/* Category Filters and View Toggle */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2">
-          <ServiceFilter
-            activeCategory={activeCategory}
-            onSelectCategory={handleSelectCategory}
-            vehicleType={vehicleType}
-          />
+        {/* Category Filters, Divider, and View Switcher */}
+        <div className="space-y-4 pt-2">
+          {/* Row 1 — Service category filters */}
+          <div className="w-full">
+            <ServiceFilter
+              activeCategory={activeCategory}
+              onSelectCategory={handleSelectCategory}
+              vehicleType={vehicleType}
+            />
+          </div>
 
-          <div className="flex items-center gap-2 self-start md:self-auto p-1.5 rounded-full bg-white border border-[#DDD6CB] shadow-sm">
-            <button
-              onClick={() => setViewMode('cards')}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
-                viewMode === 'cards'
-                  ? 'bg-[#087F75] text-white shadow-sm'
-                  : 'text-[#445452] hover:text-[#202C2C]'
-              }`}
-            >
-              <LayoutGrid className="w-3.5 h-3.5" />
-              <span>Grid View</span>
-            </button>
-            <button
-              onClick={() => setViewMode('table')}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
-                viewMode === 'table'
-                  ? 'bg-[#087F75] text-white shadow-sm'
-                  : 'text-[#445452] hover:text-[#202C2C]'
-              }`}
-            >
-              <TableProperties className="w-3.5 h-3.5" />
-              <span>Signboard Table</span>
-            </button>
+          {/* Divider — Full-width subtle horizontal separator (#DDD6CB) */}
+          <div className="w-full border-t border-[#DDD6CB]" />
+
+          {/* Row 2 — Display Mode switcher (aligned to right on desktop) */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-0">
+            <div className="text-xs sm:text-sm text-[#52615E] font-medium flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#087F75]" />
+              <span>Showing {filteredServices.length} detailing treatments</span>
+            </div>
+
+            <div className="flex items-center gap-2.5 self-start sm:self-auto">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#52615E]">
+                Display Mode
+              </span>
+
+              <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-white border border-[#DDD6CB] shadow-sm h-[44px] sm:h-[48px]">
+                <button
+                  onClick={() => setViewMode('cards')}
+                  className={`flex items-center gap-1.5 px-4 h-full rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
+                    viewMode === 'cards'
+                      ? 'bg-[#087F75] text-white shadow-sm'
+                      : 'text-[#445452] hover:text-[#202C2C] hover:bg-[#FFF9EF]'
+                  }`}
+                >
+                  <LayoutGrid className="w-3.5 h-3.5" />
+                  <span>Grid View</span>
+                </button>
+                <button
+                  onClick={() => setViewMode('table')}
+                  className={`flex items-center gap-1.5 px-4 h-full rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
+                    viewMode === 'table'
+                      ? 'bg-[#087F75] text-white shadow-sm'
+                      : 'text-[#445452] hover:text-[#202C2C] hover:bg-[#FFF9EF]'
+                  }`}
+                >
+                  <TableProperties className="w-3.5 h-3.5" />
+                  <span>Signboard Table</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 

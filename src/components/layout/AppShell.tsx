@@ -3,7 +3,7 @@
 import React, { useState, createContext, useContext } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import FloatingWhatsApp from './FloatingWhatsApp';
+import FloatingContactButtons from './FloatingContactButtons';
 import CustomCursor from '@/components/ui/CustomCursor';
 import Preloader from '@/components/ui/Preloader';
 import BookingWizardModal from '@/components/booking/BookingWizardModal';
@@ -43,7 +43,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         <Header onOpenBooking={() => openBooking()} />
         <main className="flex-grow">{children}</main>
         <Footer />
-        <FloatingWhatsApp />
+        <FloatingContactButtons />
       </div>
 
       <BookingWizardModal

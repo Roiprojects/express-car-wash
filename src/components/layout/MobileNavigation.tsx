@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { X, Phone, MessageSquare, Calendar, ChevronRight, ShieldCheck, Clock, Car } from 'lucide-react';
+import { X, Phone, MessageSquare, Calendar, ChevronRight, ShieldCheck, Clock } from 'lucide-react';
+import BrandLogo from '@/components/ui/BrandLogo';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
 
 interface MobileNavigationProps {
@@ -33,18 +34,8 @@ export default function MobileNavigation({
         <div>
           {/* Header */}
           <div className="flex items-center justify-between pb-5 border-b border-[#DDD6CB]">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-[#087F75] flex items-center justify-center text-white shadow-sm">
-                <Car className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <span className="font-serif font-bold text-[#202C2C] text-base tracking-tight block">
-                  Express Car Wash
-                </span>
-                <span className="text-xs text-[#52615E] tracking-wide block font-medium">
-                  Car, Bike, PPF &amp; Detailing
-                </span>
-              </div>
+            <div onClick={onClose}>
+              <BrandLogo size="sm" href="/" />
             </div>
             <button
               onClick={onClose}

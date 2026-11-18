@@ -3,8 +3,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { BUSINESS_CONFIG } from '@/data/business';
-import { Phone, MessageSquare, MapPin, Clock, ArrowUpRight, ShieldCheck, Sparkles, Car } from 'lucide-react';
+import { Phone, MessageSquare, MapPin, Clock, ArrowUpRight, ShieldCheck, Sparkles } from 'lucide-react';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
+import BrandLogo from '@/components/ui/BrandLogo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,10 +19,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#DDD6CB]">
           {/* Brand & Overview */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-[#087F75] flex items-center justify-center text-white shadow-md shadow-[#087F75]/20">
-                <Car className="w-5 h-5 text-white" />
-              </div>
+            <div className="space-y-3">
+              <BrandLogo size="xl" showText={false} />
               <div>
                 <span className="font-serif font-bold text-xl text-[#202C2C] tracking-tight block">
                   {BUSINESS_CONFIG.brandName}
@@ -30,7 +29,7 @@ export default function Footer() {
                   Car, Bike, PPF &amp; Accessories Spa
                 </span>
               </div>
-            </Link>
+            </div>
 
             <p className="text-sm sm:text-base leading-relaxed text-[#445452] max-w-sm">
               Professional car and bike washing, detailing, ceramic coating, PPF, wrapping, and accessories — all under one roof across 3 branches in Bengaluru.

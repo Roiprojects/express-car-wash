@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 440" fill="none" className="w-full h-full">
+  <defs>
+    <!-- Warm Sun Glow -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="60%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </radialGradient>
+
+    <!-- Metallic Teal Car Paint -->
+    <linearGradient id="carBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2DD4BF" />
+      <stop offset="35%" stop-color="#087F75" />
+      <stop offset="85%" stop-color="#06564F" />
+      <stop offset="100%" stop-color="#043834" />
+    </linearGradient>
+
+    <!-- Car Hood Highlights -->
+    <linearGradient id="carHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#087F75" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Windshield Glass -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#087F75" />
+    </linearGradient>
+
+    <!-- Chrome Lettering Gradient -->
+    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#F1F5F9" />
+      <stop offset="50%" stop-color="#CBD5E1" />
+      <stop offset="55%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+
+    <!-- Foam Bubble Glow -->
+    <radialGradient id="bubbleGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="65%" stop-color="#E0F2FE" />
+      <stop offset="100%" stop-color="#BAE6FD" />
+    </radialGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#087F75" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- 01: SINS: 2015 BADGE (Top-Left)            -->
+  <!-- ========================================== -->
+  <g transform="translate(60, 45)">
+    <!-- Black text outline/shadow for readability -->
+    <text x="0" y="0" font-family="'Arial Black', Impact, sans-serif" font-weight="900" font-size="28" fill="#1E293B" stroke="#0F172A" stroke-width="6" stroke-linejoin="round" letter-spacing="1.5">SINS:2015</text>
+    <text x="0" y="0" font-family="'Arial Black', Impact, sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" letter-spacing="1.5">SINS:2015</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 02: GOLDEN SUNBURST (Center-Top)           -->
+  <!-- ========================================== -->
+  <circle cx="270" cy="130" r="75" fill="url(#sunGlow)" />
+  <circle cx="270" cy="130" r="70" fill="none" stroke="#FDE68A" stroke-width="2" opacity="0.6" />
+
+  <!-- ========================================== -->
+  <!-- 03: FOAM BUBBLE CLOUDS (Background Layer)  -->
+  <!-- ========================================== -->
+  <g fill="url(#bubbleGrad)" stroke="#38BDF8" stroke-width="2">
+    <!-- Left Foam Cluster -->
+    <circle cx="110" cy="180" r="28" />
+    <circle cx="85" cy="205" r="22" />
+    <circle cx="135" cy="195" r="20" />
+    <circle cx="120" cy="225" r="16" />
+    
+    <!-- Right Foam Cluster -->
+    <circle cx="410" cy="180" r="30" />
+    <circle cx="435" cy="205" r="24" />
+    <circle cx="390" cy="195" r="22" />
+    <circle cx="425" cy="230" r="18" />
+
+    <!-- Tiny Floating Bubbles -->
+    <circle cx="140" cy="140" r="9" />
+    <circle cx="100" cy="155" r="6" />
+    <circle cx="380" cy="140" r="10" />
+    <circle cx="420" cy="145" r="7" />
+    <circle cx="440" cy="120" r="8" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 04: PRESSURE SPRAY GUN & FOAM MIST         -->
+  <!-- ========================================== -->
+  <g transform="translate(370, 70)">
+    <!-- Spray Gun Lance Body -->
+    <path d="M 25 15 L 75 15 L 75 25 L 45 25 L 40 55 L 30 55 L 35 25 L 25 25 Z" fill="#1E293B" stroke="#0F172A" stroke-width="3" stroke-linejoin="round" />
+    <!-- Pressure Bottle / Detergent Reservoir -->
+    <rect x="42" y="30" width="16" height="26" rx="4" fill="#087F75" stroke="#1E293B" stroke-width="2" />
+    <rect x="45" y="34" width="10" height="18" rx="2" fill="#2DD4BF" opacity="0.6" />
+    <!-- Steel Wand Nozzle -->
+    <path d="M 25 20 L -30 20 L -30 18 L 25 18 Z" fill="#94A3B8" stroke="#475569" stroke-width="1.5" />
+    <circle cx="-32" cy="19" r="4" fill="#0F172A" />
+
+    <!-- Dynamic High-Pressure Water Spray Fan -->
+    <path d="M -35 19 L -180 50 L -160 85 L -35 21 Z" fill="url(#bubbleGrad)" opacity="0.65" />
+    <path d="M -35 19 L -170 60 L -150 78 L -35 20 Z" fill="#FFFFFF" opacity="0.8" />
+    <!-- Spray Water Lines -->
+    <line x1="-35" y1="19" x2="-175" y2="52" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="-35" y1="19" x2="-165" y2="68" stroke="#E0F2FE" stroke-width="2" stroke-linecap="round" />
+    <line x1="-35" y1="19" x2="-155" y2="82" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 05: CENTRAL SLEEK TEAL CAR                 -->
+  <!-- ========================================== -->
+  <g filter="url(#badgeShadow)">
+    <!-- Car Outer Black Silhouette Contour for pop -->
+    <path d="M 120 220 C 135 170, 180 120, 240 115 C 295 110, 355 140, 395 180 C 410 195, 420 220, 420 240 C 420 260, 400 270, 360 270 L 160 270 C 120 270, 110 245, 120 220 Z" fill="#091E1C" />
+
+    <!-- Car Main Metallic Teal Body -->
+    <path d="M 125 225 C 138 175, 182 125, 242 120 C 295 115, 352 145, 390 185 C 405 200, 412 222, 412 238 C 412 254, 395 264, 358 264 L 162 264 C 125 264, 115 242, 125 225 Z" fill="url(#carBodyGrad)" stroke="#115E59" stroke-width="2" />
+
+    <!-- Roofline Gloss Glaze Highlight -->
+    <path d="M 180 135 C 220 125, 270 122, 335 142 C 300 130, 240 128, 180 135 Z" fill="#99F6E4" opacity="0.9" />
+
+    <!-- Windshield (Dark Gloss Glass) -->
+    <path d="M 175 145 C 215 136, 275 135, 335 152 C 345 172, 348 190, 345 195 C 285 188, 215 188, 162 195 C 160 180, 168 158, 175 145 Z" fill="url(#glassGrad)" stroke="#0F172A" stroke-width="3" />
+    
+    <!-- Windshield Specular Reflection Slash -->
+    <path d="M 220 140 L 245 140 L 210 192 L 185 192 Z" fill="#FFFFFF" opacity="0.45" />
+    <path d="M 260 140 L 272 140 L 240 192 L 228 192 Z" fill="#FFFFFF" opacity="0.25" />
+
+    <!-- Front Hood & Body Crease Lines -->
+    <path d="M 160 205 C 210 198, 280 198, 335 205 C 345 225, 340 245, 330 252 C 275 256, 210 256, 165 252 C 152 242, 150 220, 160 205 Z" fill="url(#carHighlight)" />
+
+    <!-- Front Grille (Chrome Bars on Dark Chamber) -->
+    <path d="M 215 218 C 240 216, 260 216, 285 218 C 288 232, 282 242, 250 243 C 218 242, 212 232, 215 218 Z" fill="#0F172A" stroke="#1E293B" stroke-width="2" />
+    <!-- Grille Horizontal Ribs -->
+    <line x1="223" y1="223" x2="277" y2="223" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="226" y1="229" x2="274" y2="229" stroke="#E2E8F0" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="232" y1="235" x2="268" y2="235" stroke="#CBD5E1" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Headlights (Aggressive Modern Projectors) -->
+    <!-- Left Headlight -->
+    <path d="M 162 216 C 178 214, 202 218, 206 226 C 195 232, 172 234, 160 228 Z" fill="#F8FAFC" stroke="#0F172A" stroke-width="2.5" />
+    <circle cx="180" cy="223" r="4.5" fill="#38BDF8" />
+    
+    <!-- Right Headlight -->
+    <path d="M 338 216 C 322 214, 298 218, 294 226 C 305 232, 328 234, 340 228 Z" fill="#F8FAFC" stroke="#0F172A" stroke-width="2.5" />
+    <circle cx="320" cy="223" r="4.5" fill="#38BDF8" />
+
+    <!-- Front Wheels with Alloy Rims -->
+    <!-- Left Wheel -->
+    <ellipse cx="165" cy="256" rx="24" ry="16" fill="#0F172A" stroke="#334155" stroke-width="3" />
+    <ellipse cx="165" cy="256" rx="14" ry="9" fill="#94A3B8" />
+    <circle cx="165" cy="256" r="4" fill="#F8FAFC" />
+
+    <!-- Right Wheel -->
+    <ellipse cx="335" cy="256" rx="24" ry="16" fill="#0F172A" stroke="#334155" stroke-width="3" />
+    <ellipse cx="335" cy="256" rx="14" ry="9" fill="#94A3B8" />
+    <circle cx="335" cy="256" r="4" fill="#F8FAFC" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 06: BOLD 3D "CARWASH" EMBLEM BADGE         -->
+  <!-- ========================================== -->
+  <g transform="translate(0, 20)">
+    <!-- Outer Cyan Contour Shield -->
+    <path d="M 45 285 L 85 245 L 435 245 L 475 285 L 455 355 L 260 380 L 65 355 Z" fill="#087F75" stroke="#2DD4BF" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Inner Dark Navy Plate -->
+    <path d="M 52 288 L 88 252 L 432 252 L 468 288 L 448 348 L 260 372 L 72 348 Z" fill="#0F172A" stroke="#1E293B" stroke-width="2" stroke-linejoin="round" />
+
+    <!-- 3D CARWASH Letters - Custom Hand-Vectorized Block Chiseled Lettering -->
+    <g font-family="'Arial Black', Impact, sans-serif" font-weight="900" font-size="76" letter-spacing="1">
+      <!-- Deep 3D Shadow Layer -->
+      <text x="260" y="328" text-anchor="middle" fill="#020617" stroke="#000000" stroke-width="12" stroke-linejoin="round">CARWASH</text>
+      <!-- Teal Bevel Stroke Layer -->
+      <text x="260" y="324" text-anchor="middle" fill="#087F75" stroke="#087F75" stroke-width="6" stroke-linejoin="round">CARWASH</text>
+      <!-- Chrome Face Layer -->
+      <text x="260" y="322" text-anchor="middle" fill="url(#chromeGrad)" stroke="#FFFFFF" stroke-width="1.5">CARWASH</text>
+    </g>
+
+    <!-- ========================================== -->
+    <!-- 07: "EXCELLENT CUSTOMER SERVICE" BANNER    -->
+    <!-- ========================================== -->
+    <g transform="translate(260, 354)">
+      <!-- Black Ribbon Plaque -->
+      <rect x="-140" y="-14" width="280" height="24" rx="12" fill="#091E1C" stroke="#2DD4BF" stroke-width="2" />
+      <text x="0" y="2" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-weight="800" font-size="12" fill="#FFFFFF" letter-spacing="2">EXCELLENT CUSTOMER SERVICE</text>
+    </g>
+  </g>
+</svg>

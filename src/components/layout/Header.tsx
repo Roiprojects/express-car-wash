@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Calendar, ChevronDown, Car } from 'lucide-react';
 import MobileNavigation from './MobileNavigation';
 import { BUSINESS_CONFIG } from '@/data/business';
+import BrandLogo from '@/components/ui/BrandLogo';
 
 interface HeaderProps {
   onOpenBooking?: () => void;
@@ -34,24 +35,8 @@ export default function Header({ onOpenBooking }: HeaderProps) {
       <header className="sticky top-0 z-50 w-full h-[74px] md:h-[82px] bg-[#FFF9EF] border-b border-[#DDD6CB] flex items-center shadow-[0_2px_12px_rgba(32,44,44,0.04)]">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Brand Logo & Title */}
-            <Link 
-              href="/" 
-              className="group flex items-center gap-3 focus:outline-none rounded-xl"
-            >
-              {/* Teal Icon Badge */}
-              <div className="w-10 h-10 md:w-11 md:h-11 rounded-2xl bg-[#087F75] flex items-center justify-center shadow-md shadow-[#087F75]/25 group-hover:scale-105 group-hover:bg-[#06665F] transition-all duration-300">
-                <Car className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif font-bold text-base md:text-lg tracking-tight text-[#202C2C] group-hover:text-[#087F75] transition-colors leading-tight">
-                  {BUSINESS_CONFIG.brandName}
-                </span>
-                <span className="text-xs text-[#52615E] tracking-wide font-medium">
-                  Car, Bike, PPF &amp; Detailing
-                </span>
-              </div>
-            </Link>
+            {/* Brand Logo & Title with HD Logo */}
+            <BrandLogo size="md" animate />
 
             {/* Desktop Navigation Links - High Contrast & 15px readable text */}
             <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
