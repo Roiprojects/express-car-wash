@@ -85,12 +85,13 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
             src={item.afterImage}
             alt={`${item.title} - After treatment`}
             fill
-            sizes="(max-width: 768px) 100vw, 1200px"
+            sizes="(max-width: 768px) 100vw, 1400px"
             className="object-cover object-center"
             priority
+            quality={95}
           />
-          {/* Subtle vignette for contrast */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
+          {/* Subtle bottom edge gradient for badge contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
 
           {/* AFTER Badge Label (Bottom Right) */}
           <div className="absolute bottom-4 right-4 z-10 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md border border-[#DDD6CB] text-[#087F75] font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg flex items-center gap-2">
@@ -110,12 +111,13 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
             src={item.beforeImage}
             alt={`${item.title} - Before treatment`}
             fill
-            sizes="(max-width: 768px) 100vw, 1200px"
+            sizes="(max-width: 768px) 100vw, 1400px"
             className="object-cover object-center"
             priority
+            quality={95}
           />
-          {/* Subtle vignette for contrast */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
+          {/* Subtle bottom edge gradient for badge contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
 
           {/* BEFORE Badge Label (Bottom Left) */}
           <div className="absolute bottom-4 left-4 z-10 px-4 py-2 rounded-full bg-[#202C2C]/90 backdrop-blur-md border border-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg flex items-center gap-2">
