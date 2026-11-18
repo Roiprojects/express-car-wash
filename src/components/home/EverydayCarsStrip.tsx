@@ -7,8 +7,8 @@ import { Sparkles } from 'lucide-react';
 
 export default function EverydayCarsStrip() {
   return (
-    <section className="relative w-full py-12 md:py-16 bg-[#F5EBDD] border-b border-[#DDD6CB] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+    <section className="relative w-full pt-8 pb-10 sm:pt-9 sm:pb-12 bg-[#F5EBDD] border-t border-b border-[#DDD6CB] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8 text-center">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] border border-[#DDD6CB] text-xs font-mono uppercase tracking-widest text-[#087F75] mb-3 font-semibold">
           <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
           <span>Everyday Vehicle Specialists</span>

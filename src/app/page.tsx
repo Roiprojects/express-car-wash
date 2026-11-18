@@ -7,7 +7,6 @@ import AboutPreview from '@/components/home/AboutPreview';
 import FeaturedServices from '@/components/home/FeaturedServices';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import PricingPreview from '@/components/home/PricingPreview';
-import BranchLocations from '@/components/home/BranchLocations';
 import InteractiveBeforeAfter from '@/components/home/InteractiveBeforeAfter';
 import TestimonialsPreview from '@/components/home/TestimonialsPreview';
 import ConversionCTA from '@/components/home/ConversionCTA';
@@ -36,16 +35,13 @@ export default function HomePage() {
       {/* 06: Pricing Preview & Vehicle Tiers */}
       <PricingPreview onOpenBookingWithService={(id) => openBooking(id)} />
 
-      {/* 07: 3-Branch Network Section */}
-      <BranchLocations />
-
-      {/* 08: Before / After Transformations */}
+      {/* 07: Before / After Transformations */}
       <InteractiveBeforeAfter />
 
-      {/* 09: Infinite Scrolling Customer Testimonials */}
+      {/* 08: Infinite Scrolling Customer Testimonials */}
       <TestimonialsPreview />
 
-      {/* 10: Final Conversion CTA */}
+      {/* 09: Final Conversion CTA */}
       <ConversionCTA onOpenBooking={() => openBooking()} />
     </>
   );

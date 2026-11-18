@@ -25,12 +25,12 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
   const carServices = SERVICES_DATA.filter((s) => highlightedServiceIds.includes(s.id));
 
   return (
-    <section className="py-20 lg:py-28 bg-[#F5EBDD] border-t border-[#DDD6CB] relative">
+    <section className="py-20 lg:py-28 bg-[#FFF9EF] border-t border-[#DDD6CB] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Transparent Workshop Rates</span>
             </div>

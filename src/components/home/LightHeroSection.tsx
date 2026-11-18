@@ -23,7 +23,7 @@ interface LightHeroSectionProps {
 
 export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProps) {
   return (
-    <section className="relative w-full bg-[#FFF9EF] overflow-hidden pt-8 pb-14 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24">
+    <section className="relative w-full bg-[#FFF9EF] overflow-hidden pt-8 pb-7 sm:pt-10 sm:pb-8 lg:pt-14 lg:pb-8">
       {/* Soft Ambient Warm Beige Organic Shapes */}
       <div className="absolute top-0 right-0 w-[55%] h-[85%] bg-gradient-to-bl from-[#F5EBDD]/80 via-[#F5EBDD]/40 to-transparent rounded-bl-[160px] pointer-events-none -z-0" />
       <div className="absolute -top-24 left-1/4 w-96 h-96 bg-[#F5EBDD]/50 rounded-full blur-3xl pointer-events-none -z-0" />
@@ -133,7 +133,7 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
         </div>
 
         {/* BOTTOM HORIZONTAL SERVICE HIGHLIGHT STRIP */}
-        <div className="mt-12 sm:mt-16 lg:mt-20">
+        <div className="mt-8 sm:mt-10 lg:mt-12">
           <div className="w-full bg-[#F5EBDD] border border-[#DDD6CB] rounded-3xl lg:rounded-full px-5 sm:px-8 py-4 sm:py-5 flex flex-wrap items-center justify-between gap-4 sm:gap-6 shadow-sm">
             {/* Service 1: Foam Wash */}
             <div className="flex items-center gap-2.5">
@@ -185,27 +185,6 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Soft Bottom Warm Beige Organic Wave */}
-      <div className="relative w-full h-12 sm:h-16 mt-8 sm:mt-12 overflow-hidden pointer-events-none">
-        <svg
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full preserve-3d"
-        >
-          <path
-            d="M0,32 C320,72 480,10 720,40 C960,70 1120,20 1440,50 L1440,80 L0,80 Z"
-            fill="#F5EBDD"
-            fillOpacity="0.8"
-          />
-          <path
-            d="M0,45 C280,20 540,65 820,35 C1100,5 1280,55 1440,35 L1440,80 L0,80 Z"
-            fill="#DDD6CB"
-            fillOpacity="0.3"
-          />
-        </svg>
       </div>
     </section>
   );
