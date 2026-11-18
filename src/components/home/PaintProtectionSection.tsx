@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ShieldCheck, Gem, Sparkles, ArrowRight, ShieldAlert, CheckCircle2, MessageSquare } from 'lucide-react';
+import { ShieldCheck, Gem, Sparkles, ArrowRight, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import { generateProtectionWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function PaintProtectionSection() {
@@ -63,30 +63,18 @@ export default function PaintProtectionSection() {
     <section className="py-20 lg:py-28 bg-[#F1F7F3] border-t border-[#E3EBE7] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-4 font-semibold border border-[#438E88]/20">
-              <ShieldAlert className="w-3.5 h-3.5 text-[#438E88]" />
-              <span>Advanced Paint Preservation</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
-              Protection Beyond <br />
-              <span className="text-[#438E88] italic font-serif">The Everyday Wash.</span>
-            </h2>
-            <p className="mt-4 text-sm sm:text-base text-[#62747A] leading-relaxed">
-              Preserve your vehicle’s factory clear coat against stone chips, harsh sun oxidation, swirl marks, and environmental contamination with multi-year paint armor.
-            </p>
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-4 font-semibold border border-[#438E88]/20">
+            <ShieldAlert className="w-3.5 h-3.5 text-[#438E88]" />
+            <span>Advanced Paint Preservation</span>
           </div>
-
-          <a
-            href={generateProtectionWhatsAppUrl('PPF')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="self-start lg:self-end inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#438E88] text-white font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-[#32766F] transition-all duration-300 shadow-md shadow-[#438E88]/20 hover:scale-[1.02] active:scale-[0.98]"
-          >
-            <MessageSquare className="w-4 h-4 fill-current" />
-            <span>Enquire About Protection</span>
-          </a>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
+            Protection Beyond <br />
+            <span className="text-[#438E88] italic font-serif">The Everyday Wash.</span>
+          </h2>
+          <p className="mt-4 text-sm sm:text-base text-[#62747A] leading-relaxed">
+            Preserve your vehicle’s factory clear coat against stone chips, harsh sun oxidation, swirl marks, and environmental contamination with multi-year paint armor.
+          </p>
         </div>
 
         {/* Protection Cards Grid */}
