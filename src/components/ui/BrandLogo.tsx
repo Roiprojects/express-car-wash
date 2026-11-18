@@ -68,17 +68,20 @@ export default function BrandLogo({
       initial={{ opacity: 0, y: -4 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      className="inline-flex items-center shrink-0"
     >
       {content}
     </motion.div>
   ) : (
-    content
+    <div className="inline-flex items-center shrink-0">
+      {content}
+    </div>
   );
 
   if (!href) return motionWrapper;
 
   return (
-    <Link href={href} aria-label={`${BUSINESS_CONFIG.brandName} Home`}>
+    <Link href={href} aria-label={`${BUSINESS_CONFIG.brandName} Home`} className="inline-flex items-center shrink-0">
       {motionWrapper}
     </Link>
   );

@@ -39,14 +39,14 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             <BrandLogo size="md" animate />
 
             {/* Desktop Navigation Links - High Contrast & 15px readable text */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 shrink-0">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 shrink-0">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-3 xl:px-3.5 py-2 rounded-full text-xs xl:text-sm font-semibold tracking-wide transition-all duration-200 flex items-center gap-1 whitespace-nowrap ${
+                    className={`relative px-2.5 xl:px-3.5 py-1.5 xl:py-2 rounded-full text-xs xl:text-sm font-semibold tracking-wide transition-all duration-200 flex items-center gap-1 whitespace-nowrap ${
                       isActive
                         ? 'bg-[#F5EBDD] text-[#087F75] font-bold shadow-sm'
                         : 'text-[#202C2C] hover:text-[#087F75] hover:bg-[#F5EBDD]'
