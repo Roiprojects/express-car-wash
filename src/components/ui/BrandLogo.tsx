@@ -23,12 +23,13 @@ export default function BrandLogo({
 }: BrandLogoProps) {
   const shouldReduceMotion = useReducedMotion();
 
-  // Dimensions based on size (969:803 aspect ratio for HD logo)
+  // Dimensions based on trimmed 929:763 aspect ratio (~1.2175:1)
+  // md is tuned for the main navbar: 55px mobile, 68px tablet, 80px desktop
   const imageDimensions = {
-    sm: { width: 58, height: 48, className: 'w-[46px] sm:w-[54px] h-auto' },
-    md: { width: 72, height: 60, className: 'w-[58px] md:w-[68px] h-auto' },
-    lg: { width: 96, height: 80, className: 'w-[84px] md:w-[96px] h-auto' },
-    xl: { width: 216, height: 180, className: 'w-[170px] sm:w-[210px] h-auto' },
+    sm: { width: 67, height: 55, className: 'w-[55px] h-[45px] sm:w-[67px] sm:h-[55px]' },
+    md: { width: 98, height: 80, className: 'w-[67px] h-[55px] md:w-[83px] md:h-[68px] lg:w-[98px] lg:h-[80px]' },
+    lg: { width: 110, height: 90, className: 'w-[90px] h-[74px] md:w-[110px] md:h-[90px]' },
+    xl: { width: 244, height: 200, className: 'w-[180px] sm:w-[220px] md:w-[244px] h-auto' },
   }[size];
 
   const logoImage = (
@@ -46,17 +47,17 @@ export default function BrandLogo({
 
   const brandText = showText && (
     <div className="flex flex-col text-left">
-      <span className="font-serif font-bold text-base md:text-lg tracking-tight text-[#202C2C] group-hover:text-[#087F75] transition-colors leading-tight">
+      <span className="font-serif font-bold text-base sm:text-lg lg:text-xl tracking-tight text-[#202C2C] group-hover:text-[#087F75] transition-colors leading-tight">
         {BUSINESS_CONFIG.brandName}
       </span>
-      <span className="text-xs text-[#52615E] tracking-wide font-medium">
+      <span className="text-[11px] sm:text-xs text-[#52615E] tracking-wide font-medium">
         Car, Bike, PPF &amp; Detailing
       </span>
     </div>
   );
 
   const content = (
-    <div className={`group flex items-center gap-3 focus:outline-none rounded-xl ${className}`}>
+    <div className={`group flex items-center gap-2.5 sm:gap-3.5 focus:outline-none rounded-xl ${className}`}>
       {logoImage}
       {brandText}
     </div>
@@ -64,9 +65,9 @@ export default function BrandLogo({
 
   const motionWrapper = animate && !shouldReduceMotion ? (
     <motion.div
-      initial={{ opacity: 0, y: -6 }}
+      initial={{ opacity: 0, y: -4 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
     >
       {content}
     </motion.div>
