@@ -46,9 +46,9 @@ export const BEFORE_AFTER_ITEMS: BeforeAfterItem[] = [
     service: 'Paint Polish / Scratch Correction',
     beforeImage: '/images/before-after/polish-before.jpg',
     afterImage: '/images/before-after/polish-after.jpg',
-    beforeLabel: 'Before: Heavy Mud, Swirls & Dull Paint',
-    afterLabel: 'After: Mirror Gloss & Deep Restoration',
-    transformationDetails: 'Heavy dried mud, severe paint oxidation, and road swirl scratches eliminated through multi-stage compound polishing and gloss refinement.',
+    beforeLabel: 'Before: Road Dust & Light Mud',
+    afterLabel: 'After: High-Gloss Mirror Shine',
+    transformationDetails: 'Everyday road dust film and lower panel mud removed through dual-action snow foam washing, paint decontamination, and high-gloss polish.',
     isAuthenticWorkshopAsset: true,
   },
   {
