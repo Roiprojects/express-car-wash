@@ -46,18 +46,18 @@ export default function BrandLogo({
   );
 
   const brandText = showText && (
-    <div className="flex flex-col text-left">
-      <span className="font-serif font-bold text-base sm:text-lg lg:text-xl tracking-tight text-[#202C2C] group-hover:text-[#087F75] transition-colors leading-tight">
+    <div className="flex flex-col text-left shrink-0 whitespace-nowrap">
+      <span className="font-serif font-bold text-base sm:text-lg lg:text-xl tracking-tight text-[#202C2C] group-hover:text-[#087F75] transition-colors leading-tight whitespace-nowrap">
         {BUSINESS_CONFIG.brandName}
       </span>
-      <span className="text-[11px] sm:text-xs text-[#52615E] tracking-wide font-medium">
+      <span className="text-[11px] sm:text-xs text-[#52615E] tracking-wide font-medium whitespace-nowrap">
         Car, Bike, PPF &amp; Detailing
       </span>
     </div>
   );
 
   const content = (
-    <div className={`group flex items-center gap-2.5 sm:gap-3.5 focus:outline-none rounded-xl ${className}`}>
+    <div className={`group flex items-center gap-2.5 sm:gap-3.5 focus:outline-none rounded-xl shrink-0 ${className}`}>
       {logoImage}
       {brandText}
     </div>

@@ -34,19 +34,19 @@ export default function Header({ onOpenBooking }: HeaderProps) {
       */}
       <header className="sticky top-0 z-50 w-full h-[76px] md:h-[88px] lg:h-[98px] bg-[#FFF9EF] border-b border-[#DDD6CB] flex items-center shadow-[0_2px_12px_rgba(32,44,44,0.04)]">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-3 xl:gap-6 flex-nowrap">
             {/* Brand Logo & Title with HD Logo */}
             <BrandLogo size="md" animate />
 
             {/* Desktop Navigation Links - High Contrast & 15px readable text */}
-            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 shrink-0">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-4 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 flex items-center gap-1.5 ${
+                    className={`relative px-3 xl:px-3.5 py-2 rounded-full text-xs xl:text-sm font-semibold tracking-wide transition-all duration-200 flex items-center gap-1 whitespace-nowrap ${
                       isActive
                         ? 'bg-[#F5EBDD] text-[#087F75] font-bold shadow-sm'
                         : 'text-[#202C2C] hover:text-[#087F75] hover:bg-[#F5EBDD]'
@@ -62,21 +62,21 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             </nav>
 
             {/* Action Buttons: Phone Pill & Book Wash */}
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
               <a
                 href="tel:7022338693"
-                className="flex items-center gap-2 text-sm font-semibold text-[#202C2C] hover:text-[#087F75] px-4 py-2 rounded-full border border-[#DDD6CB] bg-white hover:border-[#087F75]/50 hover:bg-[#F5EBDD] shadow-sm transition-all"
+                className="hidden xl:flex items-center gap-2 text-xs xl:text-sm font-semibold text-[#202C2C] hover:text-[#087F75] px-3.5 py-2 rounded-full border border-[#DDD6CB] bg-white hover:border-[#087F75]/50 hover:bg-[#F5EBDD] shadow-sm transition-all whitespace-nowrap"
                 title={`Call ${BUSINESS_CONFIG.brandName} (${BUSINESS_CONFIG.phoneFormatted})`}
               >
-                <Phone className="w-4 h-4 text-[#087F75]" />
+                <Phone className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-[#087F75]" />
                 <span>+91 70223 38693</span>
               </a>
 
               <button
                 onClick={onOpenBooking}
-                className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-sm tracking-wide shadow-md shadow-[#087F75]/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="group relative inline-flex items-center justify-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-xs xl:text-sm tracking-wide shadow-md shadow-[#087F75]/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
               >
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
                 <span>Book Wash</span>
               </button>
             </div>
