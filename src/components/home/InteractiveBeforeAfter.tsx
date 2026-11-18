@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BEFORE_AFTER_ITEMS } from '@/data/gallery';
 import BeforeAfterSlider from '@/components/gallery/BeforeAfterSlider';
 import { Sparkles, ArrowRight } from 'lucide-react';
@@ -21,37 +22,56 @@ export default function InteractiveBeforeAfter() {
               <span>Real Detailing Transformations</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#202C2C] leading-tight tracking-tight">
-              The Difference Is <br />
-              <span className="text-[#087F75] italic font-serif">In The Finish.</span>
+              See the <span className="text-[#087F75] italic font-serif">Difference.</span>
             </h2>
             <p className="mt-3 text-base sm:text-lg text-[#445452] leading-relaxed">
               Drag the interactive slider horizontally or use left/right arrow keys to reveal the optical depth, swirl correction, and deep interior extraction our bays achieve.
             </p>
           </div>
 
-          {/* Transformation Switchers */}
-          <div className="flex flex-wrap gap-2.5">
-            {BEFORE_AFTER_ITEMS.map((item, idx) => (
-              <button
-                key={item.id}
-                onClick={() => setActiveIndex(idx)}
-                className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all ${
-                  activeIndex === idx
-                    ? 'bg-[#087F75] text-white shadow-sm'
-                    : 'bg-white text-[#202C2C] hover:text-[#087F75] border border-[#DDD6CB]'
-                }`}
-              >
-                {idx === 0 && 'Paint Polish'}
-                {idx === 1 && 'Interior Steam'}
-                {idx === 2 && 'Ceramic Hydrophobic'}
-              </button>
-            ))}
+          {/* Transformation Switchers with Animated Highlight */}
+          <div className="flex flex-wrap gap-2.5 relative">
+            {BEFORE_AFTER_ITEMS.map((item, idx) => {
+              const isActive = activeIndex === idx;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveIndex(idx)}
+                  className={`relative z-10 px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-200 ${
+                    isActive
+                      ? 'text-white'
+                      : 'text-[#202C2C] bg-white hover:text-[#087F75] border border-[#DDD6CB]'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTransformTab"
+                      className="absolute inset-0 bg-[#087F75] rounded-full -z-10 shadow-sm"
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  {idx === 0 && 'Paint Polish'}
+                  {idx === 1 && 'Interior Steam'}
+                  {idx === 2 && 'Ceramic Hydrophobic'}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* The Interactive Slider Component */}
+        {/* The Interactive Slider Component with Smooth Fade/Slide Mode Switching */}
         <div className="max-w-5xl mx-auto">
-          <BeforeAfterSlider item={activeItem} />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeItem.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+            >
+              <BeforeAfterSlider item={activeItem} />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Gallery Link */}

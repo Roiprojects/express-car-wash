@@ -2,8 +2,8 @@
 
 import React from 'react';
 import CarMarqueeRow from './CarMarqueeRow';
-import { HERO_ROW_1_CARS, HERO_ROW_2_CARS } from '@/data/everydayCars';
-import { Sparkles } from 'lucide-react';
+import { HERO_ROW_1_CARS, HERO_ROW_2_BIKES } from '@/data/everydayCars';
+import { Sparkles, Car, Bike } from 'lucide-react';
 
 export default function EverydayCarsStrip() {
   return (
@@ -21,14 +21,14 @@ export default function EverydayCarsStrip() {
         </p>
       </div>
 
-      {/* Row 1: Left */}
+      {/* Row 1: Cars Marquee (Right to Left) */}
       <div className="w-full hero-marquee-mask">
         <CarMarqueeRow cars={HERO_ROW_1_CARS} direction="left" speedSeconds={34} />
       </div>
 
-      {/* Row 2: Right */}
+      {/* Row 2: Two-Wheelers & Scooters Marquee (Left to Right) */}
       <div className="w-full hero-marquee-mask mt-4">
-        <CarMarqueeRow cars={HERO_ROW_2_CARS} direction="right" speedSeconds={38} />
+        <CarMarqueeRow cars={HERO_ROW_2_BIKES} direction="right" speedSeconds={38} />
       </div>
     </section>
   );

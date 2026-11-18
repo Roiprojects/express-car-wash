@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { CAR_CATEGORIES, CarCategory, SERVICES_DATA } from '@/data/services';
+import { motion, AnimatePresence } from 'framer-motion';
+import { SERVICES_DATA, CAR_CATEGORIES, CarCategory } from '@/data/services';
+import { Check, ArrowRight, Sparkles, SlidersHorizontal } from 'lucide-react';
 import { formatINR } from '@/lib/formatting';
-import { Check, Sparkles, ArrowRight, Calendar, AlertCircle } from 'lucide-react';
 
 interface PricingPreviewProps {
   onOpenBookingWithService?: (serviceId: string) => void;
@@ -15,8 +16,6 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
 
   const highlightedServiceIds = [
     'full-car-foam-wash',
-    'outer-wash',
-    'full-car-diesel-wash',
     'deep-interior-cleaning',
     'rubbing-polish-teflon',
     'ceramic-wash',
@@ -44,19 +43,26 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
           </div>
 
           {/* Vehicle Category Switcher Pills */}
-          <div className="inline-flex p-1.5 rounded-full bg-white border border-[#DDD6CB] self-start md:self-auto shadow-sm">
+          <div className="inline-flex p-1.5 rounded-full bg-white border border-[#DDD6CB] self-start md:self-auto shadow-sm relative">
             {CAR_CATEGORIES.map((cat) => {
               const isSelected = selectedCategory === cat.id;
               return (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 ${
+                  className={`relative z-10 px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-200 ${
                     isSelected
-                      ? 'bg-[#087F75] text-white shadow-sm'
-                      : 'text-[#445452] hover:text-[#202C2C] hover:bg-[#FFF9EF]'
+                      ? 'text-white'
+                      : 'text-[#445452] hover:text-[#202C2C]'
                   }`}
                 >
+                  {isSelected && (
+                    <motion.div
+                      layoutId="activeCategoryPill"
+                      className="absolute inset-0 bg-[#087F75] rounded-full -z-10 shadow-sm"
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    />
+                  )}
                   {cat.id === 'small' && 'Small Hatch'}
                   {cat.id === 'm_suv' && 'Mid-SUV'}
                   {cat.id === 'suv_xl' && 'SUV XL / Full Size'}
@@ -96,7 +102,7 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
             return (
               <div
                 key={service.id}
-                className="p-7 rounded-3xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between transition-all duration-300 group shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:shadow-xl"
+                className="p-7 rounded-3xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between transition-all duration-300 group shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:shadow-xl hover:-translate-y-1"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3.5">
@@ -135,30 +141,31 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
                     <span className="text-xs font-mono uppercase tracking-wider text-[#52615E] block font-semibold">
                       Price ({selectedCategory.replace('_', ' ').toUpperCase()})
                     </span>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-[#202C2C] tracking-tight">
-                      {price ? formatINR(price) : 'Contact for Price'}
-                    </div>
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={selectedCategory}
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 6 }}
+                        transition={{ duration: 0.2 }}
+                        className="text-2xl sm:text-3xl font-extrabold text-[#202C2C] tracking-tight"
+                      >
+                        {price ? formatINR(price) : 'Contact for Price'}
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
 
                   <button
                     onClick={() => onOpenBookingWithService && onOpenBookingWithService(service.id)}
-                    className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#087F75] text-white font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-[#06665F] transition-colors shadow-sm"
+                    className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#087F75] text-white font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-[#06665F] transition-all hover:scale-105 shadow-sm"
                   >
-                    <Calendar className="w-4 h-4" />
                     <span>Book</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Pricing Policy Disclaimer */}
-        <div className="mt-10 p-5 rounded-2xl bg-white border border-[#DDD6CB] flex items-start gap-3.5 text-xs sm:text-sm text-[#445452] shadow-sm">
-          <AlertCircle className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
-          <p className="leading-relaxed">
-            <strong className="text-[#202C2C]">Transparency Notice:</strong> All figures above reflect the printed workshop price board. Where handwritten revisions exist on the physical board (e.g. recent full foam wash updates), our team confirms the exact final quote over WhatsApp prior to service commencement.
-          </p>
         </div>
       </div>
     </section>

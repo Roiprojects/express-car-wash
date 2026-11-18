@@ -58,12 +58,6 @@ export const HERO_ROW_1_CARS: EverydayCarCard[] = [
     image: '/images/tata-nexon.jpg',
     altText: 'Tata Nexon compact SUV receiving full underbody and paint clean',
   },
-];
-
-/**
- * ROW TWO: Creta, Punch, Sonet, Brezza, Grand i10 (Direction: LEFT TO RIGHT)
- */
-export const HERO_ROW_2_CARS: EverydayCarCard[] = [
   {
     id: 'car-creta',
     name: 'Hyundai Creta',
@@ -71,42 +65,72 @@ export const HERO_ROW_2_CARS: EverydayCarCard[] = [
     category: 'Mid-Size SUV',
     treatmentTag: 'Ceramic Paint Shield',
     image: '/images/hyundai-creta.jpg',
-    altText: 'Hyundai Creta urban family SUV with ceramic gloss',
-  },
-  {
-    id: 'car-punch',
-    name: 'Tata Punch',
-    brand: 'Tata Motors',
-    category: 'Sub-Compact SUV',
-    treatmentTag: 'High-Pressure Wheel Blast',
-    image: '/images/tata-punch.jpg',
-    altText: 'Tata Punch micro-SUV getting wheel and arch decontamination',
-  },
-  {
-    id: 'car-sonet',
-    name: 'Kia Sonet',
-    brand: 'Kia',
-    category: 'Compact SUV',
-    treatmentTag: 'Deep Exterior Decon',
-    image: '/images/kia-sonet.jpg',
-    altText: 'Kia Sonet compact SUV receiving paint decontamination',
-  },
-  {
-    id: 'car-brezza',
-    name: 'Maruti Suzuki Brezza',
-    brand: 'Maruti Suzuki',
-    category: 'Compact SUV',
-    treatmentTag: 'Full Body Foam Spa',
-    image: '/images/maruti-brezza.jpg',
-    altText: 'Maruti Suzuki Brezza SUV undergoing complete snow foam wash',
-  },
-  {
-    id: 'car-grandi10',
-    name: 'Hyundai Grand i10',
-    brand: 'Hyundai',
-    category: 'City Hatchback',
-    treatmentTag: 'Interior & Exterior Detail',
-    image: '/images/hyundai-grandi10.jpg',
-    altText: 'Hyundai Grand i10 passenger car vacuum and interior cleaning',
+    altText: 'Hyundai Creta urban family SUV with ceramic gloss finish',
   },
 ];
+
+/**
+ * ROW TWO: MOTORCYCLES & SCOOTERS (Direction: LEFT TO RIGHT)
+ * Dedicated Indian two-wheeler care photography (Splendor, Pulsar, Apache, Shine, Activa, Two-Wheeler Armor).
+ */
+export const HERO_ROW_2_BIKES: EverydayCarCard[] = [
+  {
+    id: 'bike-splendor',
+    name: 'Hero Splendor Plus',
+    brand: 'Hero MotoCorp',
+    category: 'Commuter Bike',
+    treatmentTag: 'Snow Foam Wash & Rinse',
+    image: '/images/bikes/hero-splendor-foam.jpg',
+    altText: 'Hero Splendor Plus commuter motorcycle receiving active snow foam wash',
+  },
+  {
+    id: 'bike-pulsar',
+    name: 'Bajaj Pulsar 150',
+    brand: 'Bajaj Auto',
+    category: 'Sports Commuter',
+    treatmentTag: 'Wheel & Chain Degrease',
+    image: '/images/bikes/bajaj-pulsar-cleaning.jpg',
+    altText: 'Bajaj Pulsar 150 bike getting rim, sprocket and chain degreased',
+  },
+  {
+    id: 'bike-apache',
+    name: 'TVS Apache RTR',
+    brand: 'TVS Motor',
+    category: 'Performance Bike',
+    treatmentTag: 'Tank & Fairing Wax Polish',
+    image: '/images/bikes/tvs-apache-polishing.jpg',
+    altText: 'TVS Apache RTR bike receiving high-gloss polymer wax polish',
+  },
+  {
+    id: 'bike-shine',
+    name: 'Honda CB Shine',
+    brand: 'Honda',
+    category: 'Executive Commuter',
+    treatmentTag: 'Engine Bay & Chrome Detail',
+    image: '/images/bikes/honda-shine-detailing.jpg',
+    altText: 'Honda CB Shine motorcycle getting engine block and chrome restored',
+  },
+  {
+    id: 'bike-activa',
+    name: 'Honda Activa 6G',
+    brand: 'Honda',
+    category: 'Everyday Scooter',
+    treatmentTag: 'Deep Underbody & Footboard Wash',
+    image: '/images/bikes/honda-activa-cleaning.jpg',
+    altText: 'Honda Activa scooter receiving complete mud extraction and body wash',
+  },
+  {
+    id: 'bike-ceramic',
+    name: 'Two-Wheeler Ceramic Armor',
+    brand: 'All Bikes & Scooters',
+    category: 'Two-Wheeler Spa',
+    treatmentTag: 'Hydrophobic Shield & UV Guard',
+    image: '/images/bikes/bike-ceramic-coating.jpg',
+    altText: 'Motorcycle receiving 9H ceramic coating protection against rain and UV fade',
+  },
+];
+
+/**
+ * Backward compatibility alias
+ */
+export const HERO_ROW_2_CARS: EverydayCarCard[] = HERO_ROW_2_BIKES;
