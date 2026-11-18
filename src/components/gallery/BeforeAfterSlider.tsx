@@ -65,7 +65,7 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
         data-cursor-text="DRAG"
-        className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-3xl overflow-hidden cursor-ew-resize select-none border border-[#E3EBE7] shadow-xl bg-white group"
+        className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-3xl overflow-hidden cursor-ew-resize select-none border border-[#DDD6CB] shadow-xl bg-white group"
       >
         {/* AFTER Image (Full background) */}
         <div className="absolute inset-0 w-full h-full">
@@ -77,8 +77,8 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
             className="object-cover"
             priority
           />
-          <div className="absolute bottom-4 right-4 z-10 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#E3EBE7] text-[#438E88] font-bold text-xs uppercase tracking-wider shadow-md flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
+          <div className="absolute bottom-4 right-4 z-10 px-4 py-2 rounded-full bg-white border border-[#DDD6CB] text-[#087F75] font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md flex items-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-[#087F75]" />
             <span>{item.afterLabel}</span>
           </div>
         </div>
@@ -96,43 +96,40 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
             className="object-cover"
             priority
           />
-          <div className="absolute bottom-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white font-bold text-xs uppercase tracking-wider shadow-md">
+          <div className="absolute bottom-4 left-4 z-10 px-4 py-2 rounded-full bg-[#202C2C]/85 backdrop-blur-md border border-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md">
             {item.beforeLabel}
           </div>
         </div>
 
-        {/* Dividing Vertical Line & Central Draggable Pill */}
+        {/* The Vertical Divider Line & Drag Handle */}
         <div
-          className="absolute top-0 bottom-0 z-20 w-0.5 bg-[#438E88] pointer-events-none"
+          className="absolute top-0 bottom-0 w-1 bg-[#087F75] pointer-events-none z-20 shadow-lg"
           style={{ left: `${sliderPosition}%` }}
         >
-          <div className="absolute inset-0 w-1 -translate-x-0.5 bg-[#438E88]/40 blur-[2px]" />
-
-          {/* Draggable central handle */}
-          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#438E88] text-white flex items-center justify-center shadow-lg shadow-[#438E88]/30 border-2 border-white pointer-events-auto cursor-ew-resize transition-transform duration-150 group-hover:scale-110 active:scale-95">
-            <MoveHorizontal className="w-5 h-5 stroke-[2.5]" />
+          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border-2 border-[#087F75] text-[#087F75] flex items-center justify-center shadow-2xl transition-transform group-hover:scale-110">
+            <MoveHorizontal className="w-5 h-5 text-[#087F75]" />
           </div>
-        </div>
-
-        {/* Top Floating Service Badge */}
-        <div className="absolute top-4 left-4 z-20 px-3.5 py-1 rounded-full bg-white/90 backdrop-blur-md border border-[#E3EBE7] text-[#253C42] font-mono text-[11px] tracking-wide font-bold shadow-sm">
-          {item.service} • {item.vehicle}
         </div>
       </div>
 
-      {/* Caption & Asset Honesty Notice */}
-      <div className="mt-4 px-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
+      {/* Info Card Below Slider */}
+      <div className="mt-6 p-6 rounded-3xl bg-white border border-[#DDD6CB] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
         <div>
-          <h4 className="font-serif font-bold text-[#253C42] text-base">{item.title}</h4>
-          <p className="text-[#62747A] mt-0.5">{item.transformationDetails}</p>
+          <span className="text-xs font-mono text-[#087F75] uppercase tracking-wider font-bold">
+            {item.service} • {item.vehicle}
+          </span>
+          <h3 className="text-xl font-serif font-bold text-[#202C2C] mt-0.5">
+            {item.title}
+          </h3>
+          <p className="text-sm text-[#445452] mt-1">
+            {item.transformationDetails}
+          </p>
         </div>
 
-        {!item.isAuthenticWorkshopAsset && (
-          <div className="flex items-center gap-1.5 text-[#62747A] text-[11px] font-mono bg-white px-3 py-1 rounded-full border border-[#E3EBE7]">
-            <AlertCircle className="w-3.5 h-3.5 text-[#438E88]" />
-            <span>Interactive Visual Demonstration</span>
-          </div>
-        )}
+        <div className="flex items-center gap-2 text-xs sm:text-sm text-[#52615E] font-medium shrink-0 bg-[#F5EBDD] px-4 py-2.5 rounded-full border border-[#DDD6CB]">
+          <MoveHorizontal className="w-4 h-4 text-[#087F75]" />
+          <span>Drag slider or press Left/Right keys</span>
+        </div>
       </div>
     </div>
   );

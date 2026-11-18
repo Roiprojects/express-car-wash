@@ -3,111 +3,125 @@
 @tailwind utilities;
 
 :root {
-  --background: #FFFFFF;
-  --surface: #F1F7F3;
-  --surface-hover: #E4F2EF;
-  --border: #E3EBE7;
-  --accent: #438E88;
-  --accent-hover: #32766F;
-  --text-primary: #253C42;
-  --text-secondary: #62747A;
-  --text-muted: #8B9FA5;
+  --background: #FFF9EF;
+  --background-secondary: #F5EBDD;
+  --surface: #FFFFFF;
+  --surface-hover: #F5EBDD;
+  --border: #DDD6CB;
+  --accent: #087F75;
+  --accent-hover: #06665F;
+  --text-primary: #202C2C;
+  --text-secondary: #445452;
+  --text-muted: #52615E;
 }
 
 @layer base {
   * {
-    border-color: #E3EBE7;
+    border-color: #DDD6CB;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--background);
-    color: var(--text-primary);
+    background-color: #FFF9EF;
+    color: #445452;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #253C42;
+    background-color: #FFF9EF;
+    color: #445452;
     overflow-x: hidden;
     font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    color: #202C2C;
+    font-family: var(--font-serif), 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    color: #445452;
+    line-height: 1.65;
+  }
+
   ::selection {
-    background-color: #E4F2EF;
-    color: #438E88;
+    background-color: #F5EBDD;
+    color: #087F75;
   }
 }
 
-/* Custom Scrollbar - Light Mint & Slate */
+/* Custom Scrollbar - Warm Beige & Teal */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F1F7F3;
+  background: #FFF9EF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E3EBE7;
+  background: #DDD6CB;
   border-radius: 4px;
-  border: 1px solid #F1F7F3;
+  border: 1px solid #FFF9EF;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #438E88;
+  background: #087F75;
 }
 
-/* Glassmorphism surfaces for Light Mint & White */
+/* Elegant Surfaces for Warm Cream & White Cards */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #E3EBE7;
-  box-shadow: 0 4px 20px -2px rgba(37, 60, 66, 0.05);
+  border: 1px solid #DDD6CB;
+  box-shadow: 0 4px 20px -2px rgba(32, 44, 44, 0.05);
 }
 
 .glass-panel-elevated {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid #E3EBE7;
-  box-shadow: 0 10px 30px -5px rgba(37, 60, 66, 0.08);
+  border: 1px solid #DDD6CB;
+  box-shadow: 0 10px 30px -5px rgba(32, 44, 44, 0.08);
 }
 
 .accent-glow-sm {
-  box-shadow: 0 0 20px -5px rgba(67, 142, 136, 0.15);
+  box-shadow: 0 0 20px -5px rgba(8, 127, 117, 0.18);
 }
 
 .accent-glow-lg {
-  box-shadow: 0 0 40px -10px rgba(67, 142, 136, 0.25);
+  box-shadow: 0 0 40px -10px rgba(8, 127, 117, 0.25);
 }
 
 /* Subtle clean mesh background */
 .automotive-grid {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(67, 142, 136, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(67, 142, 136, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(8, 127, 117, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 127, 117, 0.04) 1px, transparent 1px);
 }
 
 .radial-vignette {
-  background: radial-gradient(circle at 50% 30%, transparent 20%, #F1F7F3 95%);
+  background: radial-gradient(circle at 50% 30%, transparent 20%, #FFF9EF 95%);
 }
 
-/* Text clipping and gradients */
+/* High Contrast Headings */
 .text-gradient-cyan,
 .text-gradient-teal {
-  background: linear-gradient(135deg, #253C42 15%, #438E88 100%);
+  background: linear-gradient(135deg, #202C2C 20%, #087F75 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-metallic {
-  background: linear-gradient(180deg, #253C42 0%, #62747A 100%);
+  background: linear-gradient(180deg, #202C2C 0%, #445452 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -119,10 +133,10 @@
 
 .magnetic-btn-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px -6px rgba(67, 142, 136, 0.25);
+  box-shadow: 0 8px 24px -6px rgba(8, 127, 117, 0.25);
 }
 
-/* Seamless Infinite Marquee Animations for Everyday Cars */
+/* Seamless Infinite Marquee Animations */
 @keyframes marquee-left {
   0% {
     transform: translate3d(0, 0, 0);
@@ -180,27 +194,14 @@
   will-change: transform;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-testimonials-marquee {
-    animation: none !important;
-    transform: none !important;
-  }
+/* Custom Checkbox and Radio styling */
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #087F75;
 }
 
-/* Gradient Mask for Marquee edges */
-.hero-marquee-mask {
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 15%,
-    black 85%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 15%,
-    black 85%,
-    transparent 100%
-  );
+/* Input Focus States */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #087F75 !important;
+  box-shadow: 0 0 0 2px rgba(8, 127, 117, 0.2);
 }

@@ -55,17 +55,17 @@ export default function ServiceFilter({ activeCategory, onSelectCategory, vehicl
   };
 
   return (
-    <div className="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar">
+    <div className="flex items-center gap-2.5 overflow-x-auto pb-4 no-scrollbar">
       {availableCategories.map((cat) => {
         const isActive = activeCategory === cat.id;
         return (
           <button
             key={cat.id}
             onClick={() => onSelectCategory(cat.id)}
-            className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
               isActive
-                ? 'bg-[#438E88] text-white shadow-sm'
-                : 'bg-[#F1F7F3] text-[#62747A] hover:text-[#253C42] border border-[#E3EBE7] hover:border-[#438E88]/40 shadow-sm'
+                ? 'bg-[#087F75] text-white shadow-sm'
+                : 'bg-white text-[#202C2C] hover:text-[#087F75] hover:bg-[#FFF9EF] border border-[#DDD6CB] hover:border-[#087F75] shadow-sm'
             }`}
           >
             {getIcon(cat.iconName)}

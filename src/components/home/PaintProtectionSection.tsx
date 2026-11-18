@@ -29,24 +29,24 @@ export default function PaintProtectionSection() {
       badge: 'Molecular Glass Shield',
       type: 'Ceramic' as const,
       description:
-        'Liquid silica quartz (SiO2) formulation that molecularly cross-links with the clear coat to form a rigid, sacrificial glass matrix. Delivers extreme liquid reflection, self-cleaning water-beading, and chemical shielding.',
+        'Liquid silica quartz (SiO2) formulation that molecularly cross-links with the clear coat to form a rigid, sacrificial glass matrix. Delivers extreme liquid reflection, self-cleaning water-beading contact angles, and UV chemical resistance.',
       features: [
-        'Multi-stage machine paint correction included',
-        'Hard 9H / 10H quartz sacrificial barrier',
-        'Extreme contact-angle water beading (>110°)',
-        'Shields against bird drop etching & tree sap',
-        'Reduces dirt bonding for effortless washdowns',
+        'Multi-year clear coat chemical bonding',
+        '9H/10H pencil-scale hardness barrier against micro-swirls',
+        'Extreme hydrophobic contact angle (>110° water beading)',
+        'Defense against bird droppings, acid rain & industrial fallout',
+        'Cured in climate-controlled detailing bays',
       ],
       icon: Gem,
-      recommended: 'Daily drivers, brand new hatchbacks, sedans and compact SUVs.',
+      recommended: 'Daily city runners seeking effortless washing and permanent deep candy gloss.',
     },
     {
       id: 'graphene',
       title: 'Graphene Matrix Coating',
       badge: 'Next-Gen Heat Dissipation',
-      type: 'Graphene' as const,
+      type: 'Ceramic' as const,
       description:
-        'Infused with reduced graphene oxide carbon lattice structures. Provides lower surface heat absorption compared to standard ceramic, dramatically diminishing baked-on hard water spot etchings in hot climates.',
+        'Infused with reduced graphene oxide carbon lattice structures. Provides lower surface temperature absorption compared to standard ceramics, dramatically diminishing bake-in mineral water spot etchings in hot climates.',
       features: [
         'Advanced carbon nano-structure heat dispersion',
         'Significant reduction in water-spotting etchings',
@@ -60,19 +60,19 @@ export default function PaintProtectionSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#F1F7F3] border-t border-[#E3EBE7] relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[#FFF9EF] border-t border-[#DDD6CB] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-4 font-semibold border border-[#438E88]/20">
-            <ShieldAlert className="w-3.5 h-3.5 text-[#438E88]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-4 font-bold border border-[#DDD6CB]">
+            <ShieldAlert className="w-3.5 h-3.5 text-[#087F75]" />
             <span>Advanced Paint Preservation</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#202C2C] leading-tight tracking-tight">
             Protection Beyond <br />
-            <span className="text-[#438E88] italic font-serif">The Everyday Wash.</span>
+            <span className="text-[#087F75] italic font-serif">The Everyday Wash.</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-[#62747A] leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#445452] leading-relaxed">
             Preserve your vehicle’s factory clear coat against stone chips, harsh sun oxidation, swirl marks, and environmental contamination with multi-year paint armor.
           </p>
         </div>
@@ -84,33 +84,33 @@ export default function PaintProtectionSection() {
             return (
               <div
                 key={card.id}
-                className="group p-8 rounded-3xl bg-white border border-[#E3EBE7] hover:border-[#438E88] flex flex-col justify-between transition-all duration-300 shadow-[0_8px_30px_rgba(37,60,66,0.06)] hover:-translate-y-1 hover:shadow-xl relative overflow-hidden"
+                className="group p-8 rounded-3xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between transition-all duration-300 shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:-translate-y-1 hover:shadow-xl relative overflow-hidden"
               >
                 <div>
                   {/* Top Badge & Icon */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-[#E4F2EF] text-[#438E88] flex items-center justify-center group-hover:bg-[#438E88] group-hover:text-white transition-colors duration-300 shadow-sm">
+                    <div className="w-12 h-12 rounded-2xl bg-[#F5EBDD] text-[#087F75] flex items-center justify-center group-hover:bg-[#087F75] group-hover:text-white transition-colors duration-300 shadow-sm">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-mono font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#F1F7F3] text-[#438E88] border border-[#E3EBE7]">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] border border-[#DDD6CB]">
                       {card.badge}
                     </span>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl font-serif font-bold text-[#253C42] group-hover:text-[#438E88] transition-colors duration-300 leading-snug">
+                  <h3 className="text-xl font-serif font-bold text-[#202C2C] group-hover:text-[#087F75] transition-colors duration-300 leading-snug">
                     {card.title}
                   </h3>
 
-                  <p className="mt-3.5 text-xs sm:text-sm text-[#62747A] leading-relaxed">
+                  <p className="mt-3.5 text-sm sm:text-base text-[#445452] leading-relaxed">
                     {card.description}
                   </p>
 
                   {/* Feature Checklist */}
-                  <div className="mt-6 space-y-2.5 pt-4 border-t border-[#E3EBE7]">
+                  <div className="mt-6 space-y-3 pt-5 border-t border-[#DDD6CB]">
                     {card.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs text-[#253C42]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#438E88] shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#202C2C]">
+                        <CheckCircle2 className="w-4 h-4 text-[#087F75] shrink-0 mt-0.5" />
                         <span className="leading-snug font-medium">{feature}</span>
                       </div>
                     ))}
@@ -118,9 +118,9 @@ export default function PaintProtectionSection() {
                 </div>
 
                 {/* Card Footer & Enquiry Link */}
-                <div className="mt-8 pt-5 border-t border-[#E3EBE7] flex items-center justify-between">
-                  <div className="text-[11px] text-[#62747A] max-w-[65%] line-clamp-1">
-                    <span className="text-[#253C42] font-semibold">Ideal for: </span>
+                <div className="mt-8 pt-5 border-t border-[#DDD6CB] flex items-center justify-between">
+                  <div className="text-xs text-[#52615E] max-w-[65%] line-clamp-1">
+                    <span className="text-[#202C2C] font-semibold">Ideal for: </span>
                     {card.recommended}
                   </div>
 
@@ -128,10 +128,10 @@ export default function PaintProtectionSection() {
                     href={generateProtectionWhatsAppUrl(card.type)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#438E88] group-hover:text-[#32766F] transition-colors uppercase tracking-wider shrink-0"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#087F75] group-hover:text-[#06665F] transition-colors uppercase tracking-wider shrink-0"
                   >
                     <span>Get Quote</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>
@@ -140,14 +140,14 @@ export default function PaintProtectionSection() {
         </div>
 
         {/* Quality Standard Notice Box */}
-        <div className="mt-12 p-5 rounded-2xl bg-white border border-[#E3EBE7] text-xs text-[#62747A] flex items-center justify-between flex-wrap gap-4 shadow-sm">
+        <div className="mt-12 p-6 rounded-2xl bg-white border border-[#DDD6CB] text-xs sm:text-sm text-[#445452] flex items-center justify-between flex-wrap gap-4 shadow-sm">
           <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#438E88]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#087F75]" />
             <span>
-              <strong className="text-[#253C42]">Transparent Quality Standard:</strong> We provide detailed vehicle pre-inspection before applying PPF or ceramic coatings. Package coverage (Full Front, High-Impact, or Complete Wrap) and verified curing timelines are agreed with the owner upfront.
+              <strong className="text-[#202C2C]">Transparent Quality Standard:</strong> We provide detailed vehicle pre-inspection before applying PPF or ceramic coatings. Package coverage (Full Front, High-Impact, or Complete Wrap) and verified curing timelines are agreed with the owner upfront.
             </span>
           </div>
-          <span className="text-[#438E88] font-mono text-[11px] font-bold px-3 py-1 rounded-full bg-[#E4F2EF] border border-[#438E88]/20">
+          <span className="text-[#087F75] font-mono text-xs font-bold px-3.5 py-1.5 rounded-full bg-[#F5EBDD] border border-[#DDD6CB]">
             Dust-Controlled Bays
           </span>
         </div>

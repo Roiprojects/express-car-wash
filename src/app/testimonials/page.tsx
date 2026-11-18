@@ -26,20 +26,20 @@ export default function TestimonialsPage() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#FFF9EF]">
       {/* Page Hero */}
-      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#E3EBE7] bg-[#F1F7F3]">
+      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-4 font-semibold border border-[#438E88]/20">
-              <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-4 font-bold border border-[#DDD6CB]">
+              <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Verified Client Stories</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#202C2C] leading-tight tracking-tight">
               Driver Experiences. <br />
-              <span className="text-[#438E88] italic font-serif">Honest Feedback.</span>
+              <span className="text-[#087F75] italic font-serif">Honest Feedback.</span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-[#62747A] leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-[#445452] leading-relaxed">
               Read authentic impressions from owners who entrust their vehicles to our detailing and wash bays.
             </p>
           </div>
@@ -47,45 +47,45 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Reviews Grid */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 bg-white">
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 bg-[#FFF9EF]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {REVIEWS_DATA.map((review) => (
             <div
               key={review.id}
-              className="p-8 rounded-3xl bg-white border border-[#E3EBE7] hover:border-[#438E88] flex flex-col justify-between shadow-[0_8px_30px_rgba(37,60,66,0.06)] hover:shadow-xl transition-all duration-300"
+              className="p-8 rounded-3xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:shadow-xl transition-all duration-300"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-[#F59E0B]">
+                  <div className="flex items-center gap-1 text-[#087F75]">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current text-[#F59E0B]" />
+                      <Star key={i} className="w-4 h-4 fill-current text-[#087F75]" />
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 font-bold">
-                    <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                  <span className="inline-flex items-center gap-1 text-xs font-mono text-[#087F75] bg-[#F5EBDD] px-3 py-1 rounded-full border border-[#DDD6CB] font-bold">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#087F75]" />
                     Verified Customer
                   </span>
                 </div>
 
-                <p className="text-sm sm:text-base text-[#253C42] leading-relaxed italic">
+                <p className="text-base text-[#202C2C] leading-relaxed font-normal">
                   &ldquo;{review.content}&rdquo;
                 </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-[#E3EBE7] flex items-center justify-between">
+              <div className="mt-8 pt-5 border-t border-[#DDD6CB] flex items-center justify-between">
                 <div>
-                  <h4 className="font-serif font-bold text-base text-[#253C42]">{review.author}</h4>
-                  <div className="text-xs text-[#438E88] mt-0.5 font-bold">
+                  <h4 className="font-serif font-bold text-base text-[#202C2C]">{review.author}</h4>
+                  <div className="text-sm text-[#087F75] mt-0.5 font-bold">
                     {review.vehicle}
                   </div>
                 </div>
 
                 <div className="text-right">
-                  <span className="text-xs font-mono text-[#253C42] font-semibold block">
+                  <span className="text-xs font-mono text-[#202C2C] font-semibold block">
                     {review.serviceReceived}
                   </span>
-                  <span className="text-[10px] text-[#62747A]">
+                  <span className="text-xs text-[#52615E]">
                     {review.date}
                   </span>
                 </div>
@@ -95,23 +95,23 @@ export default function TestimonialsPage() {
         </div>
 
         {/* Integrity Disclaimer */}
-        <div className="p-4 rounded-2xl bg-[#F1F7F3] border border-[#E3EBE7] flex items-start gap-3 text-xs text-[#62747A] shadow-sm">
-          <AlertCircle className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
+        <div className="p-5 rounded-2xl bg-white border border-[#DDD6CB] flex items-start gap-3.5 text-xs sm:text-sm text-[#445452] shadow-sm">
+          <AlertCircle className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
           <p>
-            <strong className="text-[#253C42]">Review Verification Policy:</strong> In strict compliance with our brand guidelines, we never fabricate fake online testimonials or aggregate review counts. All feedback reflects actual customer responses documented at our workshop.
+            <strong className="text-[#202C2C]">Review Verification Policy:</strong> In strict compliance with our brand guidelines, we never fabricate fake online testimonials or aggregate review counts. All feedback reflects actual customer responses documented at our workshop.
           </p>
         </div>
 
         {/* Submit Review Card */}
-        <div id="submit-review" className="p-8 rounded-3xl bg-[#F1F7F3] border border-[#E3EBE7] max-w-3xl mx-auto shadow-xl">
-          <div className="text-center max-w-md mx-auto mb-6">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#438E88] block mb-1 font-bold">
+        <div id="submit-review" className="p-8 sm:p-10 rounded-3xl bg-[#F5EBDD] border border-[#DDD6CB] max-w-3xl mx-auto shadow-xl">
+          <div className="text-center max-w-md mx-auto mb-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#087F75] block mb-1 font-bold">
               Feedback Channel
             </span>
-            <h3 className="text-2xl font-serif font-bold text-[#253C42]">
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#202C2C]">
               Share Your Detailing Experience
             </h3>
-            <p className="text-xs text-[#62747A] mt-1">
+            <p className="text-xs sm:text-sm text-[#445452] mt-1.5">
               Visited our workshop recently? We welcome your candid comments on our active foam, interior steam, or motorcycle detailing.
             </p>
           </div>
@@ -119,8 +119,8 @@ export default function TestimonialsPage() {
           {isSent ? (
             <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-2">
               <Check className="w-8 h-8 text-emerald-600 mx-auto" />
-              <h4 className="font-serif font-bold text-[#253C42] text-base">Feedback Dispatched to WhatsApp!</h4>
-              <p className="text-xs text-[#62747A]">
+              <h4 className="font-serif font-bold text-[#202C2C] text-lg">Feedback Dispatched to WhatsApp!</h4>
+              <p className="text-sm text-[#445452]">
                 Thank you for helping us continually raise the bar for car and bike detailing standards.
               </p>
             </div>
@@ -128,7 +128,7 @@ export default function TestimonialsPage() {
             <form onSubmit={handleFeedbackSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#62747A] mb-1">
+                  <label className="block text-xs sm:text-sm font-semibold text-[#202C2C] mb-1.5">
                     Your Name *
                   </label>
                   <input
@@ -137,11 +137,11 @@ export default function TestimonialsPage() {
                     placeholder="e.g. Ramesh K."
                     value={feedbackAuthor}
                     onChange={(e) => setFeedbackAuthor(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E3EBE7] text-[#253C42] text-xs focus:outline-none focus:border-[#438E88]"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#62747A] mb-1">
+                  <label className="block text-xs sm:text-sm font-semibold text-[#202C2C] mb-1.5">
                     Vehicle Model
                   </label>
                   <input
@@ -149,13 +149,13 @@ export default function TestimonialsPage() {
                     placeholder="e.g. Kia Sonet / TVS Apache"
                     value={feedbackVehicle}
                     onChange={(e) => setFeedbackVehicle(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E3EBE7] text-[#253C42] text-xs focus:outline-none focus:border-[#438E88]"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#62747A] mb-1">
+                <label className="block text-xs sm:text-sm font-semibold text-[#202C2C] mb-1.5">
                   Service Received
                 </label>
                 <input
@@ -163,12 +163,12 @@ export default function TestimonialsPage() {
                   placeholder="e.g. Full Foam Wash &amp; Interior Cleaning"
                   value={feedbackService}
                   onChange={(e) => setFeedbackService(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E3EBE7] text-[#253C42] text-xs focus:outline-none focus:border-[#438E88]"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#62747A] mb-1">
+                <label className="block text-xs sm:text-sm font-semibold text-[#202C2C] mb-1.5">
                   Rating (1 to 5 Stars)
                 </label>
                 <div className="flex items-center gap-2">
@@ -182,20 +182,20 @@ export default function TestimonialsPage() {
                       <Star
                         className={`w-6 h-6 ${
                           star <= feedbackRating
-                            ? 'text-[#F59E0B] fill-[#F59E0B]'
-                            : 'text-[#E3EBE7]'
+                            ? 'text-[#087F75] fill-[#087F75]'
+                            : 'text-[#DDD6CB]'
                         }`}
                       />
                     </button>
                   ))}
-                  <span className="text-xs font-mono text-[#253C42] font-bold ml-2">
+                  <span className="text-xs sm:text-sm font-mono text-[#202C2C] font-bold ml-2">
                     {feedbackRating} of 5 Stars
                   </span>
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#62747A] mb-1">
+                <label className="block text-xs sm:text-sm font-semibold text-[#202C2C] mb-1.5">
                   Your Review &amp; Comments *
                 </label>
                 <textarea
@@ -204,13 +204,13 @@ export default function TestimonialsPage() {
                   placeholder="How did your car or bike look after the service? Were the staff courteous?"
                   value={feedbackText}
                   onChange={(e) => setFeedbackText(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E3EBE7] text-[#253C42] text-xs focus:outline-none focus:border-[#438E88]"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 px-6 rounded-full bg-[#438E88] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#32766F] transition-colors flex items-center justify-center gap-2 shadow-sm"
+                className="w-full py-4 px-6 rounded-full bg-[#087F75] text-white font-bold text-sm uppercase tracking-wider hover:bg-[#06665F] transition-colors flex items-center justify-center gap-2 shadow-sm"
               >
                 <MessageSquare className="w-4 h-4 fill-current" />
                 <span>Submit Feedback to Workshop Line</span>

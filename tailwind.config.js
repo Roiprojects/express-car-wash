@@ -8,52 +8,68 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        mint: {
-          DEFAULT: "#E4F2EF",
-          soft: "#F1F7F3",
-          border: "#E3EBE7",
+        cream: {
+          DEFAULT: "#FFF9EF",
+          bg: "#FFF9EF",
+          secondary: "#F5EBDD",
+          card: "#FFFFFF",
+          border: "#DDD6CB",
+        },
+        charcoal: {
+          DEFAULT: "#202C2C",
+          heading: "#202C2C",
+          body: "#445452",
+          muted: "#52615E",
         },
         teal: {
-          brand: "#438E88",
-          hover: "#32766F",
-          soft: "#E4F2EF",
+          DEFAULT: "#087F75",
+          brand: "#087F75",
+          hover: "#06665F",
+          soft: "#E8F5F3",
         },
-        heading: "#253C42",
-        body: "#62747A",
+        // Backward compatibility mappings
+        mint: {
+          DEFAULT: "#F5EBDD",
+          soft: "#F5EBDD",
+          border: "#DDD6CB",
+        },
+        heading: "#202C2C",
+        body: "#445452",
+        muted: "#52615E",
         background: {
-          DEFAULT: "#0C1016",
-          secondary: "#10151D",
-          surface: "#13171D",
-          hover: "#19212A",
-          card: "#13171D",
-          elevated: "#19212A",
+          DEFAULT: "#FFF9EF",
+          secondary: "#F5EBDD",
+          surface: "#FFFFFF",
+          hover: "#F5EBDD",
+          card: "#FFFFFF",
+          elevated: "#FFFFFF",
         },
         surface: {
-          DEFAULT: "#13171D",
-          hover: "#19212A",
-          elevated: "#1A212B",
+          DEFAULT: "#FFFFFF",
+          hover: "#F5EBDD",
+          elevated: "#FFFFFF",
         },
         accent: {
-          DEFAULT: "#069DAD",
-          hover: "#10B6C5",
-          muted: "rgba(6, 157, 173, 0.15)",
-          glow: "rgba(6, 157, 173, 0.25)",
+          DEFAULT: "#087F75",
+          hover: "#06665F",
+          muted: "rgba(8, 127, 117, 0.12)",
+          glow: "rgba(8, 127, 117, 0.2)",
         },
         foreground: {
-          DEFAULT: "#FFFFFF",
-          secondary: "#738CAC",
-          muted: "#6B809A",
+          DEFAULT: "#202C2C",
+          secondary: "#445452",
+          muted: "#52615E",
         },
         border: {
-          DEFAULT: "#252B34",
-          subtle: "#252B34",
-          hover: "#069DAD",
+          DEFAULT: "#DDD6CB",
+          subtle: "#DDD6CB",
+          hover: "#087F75",
         }
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
-        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        display: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
       },
       keyframes: {
         shimmer: {

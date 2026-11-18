@@ -74,20 +74,20 @@ export default function ServicesPage() {
   });
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#FFF9EF]">
       {/* Hero Header */}
-      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#E3EBE7] bg-[#F1F7F3]">
+      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] text-[#438E88] text-xs font-mono uppercase tracking-widest mb-4 font-semibold border border-[#438E88]/20">
-              <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-4 font-bold border border-[#DDD6CB]">
+              <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Kousalya&apos;s Express — Complete Automotive Menu</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#253C42] leading-tight tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#202C2C] leading-tight tracking-tight">
               Every Service. <br />
-              <span className="text-[#438E88] italic font-serif">One Destination.</span>
+              <span className="text-[#087F75] italic font-serif">One Destination.</span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-[#62747A] leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-[#445452] leading-relaxed">
               From everyday foam washes to self-healing PPF, 9H/10H ceramic shields, vehicle wrapping, bodywork tinkering &amp; painting, and performance accessories.
             </p>
           </div>
@@ -112,13 +112,13 @@ export default function ServicesPage() {
             vehicleType={vehicleType}
           />
 
-          <div className="flex items-center gap-2 self-start md:self-auto p-1 rounded-full bg-[#F1F7F3] border border-[#E3EBE7]">
+          <div className="flex items-center gap-2 self-start md:self-auto p-1.5 rounded-full bg-white border border-[#DDD6CB] shadow-sm">
             <button
               onClick={() => setViewMode('cards')}
-              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
                 viewMode === 'cards'
-                  ? 'bg-[#438E88] text-white shadow-sm'
-                  : 'text-[#62747A] hover:text-[#253C42]'
+                  ? 'bg-[#087F75] text-white shadow-sm'
+                  : 'text-[#445452] hover:text-[#202C2C]'
               }`}
             >
               <LayoutGrid className="w-3.5 h-3.5" />
@@ -126,10 +126,10 @@ export default function ServicesPage() {
             </button>
             <button
               onClick={() => setViewMode('table')}
-              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
                 viewMode === 'table'
-                  ? 'bg-[#438E88] text-white shadow-sm'
-                  : 'text-[#62747A] hover:text-[#253C42]'
+                  ? 'bg-[#087F75] text-white shadow-sm'
+                  : 'text-[#445452] hover:text-[#202C2C]'
               }`}
             >
               <TableProperties className="w-3.5 h-3.5" />
@@ -139,10 +139,10 @@ export default function ServicesPage() {
         </div>
 
         {/* Pricing Transparency Banner */}
-        <div className="p-4 rounded-2xl bg-[#F1F7F3] border border-[#E3EBE7] flex items-start gap-3 text-xs text-[#62747A] shadow-sm">
-          <AlertCircle className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
+        <div className="p-5 rounded-2xl bg-white border border-[#DDD6CB] flex items-start gap-3.5 text-xs sm:text-sm text-[#445452] shadow-sm">
+          <AlertCircle className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
           <p className="leading-relaxed">
-            <strong className="text-[#253C42]">Workshop Pricing Integrity:</strong> All prices below represent the confirmed workshop signboard. Any handwritten notes or revisions (including full foam wash updates) are prominently flagged so you receive 100% transparent quotes over WhatsApp before work begins.
+            <strong className="text-[#202C2C]">Workshop Pricing Integrity:</strong> All prices below represent the confirmed workshop signboard. Any handwritten notes or revisions (including full foam wash updates) are prominently flagged so you receive 100% transparent quotes over WhatsApp before work begins.
           </p>
         </div>
 
@@ -161,13 +161,13 @@ export default function ServicesPage() {
                 ))}
               </div>
             ) : (
-              <div className="p-16 text-center rounded-3xl bg-[#F1F7F3] border border-[#E3EBE7] space-y-4">
-                <p className="text-[#62747A] text-sm">
+              <div className="p-16 text-center rounded-3xl bg-white border border-[#DDD6CB] space-y-4">
+                <p className="text-[#445452] text-base">
                   No treatments match the selected category for this vehicle type.
                 </p>
                 <button
                   onClick={() => setActiveCategory('all')}
-                  className="px-5 py-2.5 rounded-full bg-[#438E88] text-white font-bold text-xs uppercase"
+                  className="px-6 py-3 rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-sm"
                 >
                   Reset Category Filter
                 </button>

@@ -7,16 +7,16 @@ import { Sparkles } from 'lucide-react';
 
 export default function EverydayCarsStrip() {
   return (
-    <section className="relative w-full py-12 md:py-16 bg-[#F1F7F3] border-b border-[#E3EBE7] overflow-hidden">
+    <section className="relative w-full py-12 md:py-16 bg-[#F5EBDD] border-b border-[#DDD6CB] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E4F2EF] border border-[#438E88]/20 text-xs font-mono uppercase tracking-widest text-[#438E88] mb-3 font-semibold">
-          <Sparkles className="w-3.5 h-3.5 text-[#438E88]" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] border border-[#DDD6CB] text-xs font-mono uppercase tracking-widest text-[#087F75] mb-3 font-semibold">
+          <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
           <span>Everyday Vehicle Specialists</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#253C42] tracking-tight">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#202C2C] tracking-tight">
           Everyday Vehicles Serviced Daily Across Bengaluru
         </h2>
-        <p className="mt-2 text-xs sm:text-sm text-[#62747A] max-w-xl mx-auto leading-relaxed">
+        <p className="mt-2 text-sm sm:text-base text-[#445452] max-w-xl mx-auto leading-relaxed">
           From Maruti Swift, Baleno, and Dzire to Nexon, Creta, Pulsar, and Activa — crafted detailing for everyday Indian roads.
         </p>
       </div>

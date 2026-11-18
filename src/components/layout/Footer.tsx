@@ -10,38 +10,38 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#F1F7F3] text-[#62747A] border-t border-[#E3EBE7] overflow-hidden">
+    <footer className="relative bg-[#F5EBDD] text-[#445452] border-t border-[#DDD6CB] overflow-hidden">
       {/* Subtle top teal accent line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-[2px] bg-gradient-to-r from-transparent via-[#438E88]/40 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-[2px] bg-gradient-to-r from-transparent via-[#087F75]/40 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#E3EBE7]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#DDD6CB]">
           {/* Brand & Overview */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-[#438E88] flex items-center justify-center text-white shadow-md shadow-[#438E88]/20">
+              <div className="w-10 h-10 rounded-2xl bg-[#087F75] flex items-center justify-center text-white shadow-md shadow-[#087F75]/20">
                 <Car className="w-5 h-5 text-white" />
               </div>
               <div>
-                <span className="font-serif font-bold text-xl text-[#253C42] tracking-tight block">
+                <span className="font-serif font-bold text-xl text-[#202C2C] tracking-tight block">
                   {BUSINESS_CONFIG.brandName}
                 </span>
-                <span className="text-xs text-[#62747A] uppercase tracking-wider block font-medium">
+                <span className="text-xs text-[#52615E] uppercase tracking-wider block font-semibold">
                   Car, Bike, PPF &amp; Accessories Spa
                 </span>
               </div>
             </Link>
 
-            <p className="text-sm leading-relaxed text-[#62747A] max-w-sm">
+            <p className="text-sm sm:text-base leading-relaxed text-[#445452] max-w-sm">
               Professional car and bike washing, detailing, ceramic coating, PPF, wrapping, and accessories — all under one roof across 3 branches in Bengaluru.
             </p>
 
-            <div className="p-4 rounded-2xl bg-white border border-[#E3EBE7] space-y-2 text-xs shadow-sm">
-              <div className="flex items-center gap-2 text-[#253C42] font-semibold">
-                <ShieldCheck className="w-4 h-4 text-[#438E88] flex-shrink-0" />
+            <div className="p-4 rounded-2xl bg-white border border-[#DDD6CB] space-y-2 text-xs sm:text-sm shadow-sm">
+              <div className="flex items-center gap-2 text-[#202C2C] font-semibold">
+                <ShieldCheck className="w-4 h-4 text-[#087F75] flex-shrink-0" />
                 <span>Notice on Brand &amp; Network</span>
               </div>
-              <p className="text-[11px] text-[#62747A] leading-normal">
+              <p className="text-xs text-[#52615E] leading-relaxed">
                 {BUSINESS_CONFIG.legalEntityNotice} Established year 2015 and branch addresses are subject to business confirmation.
               </p>
             </div>
@@ -51,16 +51,16 @@ export default function Footer() {
                 href={generateQuickWhatsAppUrl('Hello from website footer!')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#438E88] text-white font-bold text-xs uppercase tracking-wide hover:bg-[#32766F] transition-colors shadow-sm shadow-[#438E88]/20"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#087F75] text-white font-bold text-xs uppercase tracking-wide hover:bg-[#06665F] transition-colors shadow-sm shadow-[#087F75]/20"
               >
-                <MessageSquare className="w-3.5 h-3.5 fill-current" />
+                <MessageSquare className="w-4 h-4 fill-current" />
                 <span>WhatsApp Us</span>
               </a>
               <a
                 href="tel:7022338693"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-[#E3EBE7] text-[#253C42] font-semibold text-xs hover:border-[#438E88] hover:text-[#438E88] transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] font-semibold text-xs hover:border-[#087F75] hover:text-[#087F75] transition-colors shadow-sm"
               >
-                <Phone className="w-3.5 h-3.5 text-[#438E88]" />
+                <Phone className="w-4 h-4 text-[#087F75]" />
                 <span>Call +91 70223 38693</span>
               </a>
             </div>
@@ -68,10 +68,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#253C42]">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#202C2C]">
               Navigation
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-3 text-sm">
               {[
                 { href: '/', label: 'Home' },
                 { href: '/about', label: 'About Us' },
@@ -84,10 +84,10 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="hover:text-[#438E88] transition-colors flex items-center gap-1 group text-[#62747A]"
+                    className="hover:text-[#087F75] transition-colors flex items-center gap-1.5 group text-[#445452] font-medium"
                   >
                     <span>{link.label}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#087F75]" />
                   </Link>
                 </li>
               ))}
@@ -96,7 +96,7 @@ export default function Footer() {
 
           {/* Extended Service Catalog */}
           <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#253C42]">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#202C2C]">
               Specialized Care
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -115,7 +115,7 @@ export default function Footer() {
                 <li key={service.name}>
                   <Link
                     href="/services"
-                    className="hover:text-[#438E88] transition-colors block text-xs py-0.5 text-[#62747A]"
+                    className="hover:text-[#087F75] transition-colors block text-xs sm:text-sm py-0.5 text-[#445452] font-medium"
                   >
                     {service.name}
                   </Link>
@@ -126,41 +126,41 @@ export default function Footer() {
 
           {/* Contact, Phone Lines & Hours */}
           <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#253C42]">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#202C2C]">
               Contact &amp; Branches
             </h4>
-            <ul className="space-y-3 text-xs">
+            <ul className="space-y-3.5 text-xs sm:text-sm">
               <li className="flex items-start gap-2.5">
-                <Phone className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-[#253C42] font-bold">
+                  <span className="block text-[#202C2C] font-bold">
                     Primary: +91 70223 38693
                   </span>
-                  <span className="block text-[#253C42]/90 font-medium">
+                  <span className="block text-[#445452] font-medium">
                     Secondary: +91 97410 74019
                   </span>
-                  <span className="text-[11px] text-[#62747A]">Direct calls &amp; WhatsApp booking</span>
+                  <span className="text-xs text-[#52615E]">Direct calls &amp; WhatsApp booking</span>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-[#253C42] font-bold">{BUSINESS_CONFIG.operatingHours.days}</span>
-                  <span className="text-[11px] text-[#62747A]">{BUSINESS_CONFIG.operatingHours.timing}</span>
+                  <span className="block text-[#202C2C] font-bold">{BUSINESS_CONFIG.operatingHours.days}</span>
+                  <span className="text-xs text-[#52615E]">{BUSINESS_CONFIG.operatingHours.timing}</span>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <Sparkles className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
+                <Sparkles className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-[#253C42] font-bold">{BUSINESS_CONFIG.serviceNotice.minimumWashTime}</span>
-                  <span className="text-[11px] text-[#62747A]">Advertised standard for thorough cleaning</span>
+                  <span className="block text-[#202C2C] font-bold">{BUSINESS_CONFIG.serviceNotice.minimumWashTime}</span>
+                  <span className="text-xs text-[#52615E]">Advertised standard for thorough cleaning</span>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#438E88] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-[#253C42] font-bold">3 Branches in Bengaluru</span>
-                  <span className="text-[11px] text-[#62747A]">Live GPS location pins shared on WhatsApp</span>
+                  <span className="block text-[#202C2C] font-bold">3 Branches in Bengaluru</span>
+                  <span className="text-xs text-[#52615E]">Live GPS location pins shared on WhatsApp</span>
                 </div>
               </li>
             </ul>
@@ -168,18 +168,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#62747A]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#52615E]">
           <p>
             © {currentYear} {BUSINESS_CONFIG.brandName}. All rights reserved. Car &amp; Bike Detailing, Paint Protection &amp; Accessories.
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="/services" className="hover:text-[#438E88] transition-colors">
+          <div className="flex items-center gap-6 font-medium">
+            <Link href="/services" className="hover:text-[#087F75] transition-colors">
               Pricing Transparency
             </Link>
-            <Link href="/faq" className="hover:text-[#438E88] transition-colors">
+            <Link href="/faq" className="hover:text-[#087F75] transition-colors">
               Service FAQ
             </Link>
-            <Link href="/contact" className="hover:text-[#438E88] transition-colors">
+            <Link href="/contact" className="hover:text-[#087F75] transition-colors">
               Book Appointment
             </Link>
           </div>

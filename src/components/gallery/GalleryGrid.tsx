@@ -23,17 +23,17 @@ export default function GalleryGrid() {
   return (
     <div className="space-y-10">
       {/* Category Pills */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+      <div className="flex items-center gap-2.5 overflow-x-auto pb-2 no-scrollbar">
         {GALLERY_CATEGORIES.map((cat) => {
           const isActive = selectedCategory === cat.id;
           return (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
                 isActive
-                  ? 'bg-[#438E88] text-white shadow-sm'
-                  : 'bg-white text-[#62747A] hover:text-[#253C42] border border-[#E3EBE7]'
+                  ? 'bg-[#087F75] text-white shadow-sm'
+                  : 'bg-white text-[#202C2C] hover:text-[#087F75] hover:bg-[#FFF9EF] border border-[#DDD6CB] shadow-sm'
               }`}
             >
               {cat.label}
@@ -57,7 +57,7 @@ export default function GalleryGrid() {
             role="button"
             aria-label={`View photo ${item.title}`}
             data-cursor-text="VIEW"
-            className="group relative rounded-3xl overflow-hidden bg-white border border-[#E3EBE7] hover:border-[#438E88] aspect-[4/3] cursor-pointer shadow-[0_8px_30px_rgba(37,60,66,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none"
+            className="group relative rounded-3xl overflow-hidden bg-white border border-[#DDD6CB] hover:border-[#087F75] aspect-[4/3] cursor-pointer shadow-[0_8px_30px_rgba(32,44,44,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none"
           >
             <Image
               src={item.image}
@@ -66,24 +66,24 @@ export default function GalleryGrid() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
             {/* Top Badge */}
             <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-              <span className="px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase bg-white/95 backdrop-blur-md border border-[#E3EBE7] text-[#253C42] font-bold">
+              <span className="px-3.5 py-1 rounded-full text-xs font-mono tracking-wider uppercase bg-white border border-[#DDD6CB] text-[#202C2C] font-bold shadow-sm">
                 {item.categoryLabel}
               </span>
-              <span className="w-8 h-8 rounded-full bg-white/95 backdrop-blur-md border border-[#E3EBE7] text-[#438E88] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-sm">
+              <span className="w-8 h-8 rounded-full bg-white border border-[#DDD6CB] text-[#087F75] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-sm">
                 <Maximize2 className="w-4 h-4" />
               </span>
             </div>
 
             {/* Bottom Info Overlay */}
             <div className="absolute bottom-4 left-4 right-4 space-y-1">
-              <div className="text-[11px] font-mono text-[#E4F2EF] font-bold">
+              <div className="text-xs font-mono text-[#F5EBDD] font-bold">
                 {item.vehicle} • {item.service}
               </div>
-              <h4 className="text-base font-serif font-bold text-white group-hover:text-[#E4F2EF] transition-colors line-clamp-1">
+              <h4 className="text-base sm:text-lg font-serif font-bold text-white group-hover:text-[#F5EBDD] transition-colors line-clamp-1">
                 {item.title}
               </h4>
             </div>

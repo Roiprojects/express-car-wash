@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, Calendar, ChevronDown, Sparkles, Car } from 'lucide-react';
+import { Menu, X, Phone, Calendar, ChevronDown, Car } from 'lucide-react';
 import MobileNavigation from './MobileNavigation';
 
 interface HeaderProps {
@@ -27,11 +27,10 @@ export default function Header({ onOpenBooking }: HeaderProps) {
   return (
     <>
       {/* 
-        PREMIUM LIGHT-THEME HEADER
-        Solid pure white background, subtle mint/slate border, soft elevation shadow.
-        Completely separate container in normal flow above the hero.
+        WARM CREAM THEME NAVIGATION BAR
+        Background: #FFF9EF, Border: #DDD6CB, Text: #202C2C, Accent: #087F75
       */}
-      <header className="sticky top-0 z-50 w-full h-[72px] md:h-[80px] bg-white border-b border-[#E3EBE7] flex items-center shadow-[0_2px_14px_rgba(37,60,66,0.06)]">
+      <header className="sticky top-0 z-50 w-full h-[74px] md:h-[82px] bg-[#FFF9EF] border-b border-[#DDD6CB] flex items-center shadow-[0_2px_12px_rgba(32,44,44,0.04)]">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Brand Logo & Title */}
@@ -40,36 +39,36 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               className="group flex items-center gap-3 focus:outline-none rounded-xl"
             >
               {/* Teal Icon Badge */}
-              <div className="w-10 h-10 md:w-11 md:h-11 rounded-2xl bg-[#438E88] flex items-center justify-center shadow-md shadow-[#438E88]/25 group-hover:scale-105 group-hover:bg-[#32766F] transition-all duration-300">
+              <div className="w-10 h-10 md:w-11 md:h-11 rounded-2xl bg-[#087F75] flex items-center justify-center shadow-md shadow-[#087F75]/25 group-hover:scale-105 group-hover:bg-[#06665F] transition-all duration-300">
                 <Car className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif font-bold text-base md:text-lg tracking-tight text-[#253C42] group-hover:text-[#438E88] transition-colors leading-tight">
+                <span className="font-serif font-bold text-base md:text-lg tracking-tight text-[#202C2C] group-hover:text-[#087F75] transition-colors leading-tight">
                   Kousalya&apos;s Express Car Wash
                 </span>
-                <span className="text-[11px] md:text-xs text-[#62747A] tracking-wide font-medium">
+                <span className="text-xs text-[#52615E] tracking-wide font-medium">
                   Car, Bike, PPF &amp; Detailing
                 </span>
               </div>
             </Link>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {/* Desktop Navigation Links - High Contrast & 15px readable text */}
+            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-3.5 py-1.5 rounded-full text-xs xl:text-sm font-semibold tracking-wide transition-all duration-200 flex items-center gap-1 ${
+                    className={`relative px-4 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 flex items-center gap-1.5 ${
                       isActive
-                        ? 'bg-[#E4F2EF] text-[#438E88] font-bold shadow-sm'
-                        : 'text-[#253C42] hover:text-[#438E88] hover:bg-[#F1F7F3]'
+                        ? 'bg-[#F5EBDD] text-[#087F75] font-bold shadow-sm'
+                        : 'text-[#202C2C] hover:text-[#087F75] hover:bg-[#F5EBDD]'
                     }`}
                   >
                     <span>{link.label}</span>
                     {link.hasDropdown && (
-                      <ChevronDown className={`w-3.5 h-3.5 ${isActive ? 'text-[#438E88]' : 'text-[#62747A]'}`} />
+                      <ChevronDown className={`w-3.5 h-3.5 ${isActive ? 'text-[#087F75]' : 'text-[#52615E]'}`} />
                     )}
                   </Link>
                 );
@@ -80,18 +79,18 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             <div className="hidden sm:flex items-center gap-3">
               <a
                 href="tel:7022338693"
-                className="flex items-center gap-2 text-xs md:text-sm font-semibold text-[#253C42] hover:text-[#438E88] px-4 py-2 rounded-full border border-[#E3EBE7] bg-white hover:border-[#438E88]/40 hover:bg-[#F1F7F3] shadow-sm transition-all"
+                className="flex items-center gap-2 text-sm font-semibold text-[#202C2C] hover:text-[#087F75] px-4 py-2 rounded-full border border-[#DDD6CB] bg-white hover:border-[#087F75]/50 hover:bg-[#F5EBDD] shadow-sm transition-all"
                 title="Call Kousalya's Express Car Wash (+91 70223 38693)"
               >
-                <Phone className="w-3.5 h-3.5 text-[#438E88]" />
+                <Phone className="w-4 h-4 text-[#087F75]" />
                 <span>+91 70223 38693</span>
               </a>
 
               <button
                 onClick={onOpenBooking}
-                className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#438E88] hover:bg-[#32766F] text-white font-bold text-xs md:text-sm tracking-wide shadow-md shadow-[#438E88]/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-sm tracking-wide shadow-md shadow-[#087F75]/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
-                <Calendar className="w-3.5 h-3.5" />
+                <Calendar className="w-4 h-4" />
                 <span>Book Wash</span>
               </button>
             </div>
@@ -100,13 +99,13 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             <div className="flex items-center gap-2 lg:hidden">
               <button
                 onClick={onOpenBooking}
-                className="sm:hidden px-3.5 py-1.5 rounded-full bg-[#438E88] text-white font-bold text-xs shadow-sm"
+                className="sm:hidden px-4 py-2 rounded-full bg-[#087F75] text-white font-bold text-xs shadow-sm hover:bg-[#06665F]"
               >
                 Book
               </button>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-xl bg-[#F1F7F3] border border-[#E3EBE7] text-[#253C42] hover:text-[#438E88] hover:border-[#438E88]/40 transition-colors"
+                className="p-2.5 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] hover:text-[#087F75] hover:border-[#087F75]/40 transition-colors shadow-sm"
                 aria-label="Toggle Mobile Menu"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -120,12 +119,11 @@ export default function Header({ onOpenBooking }: HeaderProps) {
       <MobileNavigation
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
-        links={NAV_LINKS}
-        currentPath={pathname}
         onOpenBooking={() => {
           setIsMobileMenuOpen(false);
-          if (onOpenBooking) onOpenBooking();
+          onOpenBooking?.();
         }}
+        navLinks={NAV_LINKS}
       />
     </>
   );

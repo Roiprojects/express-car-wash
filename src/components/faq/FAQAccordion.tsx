@@ -34,10 +34,10 @@ export default function FAQAccordion() {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
+                className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
                   isActive
-                    ? 'bg-[#438E88] text-white shadow-sm'
-                    : 'bg-[#F1F7F3] text-[#62747A] hover:text-[#253C42] border border-[#E3EBE7]'
+                    ? 'bg-[#087F75] text-white shadow-sm'
+                    : 'bg-white text-[#202C2C] hover:text-[#087F75] border border-[#DDD6CB]'
                 }`}
               >
                 {cat.label}
@@ -48,19 +48,19 @@ export default function FAQAccordion() {
 
         {/* Search Input */}
         <div className="relative w-full md:w-72">
-          <Search className="w-4 h-4 text-[#62747A] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <Search className="w-4 h-4 text-[#52615E] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             placeholder="Search questions..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-full bg-[#F1F7F3] border border-[#E3EBE7] text-[#253C42] text-xs placeholder:text-[#62747A]/60 focus:outline-none focus:border-[#438E88] focus:bg-white"
+            className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] text-sm placeholder:text-[#52615E] focus:outline-none focus:border-[#087F75]"
           />
         </div>
       </div>
 
       {/* Accordion List */}
-      <div className="space-y-3">
+      <div className="space-y-3.5">
         {filteredFaqs.length > 0 ? (
           filteredFaqs.map((faq) => {
             const isOpen = expandedId === faq.id;
@@ -70,8 +70,8 @@ export default function FAQAccordion() {
                 key={faq.id}
                 className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'bg-white border-[#438E88] shadow-md'
-                    : 'bg-[#F1F7F3] border-[#E3EBE7] hover:border-[#438E88]/40'
+                    ? 'bg-[#FFF9EF] border-2 border-[#087F75]/70 shadow-md'
+                    : 'bg-white border-[#DDD6CB] hover:border-[#087F75]/50'
                 }`}
               >
                 <button
@@ -80,14 +80,14 @@ export default function FAQAccordion() {
                   aria-expanded={isOpen}
                   className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
                 >
-                  <span className="font-serif font-bold text-sm sm:text-base text-[#253C42]">
+                  <span className="font-serif font-bold text-base sm:text-lg text-[#202C2C]">
                     {faq.question}
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-200 ${
                       isOpen
-                        ? 'bg-[#438E88] text-white rotate-180'
-                        : 'bg-white text-[#438E88] border border-[#E3EBE7]'
+                        ? 'bg-[#087F75] text-white rotate-180'
+                        : 'bg-[#F5EBDD] text-[#087F75] border border-[#DDD6CB]'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -95,7 +95,7 @@ export default function FAQAccordion() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#62747A] leading-relaxed border-t border-[#E3EBE7] animate-in fade-in duration-200">
+                  <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-[#445452] leading-relaxed border-t border-[#DDD6CB] animate-in fade-in duration-200">
                     <p>{faq.answer}</p>
                   </div>
                 )}
@@ -103,33 +103,39 @@ export default function FAQAccordion() {
             );
           })
         ) : (
-          <div className="p-12 text-center rounded-2xl bg-[#F1F7F3] border border-[#E3EBE7]">
-            <p className="text-[#62747A] text-sm">
-              No matching questions found for &ldquo;{searchQuery}&rdquo;.
+          <div className="p-12 text-center rounded-3xl bg-white border border-[#DDD6CB] space-y-3">
+            <p className="text-[#445452] text-sm">
+              No answers matching &ldquo;{searchQuery}&rdquo;.
             </p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedCategory('all');
+              }}
+              className="px-4 py-2 rounded-full bg-[#087F75] text-white font-bold text-xs uppercase"
+            >
+              Clear Search &amp; Show All
+            </button>
           </div>
         )}
       </div>
 
-      {/* Bottom WhatsApp Help Banner */}
-      <div className="p-6 rounded-3xl bg-[#F1F7F3] border border-[#E3EBE7] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
-        <div>
-          <h4 className="text-base font-serif font-bold text-[#253C42]">
-            Have a question not listed above?
-          </h4>
-          <p className="text-xs text-[#62747A] mt-1">
-            Our workshop staff is available on WhatsApp to answer specific queries regarding your vehicle model and detailing requirements.
-          </p>
-        </div>
-
+      {/* Still Have Questions Box */}
+      <div className="p-8 rounded-3xl bg-white border border-[#DDD6CB] text-center space-y-4 shadow-sm">
+        <h4 className="font-serif font-bold text-xl text-[#202C2C]">
+          Still have a question regarding your car or bike?
+        </h4>
+        <p className="text-sm text-[#445452] max-w-lg mx-auto">
+          Our workshop managers answer WhatsApp queries throughout operating hours (8:00 AM – 8:30 PM).
+        </p>
         <a
-          href={generateQuickWhatsAppUrl('FAQ question enquiry')}
+          href={generateQuickWhatsAppUrl('I have a question about vehicle detailing')}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#438E88] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#32766F] transition-colors shadow-sm whitespace-nowrap"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#087F75] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#06665F] transition-colors shadow-sm"
         >
           <MessageSquare className="w-4 h-4 fill-current" />
-          <span>Ask on WhatsApp</span>
+          <span>Ask On WhatsApp</span>
         </a>
       </div>
     </div>

@@ -63,15 +63,15 @@ export default function WhyChooseUs() {
 
   return (
     <section
-      className="py-8 sm:py-10 bg-[#F1F7F3] border-t border-[#E3EBE7] relative overflow-hidden select-none"
+      className="py-8 sm:py-10 bg-[#F5EBDD] border-t border-[#DDD6CB] relative overflow-hidden select-none"
       aria-label="Why Choose Us"
     >
       {/* Compact Section Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 sm:mb-5 text-center">
-        <h2 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#253C42] tracking-tight">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 text-center">
+        <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#202C2C] tracking-tight">
           WHY CHOOSE US
         </h2>
-        <p className="mt-1 text-xs sm:text-sm text-[#62747A]">
+        <p className="mt-1 text-sm text-[#445452] font-medium">
           Complete care for your everyday car and bike.
         </p>
       </div>
@@ -79,8 +79,8 @@ export default function WhyChooseUs() {
       {/* Auto-scrolling Infinite Marquee */}
       <div className="relative w-full overflow-hidden">
         {/* Soft edge fade masks */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#F1F7F3] to-transparent z-10" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#F1F7F3] to-transparent z-10" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#F5EBDD] to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#F5EBDD] to-transparent z-10" />
 
         {/* Continuous Right-to-Left Scrolling Track */}
         <div
@@ -93,21 +93,21 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={`${feature.id}-${index}`}
-                className="flex-shrink-0 mx-1.5 sm:mx-2 w-[220px] sm:w-[240px]"
+                className="flex-shrink-0 mx-2 w-[230px] sm:w-[250px]"
               >
-                <div className="h-[175px] p-4 sm:p-4.5 rounded-2xl bg-white border border-[#E3EBE7] flex flex-col justify-start transition-all duration-300 shadow-[0_4px_16px_rgba(37,60,66,0.04)]">
-                  {/* Small Teal Icon */}
-                  <div className="w-8 h-8 rounded-xl bg-[#E4F2EF] text-[#438E88] flex items-center justify-center mb-3 shrink-0">
+                <div className="h-[180px] p-5 rounded-2xl bg-white border border-[#DDD6CB] flex flex-col justify-start transition-all duration-300 shadow-[0_4px_16px_rgba(32,44,44,0.04)]">
+                  {/* Small Teal Icon in Soft Beige Badge */}
+                  <div className="w-8 h-8 rounded-xl bg-[#F5EBDD] text-[#087F75] flex items-center justify-center mb-3 shrink-0">
                     <Icon className="w-4 h-4" />
                   </div>
 
                   {/* Short Heading */}
-                  <h3 className="text-sm font-serif font-bold text-[#253C42] leading-snug line-clamp-1">
+                  <h3 className="text-base font-serif font-bold text-[#202C2C] leading-snug line-clamp-1">
                     {feature.title}
                   </h3>
 
-                  {/* One or Two Lines of Description */}
-                  <p className="mt-1.5 text-xs text-[#62747A] leading-relaxed line-clamp-3">
+                  {/* One or Two Lines of Readable Description */}
+                  <p className="mt-1.5 text-xs sm:text-sm text-[#445452] leading-relaxed line-clamp-3">
                     {feature.description}
                   </p>
                 </div>
