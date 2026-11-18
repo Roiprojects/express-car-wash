@@ -81,7 +81,7 @@ export default function ServicesPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-4 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
-              <span>Kousalya&apos;s Express — Complete Automotive Menu</span>
+              <span>Express Car Wash — Complete Automotive Menu</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#202C2C] leading-tight tracking-tight">
               Every Service. <br />

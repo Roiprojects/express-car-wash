@@ -19,7 +19,7 @@ export default function TestimonialsPage() {
     e.preventDefault();
     if (!feedbackAuthor || !feedbackText) return;
 
-    const message = `Hello Kousalya's Express Detailing, here is my feedback on your service:\n\n• Name: ${feedbackAuthor}\n• Vehicle: ${feedbackVehicle}\n• Treatment: ${feedbackService}\n• Rating: ${feedbackRating}/5 Stars\n• Review: ${feedbackText}`;
+    const message = `Hello Express Car Wash, here is my feedback on your service:\n\n• Name: ${feedbackAuthor}\n• Vehicle: ${feedbackVehicle}\n• Treatment: ${feedbackService}\n• Rating: ${feedbackRating}/5 Stars\n• Review: ${feedbackText}`;
     const url = `https://wa.me/917022338693?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
     setIsSent(true);

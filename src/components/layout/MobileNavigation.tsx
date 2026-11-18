@@ -39,7 +39,7 @@ export default function MobileNavigation({
               </div>
               <div>
                 <span className="font-serif font-bold text-[#202C2C] text-base tracking-tight block">
-                  Kousalya&apos;s
+                  Express Car Wash
                 </span>
                 <span className="text-xs text-[#52615E] tracking-wide block font-medium">
                   Car, Bike, PPF &amp; Detailing

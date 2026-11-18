@@ -143,8 +143,8 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
             >
               <div className="relative w-full overflow-hidden rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] aspect-[16/10] bg-[#F5EBDD]">
                 <Image
-                  src="/images/hero/kousalyas-hero-vehicles.jpg"
-                  alt="Kousalya's Express Car Wash — Tata Nexon SUV, Bajaj Pulsar 150 Bike and Honda Activa Scooter in Bangalore Wash Bay"
+                  src="/images/hero/express-hero-vehicles.jpg"
+                  alt="Express Car Wash — Tata Nexon SUV, Bajaj Pulsar 150 Bike and Honda Activa Scooter in Bangalore Wash Bay"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 700px"

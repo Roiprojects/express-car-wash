@@ -120,7 +120,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: 'faq-17',
     category: 'branches',
-    question: 'Where are the 3 Kousalya’s Express Car Wash branches located?',
+    question: 'Where are the 3 Express Car Wash branches located?',
     answer: 'Our promotional posters advertise 3 operational branches across Bengaluru: Branch 01 (Main Detailing Studio & Coatings), Branch 02 (Express Wash & Two-Wheeler Bay), and Branch 03 (Accessories, Alloys & Audio Studio). Please connect with us on WhatsApp or call +91 7022338693 to verify exact landmark directions and bay availability before driving in.',
   },
 ];

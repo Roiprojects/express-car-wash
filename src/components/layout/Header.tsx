@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Calendar, ChevronDown, Car } from 'lucide-react';
 import MobileNavigation from './MobileNavigation';
+import { BUSINESS_CONFIG } from '@/data/business';
 
 interface HeaderProps {
   onOpenBooking?: () => void;
@@ -44,7 +45,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-base md:text-lg tracking-tight text-[#202C2C] group-hover:text-[#087F75] transition-colors leading-tight">
-                  Kousalya&apos;s Express Car Wash
+                  {BUSINESS_CONFIG.brandName}
                 </span>
                 <span className="text-xs text-[#52615E] tracking-wide font-medium">
                   Car, Bike, PPF &amp; Detailing
@@ -80,7 +81,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <a
                 href="tel:7022338693"
                 className="flex items-center gap-2 text-sm font-semibold text-[#202C2C] hover:text-[#087F75] px-4 py-2 rounded-full border border-[#DDD6CB] bg-white hover:border-[#087F75]/50 hover:bg-[#F5EBDD] shadow-sm transition-all"
-                title="Call Kousalya's Express Car Wash (+91 70223 38693)"
+                title={`Call ${BUSINESS_CONFIG.brandName} (${BUSINESS_CONFIG.phoneFormatted})`}
               >
                 <Phone className="w-4 h-4 text-[#087F75]" />
                 <span>+91 70223 38693</span>

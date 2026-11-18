@@ -45,20 +45,20 @@ export interface BusinessConfig {
   };
 }
 
+export const BUSINESS_NAME = "Express Car Wash";
+
 export const BUSINESS_CONFIG: BusinessConfig = {
-  brandName: "Kousalya's Express Car Wash",
-  shortBrandName: "Express Car Wash",
-  displayHeadlineName: "KOUSALYA'S EXPRESS",
+  brandName: BUSINESS_NAME,
+  shortBrandName: BUSINESS_NAME,
+  displayHeadlineName: "EXPRESS CAR WASH",
   legalEntityNotice:
-    "Promotional branding displays 'Kousalya's Express Car Wash'. Original workshop signboard displays 'ONE STOP Car & Bike Foam Wash SPA', 'Ex_press', and 'SLA GROUPS'. Both contact lines are actively maintained.",
+    "Express Car Wash provides complete car & bike care, detailing, paint protection, and accessories across Bengaluru.",
   establishedYear: 2015,
   establishedYearNote:
-    "Business poster reflects 'SINS: 2015' (Established 2015). Flagged for formal business documentation verification.",
+    "Serving Bengaluru drivers since 2015.",
   signboardAlternativeNames: [
-    "Kousalya's Car & Bike Services",
-    "Ex_press Car & Bike Detailing",
-    "ONE STOP Car & Bike Foam Wash SPA",
-    "SLA GROUPS"
+    "Express Car Wash",
+    "Express Car & Bike Detailing Spa"
   ],
   tagline: "Complete Car & Bike Care, Detailing, Paint Protection & Accessories.",
   heroHeadline: "COMPLETE CAR & BIKE CARE.\nALL IN ONE PLACE.",
