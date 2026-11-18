@@ -81,6 +81,28 @@ export default function VehicleSelector({
           })}
         </div>
       )}
+
+      {/* Sub-selector / Banner for Two-Wheelers */}
+      {vehicleType === 'bike' && (
+        <div className="p-4 rounded-2xl bg-[#0C1016] border border-[#252B34] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs animate-in fade-in duration-200">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent flex-shrink-0">
+              <Bike className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-white font-bold text-sm">Two-Wheeler & Motorcycle Bay</div>
+              <div className="text-[#738CAC] text-[11px] mt-0.5">
+                Calibrated low-pressure rinse, switchgear safety, chain degrease & blow-dry for all scooters & motorcycles (Activa, Jupiter, Pulsar, Splendor, Royal Enfield).
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 self-start sm:self-auto">
+            <span className="text-[11px] font-mono text-amber-300 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20 whitespace-nowrap">
+              Handwritten checks on board: Contact on WhatsApp
+            </span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

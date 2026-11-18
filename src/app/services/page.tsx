@@ -17,17 +17,51 @@ export default function ServicesPage() {
   const [carCategory, setCarCategory] = useState<CarCategory>('m_suv');
   const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
 
-  // Filter services by category and vehicle type
-  const filteredServices = SERVICES_DATA.filter((service) => {
-    // Check vehicle type
-    const matchesVehicle =
-      service.vehicleType === 'both' || service.vehicleType === vehicleType;
+  // Intelligent category selection with automatic vehicle type calibration
+  const handleSelectCategory = (cat: ServiceCategory) => {
+    setActiveCategory(cat);
+    if (cat === 'bike-wash' || (cat as string) === 'bike-washing') {
+      setVehicleType('bike');
+    } else if (cat === 'car-wash') {
+      setVehicleType('car');
+    }
+  };
 
-    // Check category
+  // Intelligent vehicle selector with auto-switch
+  const handleSelectVehicleType = (type: VehicleType) => {
+    setVehicleType(type);
+    if (type === 'bike' && activeCategory === 'car-wash') {
+      setActiveCategory('bike-wash');
+    } else if (type === 'car' && (activeCategory === 'bike-wash' || (activeCategory as string) === 'bike-washing')) {
+      setActiveCategory('car-wash');
+    }
+  };
+
+  // Robust filtering logic ensuring bike washing is NEVER empty
+  const isBikeCategory = activeCategory === 'bike-wash' || (activeCategory as string) === 'bike-washing';
+  const isCarCategory = activeCategory === 'car-wash';
+
+  const filteredServices = SERVICES_DATA.filter((service) => {
+    // 1. If Bike Washing category is selected, match all bike services
+    if (isBikeCategory) {
+      return service.category === 'bike-wash' || (service.category as string) === 'bike-washing' || service.vehicleType === 'bike';
+    }
+
+    // 2. If Car Washing category is selected, match car wash services
+    if (isCarCategory) {
+      return (service.category === 'car-wash' || (service.category as string) === 'car-washing') && (service.vehicleType === 'car' || service.vehicleType === 'both');
+    }
+
+    // 3. Category matching for other tabs
     const matchesCategory =
       activeCategory === 'all' || service.category === activeCategory;
 
-    return matchesVehicle && matchesCategory;
+    // 4. Vehicle type matching
+    const matchesVehicle =
+      service.vehicleType === 'both' ||
+      (vehicleType === 'bike' ? service.vehicleType === 'bike' : service.vehicleType === 'car');
+
+    return matchesCategory && matchesVehicle;
   });
 
   return (
@@ -57,7 +91,7 @@ export default function ServicesPage() {
         {/* Vehicle Classification Controller */}
         <VehicleSelector
           vehicleType={vehicleType}
-          onSelectVehicleType={(type) => setVehicleType(type)}
+          onSelectVehicleType={handleSelectVehicleType}
           carCategory={carCategory}
           onSelectCarCategory={(cat) => setCarCategory(cat)}
         />
@@ -66,7 +100,7 @@ export default function ServicesPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2">
           <ServiceFilter
             activeCategory={activeCategory}
-            onSelectCategory={(cat) => setActiveCategory(cat)}
+            onSelectCategory={handleSelectCategory}
           />
 
           <div className="flex items-center gap-2 self-start md:self-auto p-1 rounded-xl bg-[#13171D] border border-[#252B34]">
@@ -132,7 +166,11 @@ export default function ServicesPage() {
             )}
           </div>
         ) : (
-          <PricingTable onOpenBookingWithService={(id) => openBooking(id)} />
+          <PricingTable
+            onOpenBookingWithService={(id) => openBooking(id)}
+            activeCategory={activeCategory}
+            vehicleType={vehicleType}
+          />
         )}
       </section>
 

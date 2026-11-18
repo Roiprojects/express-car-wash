@@ -6,6 +6,7 @@ export type ServiceCategory =
   | 'all'
   | 'car-wash'
   | 'bike-wash'
+  | 'bike-washing'
   | 'interior'
   | 'polishing-waxing'
   | 'ceramic'
@@ -234,14 +235,13 @@ export const SERVICES_DATA: ServiceItem[] = [
     category: 'bike-wash',
     vehicleType: 'bike',
     popular: true,
-    badge: 'Two-Wheeler Special',
-    shortDescription: 'Safe low-pressure foam wash, chain degreasing, compressed air drying, and mirror polish for scooters & motorcycles.',
-    fullDescription: 'Dedicated two-wheeler spa protocol: delicate low pressures around handlebars and wiring looms, dual-bucket foam wash, chain cleaning, compressed air water extraction from switchgear, and tank polish.',
+    badge: 'Signboard Service',
+    shortDescription: 'Safe low-pressure active foam wash, chain degreasing, compressed air drying, and mirror polish for scooters & motorcycles.',
+    fullDescription: 'Dedicated two-wheeler spa protocol: calibrated low pressure to protect electrical switchgear, high-foaming active shampoo soak, drive chain cleaning, and thorough compressed air drying.',
     estimatedDuration: '30 – 45 mins',
     pricing: {
-      bike: 150,
-      isVerified: true,
-      statusNote: 'Baseline commuter scooter & motorcycle wash rate.',
+      isVerified: false,
+      statusNote: 'Signboard has handwritten correction. Contact on WhatsApp for current rate.',
     },
     features: [
       'Low-pressure rinse calibrated to protect electrical switchgear',
@@ -250,7 +250,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Compressed air drying for spark plugs, locks & switches',
       'Silicone polish on painted tank, mirrors & exhaust shield',
     ],
-    recommendedFor: 'Honda Activa, TVS Jupiter, Hero Splendor, Bajaj Pulsar, TVS Apache, Royal Enfield & all daily commuter bikes.',
+    recommendedFor: 'Honda Activa, TVS Jupiter, Hero Splendor, Bajaj Pulsar, TVS Apache, Royal Enfield & all daily commuter two-wheelers.',
     image: '/images/honda-activa.jpg',
   },
   {
@@ -259,17 +259,16 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: 'bike-diesel-wash',
     category: 'bike-wash',
     vehicleType: 'bike',
-    shortDescription: 'Heavy chain, sprocket, crankcase, and under-engine diesel wash to purge tar and chain lube muck.',
-    fullDescription: 'Designed for motorcycles caked in sling wax, chain grease, and highway mud. Carefully clears the swingarm, rear wheel hub, engine fins, and center stand.',
+    shortDescription: 'Heavy chain, sprocket, crankcase, and under-engine diesel wash to purge road tar, mud, and chain lube muck.',
+    fullDescription: 'Designed for motorcycles and scooters caked in road sling, chain grease, and highway mud. Carefully degreases swingarms, sprockets, engine sumps, and center stands.',
     estimatedDuration: '40 – 50 mins',
     pricing: {
-      bike: 250,
-      isVerified: true,
-      statusNote: 'Diesel emulsion degreasing for motorcycles.',
+      isVerified: false,
+      statusNote: 'Signboard has handwritten correction. Contact on WhatsApp for current rate.',
     },
     features: [
       'Diesel rinse for swingarm, chain cover & engine sump',
-      'Sprocket degreasing & mud removal',
+      'Sprocket degreasing & road tar removal',
       'Neutralizing bike foam bath',
       'Compressed air water blow-out from joints',
       'Fresh chain lube application recommendation',
@@ -279,17 +278,16 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
   {
     id: 'bike-waxing',
-    name: 'Bike Waxing & Gloss Polish',
+    name: 'Bike Waxing',
     slug: 'bike-waxing',
     category: 'bike-wash',
     vehicleType: 'bike',
     shortDescription: 'Carnauba wax protection on petrol tanks, fairings, visors, and matte/gloss trim preservation.',
-    fullDescription: 'Hand application of synthetic polymer or carnauba wax to protect motorcycle paint against sun fade, fuel spills around the tank filler neck, and daily water spots.',
+    fullDescription: 'Hand application of synthetic polymer or carnauba wax to protect motorcycle and scooter paint against sun fade, fuel spills around the tank filler neck, and daily water spots.',
     estimatedDuration: '30 – 45 mins',
     pricing: {
-      bike: 350,
       isVerified: false,
-      statusNote: 'Hand waxing & polish baseline quote.',
+      statusNote: 'Signboard has handwritten correction. Contact on WhatsApp for current rate.',
     },
     features: [
       'Pre-wax surface decontamination',
@@ -297,7 +295,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Visor & headlamp lens clarity buffing',
       'Matte paint / satin safe trim conditioner',
     ],
-    recommendedFor: 'Cruisers, sport commuters, and scooters wanting high paint gloss and UV protection.',
+    recommendedFor: 'Cruisers, commuters, and scooters wanting high paint gloss and UV protection.',
     image: '/images/honda-activa.jpg',
   },
   {
@@ -311,7 +309,6 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: 'Comprehensive detailing covering every visible nut, bolt, spoke, and cooling fin. Cleans oxidation from alloy rims, headers, and applies protective sealant across all components.',
     estimatedDuration: '90 – 120 mins',
     pricing: {
-      bike: 800,
       isVerified: false,
       statusNote: 'Quoted on vehicle condition and engine complexity.',
     },

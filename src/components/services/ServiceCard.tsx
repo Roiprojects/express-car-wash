@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { ServiceItem, CarCategory } from '@/data/services';
 import { formatINR } from '@/lib/formatting';
-import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
+import { generateQuickWhatsAppUrl, generateBikeServiceWhatsAppUrl } from '@/lib/whatsapp';
 import { Clock, Check, MessageSquare, Calendar, ChevronDown, ChevronUp, AlertCircle, ShieldAlert } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -123,14 +123,22 @@ export default function ServiceCard({
                 {isCustomQuote
                   ? 'Quotation'
                   : service.vehicleType === 'bike'
-                  ? 'Bike Rate'
+                  ? 'Two-Wheeler Rate'
                   : `Car Rate (${selectedCarCategory.replace('_', ' ').toUpperCase()})`}
               </span>
               <div className="text-xl font-black text-white tracking-tight flex items-center gap-2">
-                <span>{isCustomQuote ? 'Custom Quote' : price ? formatINR(price) : 'Enquire'}</span>
+                <span>
+                  {isCustomQuote
+                    ? 'Custom Quote'
+                    : price
+                    ? formatINR(price)
+                    : service.vehicleType === 'bike'
+                    ? 'Contact for Price'
+                    : 'Enquire'}
+                </span>
                 {!isVerified && !isCustomQuote && (
                   <span className="text-[10px] font-mono text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 font-normal">
-                    Signboard ref
+                    {service.vehicleType === 'bike' ? 'Confirm rate' : 'Signboard ref'}
                   </span>
                 )}
               </div>
@@ -138,7 +146,11 @@ export default function ServiceCard({
 
             <div className="flex items-center gap-2">
               <a
-                href={generateQuickWhatsAppUrl(`Enquiry for ${service.name}`)}
+                href={
+                  service.vehicleType === 'bike'
+                    ? generateBikeServiceWhatsAppUrl(service.name)
+                    : generateQuickWhatsAppUrl(`Enquiry for ${service.name}`)
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-xl bg-[#19212A] hover:bg-[#252B34] text-accent border border-[#252B34] hover:border-accent transition-colors"
@@ -147,7 +159,17 @@ export default function ServiceCard({
                 <MessageSquare className="w-4 h-4 fill-current" />
               </a>
 
-              {isCustomQuote ? (
+              {service.vehicleType === 'bike' ? (
+                <a
+                  href={generateBikeServiceWhatsAppUrl(service.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-sm shadow-accent/20"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 fill-current" />
+                  <span>Enquire</span>
+                </a>
+              ) : isCustomQuote ? (
                 <a
                   href={generateQuickWhatsAppUrl(`Quote enquiry for ${service.name}`)}
                   target="_blank"

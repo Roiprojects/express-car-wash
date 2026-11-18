@@ -63,6 +63,18 @@ export function generateWhatsAppBookingUrl(payload: BookingEnquiryPayload): stri
 }
 
 /**
+ * WhatsApp enquiry specifically for Bike Services.
+ */
+export function generateBikeServiceWhatsAppUrl(serviceName: string): string {
+  const brand = BUSINESS_CONFIG.brandName;
+  const targetNumber = BUSINESS_CONFIG.whatsapp;
+
+  const message = `Hello ${brand}, I would like to enquire about ${serviceName} for my motorcycle/scooter. Please share the latest price and availability.`;
+
+  return `https://wa.me/${targetNumber}?text=${encodeURIComponent(message)}`;
+}
+
+/**
  * Direct WhatsApp enquiry for general questions, protection packages, accessories, or quick CTA clicks.
  */
 export function generateQuickWhatsAppUrl(customSubject?: string): string {
