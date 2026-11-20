@@ -28,10 +28,10 @@ export default function TestimonialsPage() {
   return (
     <div className="bg-[#FFF9EF]">
       {/* Page Hero */}
-      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
+      <section className="relative py-10 sm:py-12 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-4 font-bold border border-[#DDD6CB]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Verified Client Stories</span>
             </div>
@@ -39,7 +39,7 @@ export default function TestimonialsPage() {
               Driver Experiences. <br />
               <span className="text-[#087F75] italic font-serif">Honest Feedback.</span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-[#445452] leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-[#445452] leading-relaxed">
               Read authentic impressions from owners who entrust their vehicles to our detailing and wash bays.
             </p>
           </div>
@@ -47,15 +47,15 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Reviews Grid */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 bg-[#FFF9EF]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="py-10 sm:py-12 lg:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 bg-[#FFF9EF]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {REVIEWS_DATA.map((review) => (
             <div
               key={review.id}
-              className="p-8 rounded-3xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:shadow-xl transition-all duration-300"
+              className="p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:shadow-xl transition-all duration-300"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-1 text-[#087F75]">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-current text-[#087F75]" />
@@ -68,12 +68,12 @@ export default function TestimonialsPage() {
                   </span>
                 </div>
 
-                <p className="text-base text-[#202C2C] leading-relaxed font-normal">
+                <p className="text-sm sm:text-base text-[#202C2C] leading-relaxed font-normal">
                   &ldquo;{review.content}&rdquo;
                 </p>
               </div>
 
-              <div className="mt-8 pt-5 border-t border-[#DDD6CB] flex items-center justify-between">
+              <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-[#DDD6CB] flex items-center justify-between">
                 <div>
                   <h4 className="font-serif font-bold text-base text-[#202C2C]">{review.author}</h4>
                   <div className="text-sm text-[#087F75] mt-0.5 font-bold">
@@ -103,8 +103,8 @@ export default function TestimonialsPage() {
         </div>
 
         {/* Submit Review Card */}
-        <div id="submit-review" className="p-8 sm:p-10 rounded-3xl bg-[#F5EBDD] border border-[#DDD6CB] max-w-3xl mx-auto shadow-xl">
-          <div className="text-center max-w-md mx-auto mb-8">
+        <div id="submit-review" className="p-6 sm:p-8 rounded-2xl bg-[#F5EBDD] border border-[#DDD6CB] max-w-3xl mx-auto shadow-xl">
+          <div className="text-center max-w-md mx-auto mb-6">
             <span className="text-xs font-mono uppercase tracking-widest text-[#087F75] block mb-1 font-bold">
               Feedback Channel
             </span>

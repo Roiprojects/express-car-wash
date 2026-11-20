@@ -8,11 +8,11 @@ import { BUSINESS_CONFIG } from '@/data/business';
 
 export default function AboutPreview() {
   return (
-    <section className="py-20 lg:py-28 bg-[#FFF9EF] border-t border-[#DDD6CB] relative overflow-hidden">
+    <section className="py-10 md:py-12 lg:py-14 bg-[#FFF9EF] border-t border-[#DDD6CB] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Editorial & Story */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-5">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] text-xs font-mono uppercase tracking-widest font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Complete Automotive Care Hub</span>
@@ -23,7 +23,7 @@ export default function AboutPreview() {
               <span className="text-[#087F75] italic font-serif">Complete Craft.</span>
             </h2>
 
-            <div className="space-y-4 text-[#445452] text-base sm:text-lg leading-relaxed">
+            <div className="space-y-3 text-[#445452] text-base sm:text-lg leading-relaxed">
               <p>
                 At {BUSINESS_CONFIG.brandName}, we see automotive care not as a rushed 10-minute wipe, but as a comprehensive sanctuary for your vehicle. From everyday foam washing to self-healing Paint Protection Film (PPF), 9H/10H ceramic coatings, color change wraps, audio installations, and body tinkering — we bring all essential vehicle services under one trusted roof.
               </p>
@@ -33,7 +33,7 @@ export default function AboutPreview() {
             </div>
 
             {/* Key Differentiators */}
-            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-sm sm:text-base">
+            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm sm:text-base">
               {[
                 'Self-healing PPF & 9H/10H ceramic coatings',
                 'Advertised 45m+ precision wash standards',

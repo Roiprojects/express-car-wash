@@ -15,8 +15,8 @@ export default function Footer() {
       {/* Subtle top teal accent line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-[2px] bg-gradient-to-r from-transparent via-[#087F75]/40 to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#DDD6CB]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 pb-8 sm:pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8 pb-8 sm:pb-10 border-b border-[#DDD6CB]">
           {/* Brand & Overview */}
           <div className="lg:col-span-2 space-y-4">
             <div className="space-y-3">
@@ -167,7 +167,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#52615E]">
+        <div className="pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-[#52615E]">
           <p>
             © {currentYear} {BUSINESS_CONFIG.brandName}. All rights reserved. Car &amp; Bike Detailing, Paint Protection &amp; Accessories.
           </p>

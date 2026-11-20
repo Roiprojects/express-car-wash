@@ -24,10 +24,10 @@ export default function BrandLogo({
   const shouldReduceMotion = useReducedMotion();
 
   // Dimensions based on trimmed 929:763 aspect ratio (~1.2175:1)
-  // md is tuned for the main navbar: 55px mobile, 68px tablet, 80px desktop
+  // md is tuned for the main navbar: 52px mobile, 60px tablet, 70px desktop (within 64-78px navbar)
   const imageDimensions = {
-    sm: { width: 67, height: 55, className: 'w-[55px] h-[45px] sm:w-[67px] sm:h-[55px]' },
-    md: { width: 98, height: 80, className: 'w-[67px] h-[55px] md:w-[83px] md:h-[68px] lg:w-[98px] lg:h-[80px]' },
+    sm: { width: 58, height: 48, className: 'w-[52px] h-[42px] sm:w-[58px] sm:h-[48px]' },
+    md: { width: 86, height: 70, className: 'w-[64px] h-[52px] sm:w-[73px] sm:h-[60px] lg:w-[86px] lg:h-[70px]' },
     lg: { width: 110, height: 90, className: 'w-[90px] h-[74px] md:w-[110px] md:h-[90px]' },
     xl: { width: 244, height: 200, className: 'w-[180px] sm:w-[220px] md:w-[244px] h-auto' },
   }[size];

@@ -14,12 +14,12 @@ function TestimonialCard({
 }) {
   return (
     <div
-      className="w-[85vw] max-w-[340px] sm:w-[360px] md:w-[380px] lg:w-[410px] shrink-0 p-7 sm:p-8 rounded-3xl bg-white border border-[#DDD6CB] flex flex-col justify-between shadow-[0_8px_30px_rgba(32,44,44,0.05)] min-h-[290px] sm:min-h-[300px] select-none transition-colors duration-300"
+      className="w-[85vw] max-w-[340px] sm:w-[360px] md:w-[380px] lg:w-[410px] shrink-0 p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] flex flex-col justify-between shadow-[0_8px_30px_rgba(32,44,44,0.05)] min-h-[240px] sm:min-h-[250px] select-none transition-colors duration-300"
       {...(isDuplicate ? { tabIndex: -1 } : {})}
     >
       <div>
         {/* Star Rating & Verified Indicator */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-1">
             {[...Array(review.rating)].map((_, i) => (
               <Star key={i} className="w-4 h-4 fill-current text-[#087F75]" />
@@ -31,14 +31,14 @@ function TestimonialCard({
           </div>
         </div>
 
-        {/* Review Quote - Comfortable 16px font size */}
-        <p className="text-base text-[#202C2C] leading-relaxed line-clamp-4 font-normal">
+        {/* Review Quote - Comfortable 15px font size */}
+        <p className="text-sm sm:text-base text-[#202C2C] leading-relaxed line-clamp-4 font-normal">
           &ldquo;{review.content}&rdquo;
         </p>
       </div>
 
       {/* Reviewer Details */}
-      <div className="mt-6 pt-4 border-t border-[#DDD6CB]">
+      <div className="mt-4 pt-3 border-t border-[#DDD6CB]">
         <div className="font-serif font-bold text-base text-[#202C2C]">{review.author}</div>
         <div className="text-sm text-[#087F75] mt-0.5 font-bold">
           {review.vehicle}
@@ -56,11 +56,11 @@ export default function TestimonialsPreview() {
 
   return (
     <section
-      className="py-20 lg:py-28 bg-[#FFF9EF] border-t border-[#DDD6CB] relative overflow-hidden"
+      className="py-10 md:py-12 lg:py-14 bg-[#FFF9EF] border-t border-[#DDD6CB] relative overflow-hidden"
       aria-label="What Our Drivers Say"
     >
       {/* Stationary Section Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
@@ -93,7 +93,7 @@ export default function TestimonialsPreview() {
 
         {/* Dual Sequence Infinite Conveyor */}
         <div className="animate-testimonials-marquee flex items-stretch">
-          <div className="flex gap-6 shrink-0 pr-6 items-stretch">
+          <div className="flex gap-4 sm:gap-5 shrink-0 pr-4 sm:pr-5 items-stretch">
             {sequence.map((review, idx) => (
               <TestimonialCard
                 key={`primary-${review.id}-${idx}`}
@@ -103,7 +103,7 @@ export default function TestimonialsPreview() {
           </div>
 
           <div
-            className="flex gap-6 shrink-0 pr-6 items-stretch"
+            className="flex gap-4 sm:gap-5 shrink-0 pr-4 sm:pr-5 items-stretch"
             aria-hidden="true"
           >
             {sequence.map((review, idx) => (
@@ -118,8 +118,8 @@ export default function TestimonialsPreview() {
       </div>
 
       {/* Stationary Review Honesty & Submission Callout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
-        <div className="p-6 sm:p-7 rounded-3xl bg-white border border-[#DDD6CB] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8">
+        <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#DDD6CB] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
           <div className="space-y-1">
             <h4 className="text-base font-serif font-bold text-[#202C2C]">
               {TESTIMONIALS_CONFIG.sectionNotice}

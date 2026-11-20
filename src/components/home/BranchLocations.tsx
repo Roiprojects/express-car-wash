@@ -7,10 +7,10 @@ import { generateBranchWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function BranchLocations() {
   return (
-    <section className="py-20 lg:py-28 bg-[#FFF9EF] border-t border-[#DDD6CB] relative overflow-hidden">
+    <section className="py-10 md:py-12 lg:py-14 bg-[#FFF9EF] border-t border-[#DDD6CB] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
             <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
             <span>{BRANCHES_SECTION_CONFIG.eyebrow}</span>
@@ -18,17 +18,17 @@ export default function BranchLocations() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#202C2C] leading-tight tracking-tight">
             Find Your <span className="text-[#087F75] italic font-serif">Nearest Branch.</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#445452] leading-relaxed">
+          <p className="mt-3 text-base sm:text-lg text-[#445452] leading-relaxed">
             {BRANCHES_SECTION_CONFIG.subtitle}
           </p>
         </div>
 
         {/* 2 Branches Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-5xl">
           {BRANCHES_DATA.map((branch) => (
             <div
               key={branch.id}
-              className="group p-8 rounded-3xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between transition-all duration-300 shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:-translate-y-1 hover:shadow-xl relative"
+              className="group p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between transition-all duration-300 shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:-translate-y-1 hover:shadow-xl relative"
             >
               <div>
                 {/* Top Badge & Number */}

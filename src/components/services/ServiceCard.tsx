@@ -62,7 +62,7 @@ export default function ServiceCard({
       </div>
 
       {/* Content Area */}
-      <div className="p-7 flex flex-col flex-grow justify-between">
+      <div className="p-4 sm:p-5 flex flex-col flex-grow justify-between">
         <div>
           <div className="flex items-start justify-between gap-2">
             <h3 className="text-xl font-serif font-bold text-[#202C2C] group-hover:text-[#087F75] transition-colors leading-snug">
@@ -73,13 +73,13 @@ export default function ServiceCard({
             </span>
           </div>
 
-          <p className="mt-3 text-sm text-[#445452] leading-relaxed">
+          <p className="mt-2.5 text-sm text-[#445452] leading-relaxed">
             {service.shortDescription}
           </p>
 
           {/* Regulatory / Service notice if present */}
           {service.notice && (
-            <div className="mt-3 p-3 rounded-2xl bg-[#F5EBDD] border border-[#DDD6CB] text-[#087F75] text-xs flex items-start gap-2">
+            <div className="mt-2.5 p-3 rounded-2xl bg-[#F5EBDD] border border-[#DDD6CB] text-[#087F75] text-xs flex items-start gap-2">
               <ShieldAlert className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#087F75]" />
               <span className="font-semibold">{service.notice}</span>
             </div>
@@ -87,11 +87,11 @@ export default function ServiceCard({
 
           {/* Expandable full description */}
           {isExpanded && (
-            <div className="mt-4 pt-4 border-t border-[#DDD6CB] space-y-3 animate-in fade-in duration-200">
+            <div className="mt-3.5 pt-3.5 border-t border-[#DDD6CB] space-y-2.5 animate-in fade-in duration-200">
               <p className="text-sm text-[#445452] leading-relaxed">
                 {service.fullDescription}
               </p>
-              <div className="space-y-2 pt-1">
+              <div className="space-y-1.5 pt-1">
                 <span className="text-xs font-mono text-[#087F75] uppercase tracking-wider block font-bold">
                   Package Inclusions:
                 </span>
@@ -108,7 +108,7 @@ export default function ServiceCard({
           <button
             type="button"
             onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-3 text-xs sm:text-sm font-bold text-[#087F75] hover:text-[#06665F] flex items-center gap-1 focus:outline-none"
+            className="mt-2.5 text-xs sm:text-sm font-bold text-[#087F75] hover:text-[#06665F] flex items-center gap-1 focus:outline-none"
           >
             <span>{isExpanded ? 'Show less' : 'View treatment details & steps'}</span>
             {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -116,7 +116,7 @@ export default function ServiceCard({
         </div>
 
         {/* Pricing & Booking Row */}
-        <div className="mt-7 pt-5 border-t border-[#DDD6CB] space-y-4">
+        <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-[#DDD6CB] space-y-3">
           <div className="flex items-end justify-between">
             <div>
               <span className="text-xs font-mono uppercase tracking-wider text-[#52615E] block font-semibold">

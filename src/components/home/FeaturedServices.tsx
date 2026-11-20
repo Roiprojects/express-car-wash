@@ -27,10 +27,10 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
   const featuredServices = SERVICES_DATA.filter((s) => featuredIds.includes(s.id));
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FFF9EF] border-t border-[#DDD6CB] relative">
+    <section className="py-10 md:py-12 lg:py-14 bg-[#FFF9EF] border-t border-[#DDD6CB] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-4">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
@@ -55,7 +55,7 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
         </div>
 
         {/* 8-Card Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {featuredServices.map((service) => {
             const startingPrice =
               service.vehicleType === 'bike'
@@ -65,7 +65,7 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
             return (
               <div
                 key={service.id}
-                className="group relative flex flex-col justify-between rounded-3xl bg-white border border-[#DDD6CB] hover:border-[#087F75] overflow-hidden shadow-[0_4px_20px_rgba(32,44,44,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-white border border-[#DDD6CB] hover:border-[#087F75] overflow-hidden shadow-[0_4px_20px_rgba(32,44,44,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 {/* Service Card Image */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F5EBDD]">
@@ -92,16 +92,16 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
                 </div>
 
                 {/* Service Details */}
-                <div className="p-6 flex flex-col flex-grow justify-between">
+                <div className="p-4 sm:p-5 flex flex-col flex-grow justify-between">
                   <div>
                     <h3 className="text-lg font-serif font-bold text-[#202C2C] group-hover:text-[#087F75] transition-colors leading-snug">
                       {service.name}
                     </h3>
-                    <p className="mt-2.5 text-sm text-[#445452] line-clamp-3 leading-relaxed">
+                    <p className="mt-2 text-sm text-[#445452] line-clamp-3 leading-relaxed">
                       {service.shortDescription}
                     </p>
 
-                    <div className="mt-3.5 flex items-center gap-2 text-xs sm:text-sm text-[#52615E]">
+                    <div className="mt-3 flex items-center gap-2 text-xs sm:text-sm text-[#52615E]">
                       <span className="flex items-center gap-1 font-semibold">
                         <Clock className="w-3.5 h-3.5 text-[#087F75]" />
                         {service.estimatedDuration}
@@ -114,7 +114,7 @@ export default function FeaturedServices({ onOpenBookingWithService }: FeaturedS
                   </div>
 
                   {/* Price & Action Row */}
-                  <div className="mt-6 pt-4 border-t border-[#DDD6CB] flex items-center justify-between gap-2">
+                  <div className="mt-4 sm:mt-5 pt-3.5 border-t border-[#DDD6CB] flex items-center justify-between gap-2">
                     <div>
                       <span className="block text-xs uppercase font-mono tracking-wider text-[#52615E] font-semibold">
                         Baseline

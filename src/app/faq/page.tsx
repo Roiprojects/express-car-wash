@@ -12,10 +12,10 @@ export default function FAQPage() {
   return (
     <div className="bg-[#FFF9EF]">
       {/* Page Hero */}
-      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
+      <section className="relative py-10 sm:py-12 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-4 font-bold border border-[#DDD6CB]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Clarity, Timelines &amp; Procedures</span>
             </div>
@@ -23,7 +23,7 @@ export default function FAQPage() {
               Frequently Asked <br />
               <span className="text-[#087F75] italic font-serif">Questions.</span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-[#445452] leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-[#445452] leading-relaxed">
               Find transparent answers regarding vehicle turnaround durations, paint-safe chemistry, vehicle classifications, and appointment scheduling.
             </p>
           </div>
@@ -31,9 +31,9 @@ export default function FAQPage() {
       </section>
 
       {/* Accordion Section */}
-      <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-10 sm:py-12 lg:py-14 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
         {/* Signboard Notice Callout */}
-        <div className="p-6 rounded-3xl bg-white border border-[#DDD6CB] space-y-3 shadow-sm">
+        <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#DDD6CB] space-y-2.5 shadow-sm">
           <div className="flex items-center gap-2.5 text-[#087F75] font-bold text-sm sm:text-base">
             <Clock className="w-5 h-5 text-[#087F75]" />
             <span className="text-[#202C2C]">Advertised Workshop Notice: 45-Minute Minimum Standard</span>

@@ -24,7 +24,7 @@ export default function PricingTable({
   const bikeServices = SERVICES_DATA.filter((s) => s.vehicleType === 'bike' && (activeCategory === 'all' || s.category === activeCategory));
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-8">
       {/* Bike Detailing Price Matrix */}
       {showBikeTable && (
         <div className="animate-in fade-in duration-200">

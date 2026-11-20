@@ -48,7 +48,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-7 sm:p-9 rounded-3xl bg-white border border-[#DDD6CB] space-y-6 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
+    <form onSubmit={handleSubmit} className="p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] space-y-4 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
       <div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-2 font-bold border border-[#DDD6CB]">
           <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />

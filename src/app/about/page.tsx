@@ -40,10 +40,10 @@ export default function AboutPage() {
   return (
     <div className="bg-[#FFF9EF]">
       {/* Editorial Page Hero */}
-      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
+      <section className="relative py-10 sm:py-12 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-4 font-bold border border-[#DDD6CB]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Brand Heritage &amp; Detailing Standards — Est. 2015</span>
             </div>
@@ -51,7 +51,7 @@ export default function AboutPage() {
               The Story Behind <br />
               <span className="text-[#087F75] italic font-serif">{BUSINESS_CONFIG.brandName}.</span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-[#445452] leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-[#445452] leading-relaxed">
               Founded in 2015, we began with a single conviction: vehicle care should not scratch paint or rush through dirty panels. Today, across 2 branches in Bengaluru, we have evolved into a comprehensive automotive hub spanning precision foam washes, self-healing PPF, ceramic shields, vehicle wrapping, bodywork (tinkering &amp; painting), and styling accessories.
             </p>
           </div>
@@ -59,10 +59,10 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Clarification & Story */}
-      <section className="py-20 bg-[#FFF9EF]">
+      <section className="py-10 sm:py-12 lg:py-14 bg-[#FFF9EF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            <div className="lg:col-span-6 space-y-4 sm:space-y-5">
               <h2 className="text-2xl sm:text-4xl font-serif font-bold text-[#202C2C] leading-snug">
                 Crafted for Passionate Automotive Owners
               </h2>
@@ -113,9 +113,9 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-20 bg-[#F5EBDD] border-t border-[#DDD6CB]">
+      <section className="py-10 sm:py-12 lg:py-14 bg-[#F5EBDD] border-t border-[#DDD6CB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-4xl font-serif font-bold text-[#202C2C]">
               Our Detailing Core Values
             </h2>
@@ -124,8 +124,8 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-7 rounded-3xl bg-white border border-[#DDD6CB] space-y-3 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] space-y-3 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
               <div className="w-10 h-10 rounded-2xl bg-[#F5EBDD] flex items-center justify-center text-[#087F75]">
                 <Clock className="w-5 h-5 text-[#087F75]" />
               </div>
@@ -135,7 +135,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl bg-white border border-[#DDD6CB] space-y-3 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] space-y-3 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
               <div className="w-10 h-10 rounded-2xl bg-[#F5EBDD] flex items-center justify-center text-[#087F75]">
                 <Droplets className="w-5 h-5 text-[#087F75]" />
               </div>
@@ -145,7 +145,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl bg-white border border-[#DDD6CB] space-y-3 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] space-y-3 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
               <div className="w-10 h-10 rounded-2xl bg-[#F5EBDD] flex items-center justify-center text-[#087F75]">
                 <Award className="w-5 h-5 text-[#087F75]" />
               </div>
@@ -159,9 +159,9 @@ export default function AboutPage() {
       </section>
 
       {/* 4-Stage Process Timeline */}
-      <section className="py-24 bg-[#FFF9EF] border-t border-[#DDD6CB]">
+      <section className="py-10 sm:py-12 lg:py-14 bg-[#FFF9EF] border-t border-[#DDD6CB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mb-6 sm:mb-8">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Standard Operational Workflow</span>
@@ -174,11 +174,11 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {processStages.map((stage) => (
               <div
                 key={stage.step}
-                className="relative p-7 rounded-3xl bg-white border border-[#DDD6CB] flex flex-col justify-between shadow-sm"
+                className="relative p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] flex flex-col justify-between shadow-sm"
               >
                 <div>
                   <div className="font-mono text-3xl font-black text-[#087F75] mb-4">

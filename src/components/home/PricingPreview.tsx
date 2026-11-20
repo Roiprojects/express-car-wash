@@ -24,10 +24,10 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
   const carServices = SERVICES_DATA.filter((s) => highlightedServiceIds.includes(s.id));
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FFF9EF] border-t border-[#DDD6CB] relative">
+    <section className="py-10 md:py-12 lg:py-14 bg-[#FFF9EF] border-t border-[#DDD6CB] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EBDD] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
@@ -73,7 +73,7 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
         </div>
 
         {/* Selected Category Info Banner */}
-        <div className="mb-8 p-4 rounded-2xl bg-white border border-[#DDD6CB] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm shadow-sm">
+        <div className="mb-6 p-3.5 sm:p-4 rounded-2xl bg-white border border-[#DDD6CB] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm shadow-sm">
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#087F75]" />
             <span className="font-bold text-[#202C2C]">
@@ -94,7 +94,7 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {carServices.map((service) => {
             const price = service.pricing[selectedCategory];
             const isVerified = service.pricing.isVerified;
@@ -102,10 +102,10 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
             return (
               <div
                 key={service.id}
-                className="p-7 rounded-3xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between transition-all duration-300 group shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:shadow-xl hover:-translate-y-1"
+                className="p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] hover:border-[#087F75] flex flex-col justify-between transition-all duration-300 group shadow-[0_8px_30px_rgba(32,44,44,0.05)] hover:shadow-xl hover:-translate-y-1"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3.5">
+                  <div className="flex items-center justify-between mb-3">
                     <span className="text-xs font-mono uppercase tracking-wider text-[#087F75] px-3 py-1 rounded-full bg-[#F5EBDD] font-bold border border-[#DDD6CB]">
                       {service.category.replace('-', ' ')}
                     </span>
@@ -120,12 +120,12 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
                     {service.name}
                   </h3>
 
-                  <p className="mt-2.5 text-sm text-[#445452] leading-relaxed line-clamp-2">
+                  <p className="mt-2 text-sm text-[#445452] leading-relaxed line-clamp-2">
                     {service.shortDescription}
                   </p>
 
                   {/* Key Features Bullet List */}
-                  <div className="mt-5 pt-4 border-t border-[#DDD6CB] space-y-2.5">
+                  <div className="mt-4 pt-3 border-t border-[#DDD6CB] space-y-2">
                     {service.features.slice(0, 3).map((feat, idx) => (
                       <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#202C2C] font-medium">
                         <Check className="w-4 h-4 text-[#087F75] flex-shrink-0" />
@@ -136,7 +136,7 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
                 </div>
 
                 {/* Bottom Row */}
-                <div className="mt-7 pt-4 border-t border-[#DDD6CB] flex items-center justify-between">
+                <div className="mt-5 pt-3.5 border-t border-[#DDD6CB] flex items-center justify-between">
                   <div>
                     <span className="text-xs font-mono uppercase tracking-wider text-[#52615E] block font-semibold">
                       Price ({selectedCategory.replace('_', ' ').toUpperCase()})

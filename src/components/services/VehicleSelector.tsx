@@ -18,9 +18,9 @@ export default function VehicleSelector({
   onSelectCarCategory,
 }: VehicleSelectorProps) {
   return (
-    <div className="p-5 sm:p-7 rounded-3xl bg-white border border-[#DDD6CB] space-y-4 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
+    <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#DDD6CB] space-y-3.5 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
       {/* Top Toggle: Car vs Bike */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#DDD6CB]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#DDD6CB]">
         <div>
           <span className="text-xs font-mono uppercase tracking-widest text-[#087F75] block font-bold">
             Vehicle Specification

@@ -66,14 +66,14 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
   };
 
   return (
-    <section className="relative w-full bg-[#FFF9EF] overflow-hidden pt-8 pb-7 sm:pt-10 sm:pb-8 lg:pt-14 lg:pb-8">
+    <section className="relative w-full bg-[#FFF9EF] overflow-hidden pt-6 pb-6 sm:pt-8 sm:pb-7 lg:pt-10 lg:pb-7">
       {/* Soft Ambient Warm Beige Organic Shapes */}
       <div className="absolute top-0 right-0 w-[55%] h-[85%] bg-gradient-to-bl from-[#F5EBDD]/80 via-[#F5EBDD]/40 to-transparent rounded-bl-[160px] pointer-events-none -z-0" />
       <div className="absolute -top-24 left-1/4 w-96 h-96 bg-[#F5EBDD]/50 rounded-full blur-3xl pointer-events-none -z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* TWO-COLUMN SPLIT SCREEN LAYOUT */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* LEFT COLUMN: 45% (col-span-5) */}
           <motion.div 
@@ -83,7 +83,7 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
             animate="visible"
           >
             {/* Eyebrow with horizontal line */}
-            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-4 sm:mb-5">
+            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-3 sm:mb-4">
               <span className="w-8 h-[2px] bg-[#087F75] inline-block" />
               <span className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#52615E] uppercase">
                 CAR &amp; BIKE CARE EXPERTS IN BENGALURU
@@ -93,7 +93,7 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
             {/* Main Headline - High Contrast Charcoal */}
             <motion.h1 
               variants={itemVariants} 
-              className="font-serif font-bold text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] text-[#202C2C] leading-[1.14] tracking-tight"
+              className="font-serif font-bold text-4xl sm:text-5xl lg:text-[52px] xl:text-[56px] text-[#202C2C] leading-[1.14] tracking-tight"
             >
               Your Vehicle Deserves <br />
               a <span className="text-[#087F75] italic font-serif">Fresh Start.</span>
@@ -102,17 +102,17 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
             {/* Subtext Paragraph - Crisp 17px/18px readable text */}
             <motion.p 
               variants={itemVariants} 
-              className="mt-5 sm:mt-6 text-base sm:text-lg text-[#445452] leading-relaxed max-w-lg font-normal"
+              className="mt-3.5 sm:mt-4 text-base sm:text-lg text-[#445452] leading-relaxed max-w-lg font-normal"
             >
               Professional car and bike washing, detailing and protection for your everyday ride.
             </motion.p>
 
             {/* Call To Action Buttons - Solid and High Contrast */}
-            <motion.div variants={itemVariants} className="mt-8 sm:mt-10 flex flex-wrap items-center gap-3.5 sm:gap-4">
+            <motion.div variants={itemVariants} className="mt-6 sm:mt-7 flex flex-wrap items-center gap-3 sm:gap-3.5">
               {/* Primary CTA: Explore Services */}
               <Link
                 href="/services"
-                className="group inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-base tracking-wide shadow-lg shadow-[#087F75]/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-sm sm:text-base tracking-wide shadow-md shadow-[#087F75]/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <LayoutGrid className="w-4 h-4 text-white" />
                 <span>Explore Services</span>
@@ -124,7 +124,7 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
                 href={generateQuickWhatsAppUrl('Hello! I would like to book a wash/detailing service.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-white hover:bg-[#F5EBDD] text-[#087F75] font-bold text-base tracking-wide border-2 border-[#087F75] shadow-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#F5EBDD] text-[#087F75] font-bold text-sm sm:text-base tracking-wide border-2 border-[#087F75] shadow-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <MessageSquare className="w-4 h-4 fill-current text-[#087F75]" />
                 <span>Book on WhatsApp</span>
@@ -217,9 +217,9 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="mt-8 sm:mt-10 lg:mt-12"
+          className="mt-6 sm:mt-7 lg:mt-8"
         >
-          <div className="w-full bg-[#F5EBDD] border border-[#DDD6CB] rounded-3xl lg:rounded-full px-5 sm:px-8 py-4 sm:py-5 flex flex-wrap items-center justify-between gap-4 sm:gap-6 shadow-sm">
+          <div className="w-full bg-[#F5EBDD] border border-[#DDD6CB] rounded-2xl lg:rounded-full px-4 sm:px-6 py-3 sm:py-3.5 flex flex-wrap items-center justify-between gap-3 sm:gap-5 shadow-sm">
             {/* Service 1: Foam Wash */}
             <div className="flex items-center gap-2.5">
               <Droplets className="w-5 h-5 text-[#087F75]" />

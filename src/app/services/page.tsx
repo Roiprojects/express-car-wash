@@ -76,10 +76,10 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#FFF9EF]">
       {/* Hero Header */}
-      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
+      <section className="relative py-10 sm:py-12 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-4 font-bold border border-[#DDD6CB]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Express Car Wash — Complete Automotive Menu</span>
             </div>
@@ -87,7 +87,7 @@ export default function ServicesPage() {
               Every Service. <br />
               <span className="text-[#087F75] italic font-serif">One Destination.</span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-[#445452] leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-[#445452] leading-relaxed">
               From everyday foam washes to self-healing PPF, 9H/10H ceramic shields, vehicle wrapping, bodywork tinkering &amp; painting, and performance accessories.
             </p>
           </div>
@@ -95,7 +95,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Main Interactive Catalog Section */}
-      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="py-8 sm:py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
         {/* Vehicle Classification Controller */}
         <VehicleSelector
           vehicleType={vehicleType}
@@ -170,7 +170,7 @@ export default function ServicesPage() {
         {viewMode === 'cards' ? (
           <div>
             {filteredServices.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                 {filteredServices.map((service) => (
                   <ServiceCard
                     key={service.id}

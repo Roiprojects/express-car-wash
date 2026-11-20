@@ -12,10 +12,10 @@ export default function InteractiveBeforeAfter() {
   const activeItem = BEFORE_AFTER_ITEMS[activeIndex];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#F5EBDD] border-t border-[#DDD6CB] relative">
+    <section className="py-10 md:py-12 lg:py-14 bg-[#F5EBDD] border-t border-[#DDD6CB] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
@@ -75,7 +75,7 @@ export default function InteractiveBeforeAfter() {
         </div>
 
         {/* Gallery Link */}
-        <div className="mt-12 text-center">
+        <div className="mt-6 sm:mt-8 text-center">
           <Link
             href="/gallery"
             className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#087F75] uppercase tracking-wider hover:text-[#06665F] transition-colors group"

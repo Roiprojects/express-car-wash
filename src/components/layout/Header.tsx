@@ -32,7 +32,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
         WARM CREAM THEME NAVIGATION BAR
         Background: #FFF9EF, Border: #DDD6CB, Text: #202C2C, Accent: #087F75
       */}
-      <header className="sticky top-0 z-50 w-full h-[76px] md:h-[88px] lg:h-[98px] bg-[#FFF9EF] border-b border-[#DDD6CB] flex items-center shadow-[0_2px_12px_rgba(32,44,44,0.04)]">
+      <header className="sticky top-0 z-50 w-full h-[64px] sm:h-[70px] lg:h-[78px] bg-[#FFF9EF] border-b border-[#DDD6CB] flex items-center shadow-[0_2px_12px_rgba(32,44,44,0.04)]">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-3 xl:gap-6 flex-nowrap">
             {/* Brand Logo & Title with HD Logo */}

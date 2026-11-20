@@ -150,7 +150,7 @@ export default function BeforeAfterSlider({ item, className = '' }: BeforeAfterS
       </div>
 
       {/* Info Card Below Slider */}
-      <div className="mt-6 p-6 sm:p-7 rounded-3xl bg-white border border-[#DDD6CB] flex flex-col md:flex-row md:items-center justify-between gap-5 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
+      <div className="mt-4 sm:mt-5 p-4 sm:p-5 rounded-2xl bg-white border border-[#DDD6CB] flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
             <span className="text-xs font-mono text-[#087F75] uppercase tracking-wider font-bold px-3 py-1 rounded-full bg-[#F5EBDD] border border-[#DDD6CB]">

@@ -13,10 +13,10 @@ export default function ContactPage() {
   return (
     <div className="bg-[#FFF9EF]">
       {/* Page Hero */}
-      <section className="relative py-16 sm:py-20 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
+      <section className="relative py-10 sm:py-12 overflow-hidden border-b border-[#DDD6CB] bg-[#F5EBDD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-4 font-bold border border-[#DDD6CB]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF9EF] text-[#087F75] text-xs font-mono uppercase tracking-widest mb-3 font-bold border border-[#DDD6CB]">
               <Sparkles className="w-3.5 h-3.5 text-[#087F75]" />
               <span>Workshop Access &amp; Bay Booking</span>
             </div>
@@ -24,7 +24,7 @@ export default function ContactPage() {
               Get in Touch. <br />
               <span className="text-[#087F75] italic font-serif">Visit Our Bays.</span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-[#445452] leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-[#445452] leading-relaxed">
               Connect directly with our detailing master technicians via WhatsApp, telephone, or schedule your vehicle visit using our interactive planner.
             </p>
           </div>
@@ -32,12 +32,12 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content: Info & Form */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#FFF9EF]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <section className="py-10 sm:py-12 lg:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#FFF9EF]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Column: Direct Info & Location */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-5 sm:space-y-6">
             {/* Quick Contact Cards */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-white border border-[#DDD6CB] space-y-6 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] space-y-4 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
               <h3 className="text-2xl font-serif font-bold text-[#202C2C]">Direct Communications</h3>
 
               <div className="space-y-4">
@@ -96,7 +96,7 @@ export default function ContactPage() {
             </div>
 
             {/* Hours & Minimum Time */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-[#F5EBDD] border border-[#DDD6CB] space-y-4 shadow-sm">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#F5EBDD] border border-[#DDD6CB] space-y-3.5 shadow-sm">
               <h3 className="text-xl font-serif font-bold text-[#202C2C]">Workshop Operating Hours</h3>
 
               <div className="space-y-3.5 text-sm">
