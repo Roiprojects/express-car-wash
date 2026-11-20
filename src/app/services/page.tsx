@@ -158,12 +158,20 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* Pricing Transparency Banner */}
-        <div className="p-5 rounded-2xl bg-white border border-[#DDD6CB] flex items-start gap-3.5 text-xs sm:text-sm text-[#445452] shadow-sm">
-          <AlertCircle className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
-          <p className="leading-relaxed">
-            <strong className="text-[#202C2C]">Workshop Pricing Integrity:</strong> All prices below represent the confirmed workshop signboard. Any handwritten notes or revisions (including full foam wash updates) are prominently flagged so you receive 100% transparent quotes over WhatsApp before work begins.
-          </p>
+        {/* Pricing Transparency & Vehicle-Dependent Terms Banner */}
+        <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#DDD6CB] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm text-[#445452] shadow-sm">
+          <div className="flex items-start gap-3">
+            <AlertCircle className="w-4 h-4 text-[#087F75] flex-shrink-0 mt-0.5" />
+            <p className="leading-relaxed">
+              <strong className="text-[#202C2C]">Workshop Pricing &amp; Service Terms:</strong> Rates vary by vehicle size and condition. Pre-wash cool-down applies to bikes, while cars follow strict dimensional brackets.
+            </p>
+          </div>
+          <a
+            href="/terms"
+            className="text-[#087F75] hover:text-[#06665F] font-bold text-xs uppercase tracking-wider shrink-0 whitespace-nowrap self-start sm:self-auto"
+          >
+            Read Vehicle Terms &rarr;
+          </a>
         </div>
 
         {/* Catalog Content (Cards or Table) */}

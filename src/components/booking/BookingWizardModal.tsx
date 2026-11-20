@@ -485,8 +485,24 @@ export default function BookingWizardModal({
                 )}
               </div>
 
-              <div className="text-xs text-[#445452] leading-relaxed bg-[#F5EBDD] p-3.5 rounded-2xl border border-[#DDD6CB]">
-                ℹ️ <strong>Booking Policy:</strong> Submitting this enquiry communicates your preferred slot to our staff. No payment is taken online; appointment is confirmed directly via WhatsApp. Payment is settled at the workshop after inspection.
+              <div className="text-xs text-[#445452] leading-relaxed bg-[#F5EBDD] p-3.5 rounded-2xl border border-[#DDD6CB] space-y-1.5">
+                <div>
+                  ℹ️ <strong>Booking Policy:</strong> Submitting this enquiry communicates your preferred slot to our staff. No payment is taken online; appointment is confirmed directly via WhatsApp. Payment is settled at the workshop after inspection.
+                </div>
+                <div className="pt-1.5 border-t border-[#DDD6CB] text-[11px] text-[#52615E]">
+                  <strong>Vehicle Terms Apply:</strong>{' '}
+                  {vehicleType === 'bike'
+                    ? 'Engine cool-down period and sensor-safe wash procedures observed.'
+                    : 'Rates calibrated to outer vehicle size. Personal valuables must be removed.'}{' '}
+                  <a
+                    href="/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#087F75] underline font-bold hover:text-[#06665F]"
+                  >
+                    Read Terms &amp; Conditions
+                  </a>
+                </div>
               </div>
             </div>
           )}

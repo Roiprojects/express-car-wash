@@ -78,6 +78,7 @@ export default function Footer() {
                 { href: '/gallery', label: 'Before & After Gallery' },
                 { href: '/testimonials', label: 'Client Reviews' },
                 { href: '/faq', label: 'Frequently Asked Questions' },
+                { href: '/terms', label: 'Terms & Conditions' },
                 { href: '/contact', label: 'Contact & Bay Visit' },
               ].map((link) => (
                 <li key={link.href}>
@@ -171,9 +172,12 @@ export default function Footer() {
           <p>
             © {currentYear} {BUSINESS_CONFIG.brandName}. All rights reserved. Car &amp; Bike Detailing, Paint Protection &amp; Accessories.
           </p>
-          <div className="flex items-center gap-6 font-medium">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 font-medium">
             <Link href="/services" className="hover:text-[#087F75] transition-colors">
               Pricing Transparency
+            </Link>
+            <Link href="/terms" className="hover:text-[#087F75] transition-colors">
+              Terms &amp; Conditions
             </Link>
             <Link href="/faq" className="hover:text-[#087F75] transition-colors">
               Service FAQ
