@@ -15,7 +15,7 @@ export default function FloatingContactButtons() {
 
   return (
     <div
-      className="fixed bottom-4 sm:bottom-6 left-4 sm:left-6 z-50 flex flex-col items-start gap-3 pointer-events-none select-none pb-[env(safe-area-inset-bottom)]"
+      className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] sm:bottom-6 left-3.5 sm:left-6 z-50 flex flex-col items-start gap-2.5 sm:gap-3 pointer-events-none select-none"
       role="region"
       aria-label="Quick Contact Actions"
     >

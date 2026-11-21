@@ -54,7 +54,7 @@ export default function FAQAccordion() {
             placeholder="Search questions..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] text-sm placeholder:text-[#52615E] focus:outline-none focus:border-[#087F75]"
+            className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] text-base sm:text-sm placeholder:text-[#52615E] focus:outline-none focus:border-[#087F75]"
           />
         </div>
       </div>

@@ -75,7 +75,7 @@ export default function AboutPreview() {
               </div>
 
               {/* Inset Secondary Detail Card */}
-              <div className="absolute -bottom-6 -left-6 sm:bottom-6 sm:-left-8 max-w-xs p-5 rounded-2xl bg-white border border-[#DDD6CB] shadow-xl">
+              <div className="absolute -bottom-4 left-2 sm:bottom-6 sm:-left-8 max-w-[calc(100%-1rem)] sm:max-w-xs p-3.5 sm:p-5 rounded-2xl bg-white border border-[#DDD6CB] shadow-xl">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#F5EBDD] text-[#087F75] flex items-center justify-center font-bold">
                     <ShieldCheck className="w-5 h-5 text-[#087F75]" />

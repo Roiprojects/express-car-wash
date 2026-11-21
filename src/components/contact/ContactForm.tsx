@@ -109,7 +109,7 @@ export default function ContactForm() {
             placeholder="e.g. Ramesh K."
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+            className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
           />
         </div>
         <div>
@@ -122,7 +122,7 @@ export default function ContactForm() {
             placeholder="e.g. +91 98765 43210"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+            className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
           />
         </div>
       </div>
@@ -137,7 +137,7 @@ export default function ContactForm() {
             placeholder="e.g. ramesh@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+            className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
           />
         </div>
 
@@ -148,7 +148,7 @@ export default function ContactForm() {
           <select
             value={interestedService}
             onChange={(e) => setInterestedService(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] text-sm focus:outline-none focus:border-[#087F75]"
+            className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
           >
             {SERVICES_DATA.filter(
               (s) => s.vehicleType === vehicleType || s.vehicleType === 'both'
@@ -170,7 +170,7 @@ export default function ContactForm() {
           placeholder="Mention vehicle model, color, specific concerns like swirls, interior spots, or preferred time..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+          className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
         />
       </div>
 

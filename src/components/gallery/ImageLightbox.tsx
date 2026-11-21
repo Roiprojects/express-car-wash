@@ -42,11 +42,11 @@ export default function ImageLightbox({
   const currentItem = items[currentIndex];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/95 backdrop-blur-xl animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-xl animate-in fade-in duration-200">
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-6 right-6 z-50 p-3 rounded-full bg-[#13171D] border border-[#252B34] text-white hover:text-accent hover:border-accent transition-colors"
+        className="absolute top-[calc(1rem+env(safe-area-inset-top,0px))] right-3 sm:top-6 sm:right-6 z-50 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-[#202C2C] border border-[#DDD6CB]/30 text-white hover:text-[#087F75] hover:border-[#087F75] active:scale-95 transition-all shadow-lg"
         aria-label="Close fullscreen view"
       >
         <X className="w-6 h-6" />
@@ -55,7 +55,7 @@ export default function ImageLightbox({
       {/* Navigation arrows */}
       <button
         onClick={() => onNavigate((currentIndex - 1 + items.length) % items.length)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-[#13171D] border border-[#252B34] text-white hover:text-accent hover:border-accent transition-colors"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-50 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-[#202C2C] border border-[#DDD6CB]/30 text-white hover:text-[#087F75] hover:border-[#087F75] active:scale-95 transition-all shadow-lg"
         aria-label="Previous photo"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -63,7 +63,7 @@ export default function ImageLightbox({
 
       <button
         onClick={() => onNavigate((currentIndex + 1) % items.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-[#13171D] border border-[#252B34] text-white hover:text-accent hover:border-accent transition-colors"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-50 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-[#202C2C] border border-[#DDD6CB]/30 text-white hover:text-[#087F75] hover:border-[#087F75] active:scale-95 transition-all shadow-lg"
         aria-label="Next photo"
       >
         <ChevronRight className="w-6 h-6" />

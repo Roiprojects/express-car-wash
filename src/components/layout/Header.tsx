@@ -33,8 +33,8 @@ export default function Header({ onOpenBooking }: HeaderProps) {
         Background: #FFF9EF, Border: #DDD6CB, Text: #202C2C, Accent: #087F75
       */}
       <header className="sticky top-0 z-50 w-full h-[64px] sm:h-[70px] lg:h-[78px] bg-[#FFF9EF] border-b border-[#DDD6CB] flex items-center shadow-[0_2px_12px_rgba(32,44,44,0.04)]">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-3 xl:gap-6 flex-nowrap">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2 sm:gap-3 xl:gap-6 flex-nowrap">
             {/* Brand Logo & Title with HD Logo */}
             <BrandLogo size="md" animate />
 
@@ -82,16 +82,16 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             </div>
 
             {/* Mobile Menu Controls */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden shrink-0">
               <button
                 onClick={onOpenBooking}
-                className="sm:hidden px-4 py-2 rounded-full bg-[#087F75] text-white font-bold text-xs shadow-sm hover:bg-[#06665F]"
+                className="sm:hidden px-3.5 py-2 min-h-[40px] rounded-full bg-[#087F75] text-white font-bold text-xs shadow-sm hover:bg-[#06665F] active:scale-95 transition-all flex items-center justify-center"
               >
                 Book
               </button>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2.5 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] hover:text-[#087F75] hover:border-[#087F75]/40 transition-colors shadow-sm"
+                className="w-11 h-11 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] hover:text-[#087F75] hover:border-[#087F75]/40 transition-colors shadow-sm flex items-center justify-center active:scale-95"
                 aria-label="Toggle Mobile Menu"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

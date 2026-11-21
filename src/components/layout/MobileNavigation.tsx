@@ -30,16 +30,16 @@ export default function MobileNavigation({
       />
 
       {/* Drawer */}
-      <div className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-[#FFF9EF] border-l border-[#DDD6CB] p-6 flex flex-col justify-between overflow-y-auto shadow-2xl">
+      <div className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-[#FFF9EF] border-l border-[#DDD6CB] p-5 sm:p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] flex flex-col justify-between overflow-y-auto shadow-2xl">
         <div>
           {/* Header */}
-          <div className="flex items-center justify-between pb-5 border-b border-[#DDD6CB]">
-            <div onClick={onClose}>
+          <div className="flex items-center justify-between pb-4 sm:pb-5 border-b border-[#DDD6CB]">
+            <div onClick={onClose} className="cursor-pointer">
               <BrandLogo size="sm" href="/" />
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] hover:text-[#087F75] transition-colors shadow-sm"
+              className="w-10 h-10 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] hover:text-[#087F75] transition-colors shadow-sm flex items-center justify-center"
               aria-label="Close navigation"
             >
               <X className="w-5 h-5" />
@@ -47,13 +47,13 @@ export default function MobileNavigation({
           </div>
 
           {/* Navigation Links */}
-          <nav className="py-6 flex flex-col gap-1.5">
+          <nav className="py-4 sm:py-6 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={onClose}
-                className="flex items-center justify-between px-4 py-3 rounded-xl font-semibold text-sm text-[#202C2C] hover:text-[#087F75] hover:bg-[#F5EBDD] transition-all"
+                className="flex items-center justify-between px-4 py-3.5 min-h-[44px] rounded-xl font-semibold text-sm sm:text-base text-[#202C2C] hover:text-[#087F75] hover:bg-[#F5EBDD] transition-all active:scale-[0.99]"
               >
                 <span>{link.label}</span>
                 <ChevronRight className="w-4 h-4 text-[#52615E]" />
@@ -63,10 +63,10 @@ export default function MobileNavigation({
         </div>
 
         {/* Bottom Actions & Info */}
-        <div className="pt-6 border-t border-[#DDD6CB] space-y-4">
+        <div className="pt-4 sm:pt-6 border-t border-[#DDD6CB] space-y-3 sm:space-y-4">
           <button
             onClick={onOpenBooking}
-            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-sm tracking-wide shadow-md shadow-[#087F75]/20 transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-3.5 px-4 min-h-[46px] rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-sm tracking-wide shadow-md shadow-[#087F75]/20 transition-colors active:scale-[0.98]"
           >
             <Calendar className="w-4 h-4" />
             <span>Book Wash / Spa</span>
@@ -77,7 +77,7 @@ export default function MobileNavigation({
               href={generateQuickWhatsAppUrl('Mobile menu booking enquiry')}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] text-xs font-semibold hover:border-[#087F75]/50 hover:text-[#087F75] transition-colors shadow-sm"
+              className="flex items-center justify-center gap-2 py-3 px-3 min-h-[44px] rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] text-xs font-semibold hover:border-[#087F75]/50 hover:text-[#087F75] transition-colors shadow-sm active:scale-[0.98]"
             >
               <MessageSquare className="w-4 h-4 text-[#087F75]" />
               <span>WhatsApp</span>
@@ -85,7 +85,7 @@ export default function MobileNavigation({
 
             <a
               href="tel:7022338693"
-              className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] text-xs font-semibold hover:border-[#087F75]/50 hover:text-[#087F75] transition-colors shadow-sm"
+              className="flex items-center justify-center gap-2 py-3 px-3 min-h-[44px] rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] text-xs font-semibold hover:border-[#087F75]/50 hover:text-[#087F75] transition-colors shadow-sm active:scale-[0.98]"
             >
               <Phone className="w-4 h-4 text-[#087F75]" />
               <span>Call Us</span>

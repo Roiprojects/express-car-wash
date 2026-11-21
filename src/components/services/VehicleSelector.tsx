@@ -30,10 +30,10 @@ export default function VehicleSelector({
           </h4>
         </div>
 
-        <div className="flex items-center gap-2 p-1 bg-[#F5EBDD] rounded-full border border-[#DDD6CB] self-start sm:self-auto">
+        <div className="w-full sm:w-auto grid grid-cols-2 sm:flex sm:items-center gap-1.5 p-1 bg-[#F5EBDD] rounded-full border border-[#DDD6CB]">
           <button
             onClick={() => onSelectVehicleType('car')}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 ${
+            className={`flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 min-h-[42px] rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 active:scale-95 ${
               vehicleType === 'car'
                 ? 'bg-[#087F75] text-white shadow-sm'
                 : 'text-[#202C2C] hover:text-[#087F75]'
@@ -45,7 +45,7 @@ export default function VehicleSelector({
 
           <button
             onClick={() => onSelectVehicleType('bike')}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 ${
+            className={`flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 min-h-[42px] rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 active:scale-95 ${
               vehicleType === 'bike'
                 ? 'bg-[#087F75] text-white shadow-sm'
                 : 'text-[#202C2C] hover:text-[#087F75]'

@@ -62,7 +62,7 @@ export default function ServiceFilter({ activeCategory, onSelectCategory, vehicl
           <button
             key={cat.id}
             onClick={() => onSelectCategory(cat.id)}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
+            className={`flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 min-h-[42px] rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 active:scale-95 ${
               isActive
                 ? 'bg-[#087F75] text-white shadow-sm'
                 : 'bg-white text-[#202C2C] hover:text-[#087F75] hover:bg-[#FFF9EF] border border-[#DDD6CB] hover:border-[#087F75] shadow-sm'

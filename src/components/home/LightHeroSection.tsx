@@ -93,7 +93,7 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
             {/* Main Headline - High Contrast Charcoal */}
             <motion.h1 
               variants={itemVariants} 
-              className="font-serif font-bold text-4xl sm:text-5xl lg:text-[52px] xl:text-[56px] text-[#202C2C] leading-[1.14] tracking-tight"
+              className="font-serif font-bold text-3xl min-[360px]:text-4xl sm:text-5xl lg:text-[52px] xl:text-[56px] text-[#202C2C] leading-[1.14] tracking-tight"
             >
               Your Vehicle Deserves <br />
               a <span className="text-[#087F75] italic font-serif">Fresh Start.</span>
@@ -108,11 +108,11 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
             </motion.p>
 
             {/* Call To Action Buttons - Solid and High Contrast */}
-            <motion.div variants={itemVariants} className="mt-6 sm:mt-7 flex flex-wrap items-center gap-3 sm:gap-3.5">
+            <motion.div variants={itemVariants} className="mt-5 sm:mt-7 flex flex-col min-[480px]:flex-row items-stretch min-[480px]:items-center gap-2.5 sm:gap-3.5">
               {/* Primary CTA: Explore Services */}
               <Link
                 href="/services"
-                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-sm sm:text-base tracking-wide shadow-md shadow-[#087F75]/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[46px] rounded-full bg-[#087F75] hover:bg-[#06665F] text-white font-bold text-sm sm:text-base tracking-wide shadow-md shadow-[#087F75]/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <LayoutGrid className="w-4 h-4 text-white" />
                 <span>Explore Services</span>
@@ -124,7 +124,7 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
                 href={generateQuickWhatsAppUrl('Hello! I would like to book a wash/detailing service.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#F5EBDD] text-[#087F75] font-bold text-sm sm:text-base tracking-wide border-2 border-[#087F75] shadow-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[46px] rounded-full bg-white hover:bg-[#F5EBDD] text-[#087F75] font-bold text-sm sm:text-base tracking-wide border-2 border-[#087F75] shadow-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <MessageSquare className="w-4 h-4 fill-current text-[#087F75]" />
                 <span>Book on WhatsApp</span>
@@ -155,7 +155,7 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
 
                 {/* Top Badge: Bay Status */}
-                <div className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-sm border border-[#DDD6CB] shadow-sm text-xs font-mono font-bold text-[#202C2C]">
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-sm border border-[#DDD6CB] shadow-sm text-[11px] sm:text-xs font-mono font-bold text-[#202C2C]">
                   <span className="w-2 h-2 rounded-full bg-[#087F75] animate-ping" />
                   <span>3 Bays Active Today</span>
                 </div>
@@ -167,9 +167,9 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
               variants={secondaryCardVariants}
               initial="hidden"
               animate="visible"
-              className="absolute -bottom-5 sm:-bottom-7 -left-3 sm:-left-6 z-30 bg-white border border-[#DDD6CB] shadow-[0_16px_35px_rgba(32,44,44,0.12)] rounded-3xl p-3 sm:p-3.5 flex items-center gap-3 sm:gap-4 max-w-[280px] sm:max-w-[320px] backdrop-blur-md"
+              className="absolute -bottom-4 sm:-bottom-7 left-0 sm:-left-6 z-30 bg-white border border-[#DDD6CB] shadow-[0_16px_35px_rgba(32,44,44,0.12)] rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex items-center gap-2.5 sm:gap-4 max-w-[calc(100%-0.5rem)] sm:max-w-[320px] backdrop-blur-md"
             >
-              <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-[#F5EBDD] shrink-0 border border-[#DDD6CB]">
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden bg-[#F5EBDD] shrink-0 border border-[#DDD6CB]">
                 <Image
                   src="/images/bikes/honda-activa-cleaning.jpg"
                   alt="Honda Activa Scooter deep clean in two-wheeler bay"
@@ -181,14 +181,14 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
               <div className="flex flex-col text-left min-w-0">
                 <div className="flex items-center gap-1.5 mb-0.5">
                   <Bike className="w-3.5 h-3.5 text-[#087F75]" />
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#087F75]">
+                  <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-[#087F75]">
                     Dedicated Bike Bays
                   </span>
                 </div>
                 <h4 className="text-xs sm:text-sm font-serif font-bold text-[#202C2C] leading-snug truncate">
                   Bikes &amp; Scooters Detailing
                 </h4>
-                <p className="text-[11px] text-[#52615E] leading-tight mt-0.5">
+                <p className="text-[10px] sm:text-[11px] text-[#52615E] leading-tight mt-0.5">
                   Chain lube, foam bath &amp; wax
                 </p>
               </div>
@@ -199,14 +199,14 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="absolute -top-3 sm:-top-4 -right-2 sm:-right-4 z-30 bg-white border border-[#DDD6CB] shadow-[0_10px_25px_rgba(32,44,44,0.08)] rounded-2xl px-3.5 py-2 flex items-center gap-2.5 pointer-events-none"
+              className="absolute top-2 right-2 sm:-top-4 sm:-right-4 z-30 bg-white border border-[#DDD6CB] shadow-[0_10px_25px_rgba(32,44,44,0.08)] rounded-xl sm:rounded-2xl px-2.5 sm:px-3.5 py-1.5 sm:py-2 flex items-center gap-2 sm:gap-2.5 pointer-events-none"
             >
-              <div className="w-8 h-8 rounded-xl bg-[#F5EBDD] text-[#087F75] flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-4 h-4 text-[#087F75]" />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#F5EBDD] text-[#087F75] flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#087F75]" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-xs font-bold text-[#202C2C] leading-tight">PPF &amp; Ceramic</span>
-                <span className="text-[10px] font-medium text-[#52615E] leading-tight">Clean Room Bays</span>
+                <span className="text-[11px] sm:text-xs font-bold text-[#202C2C] leading-tight">PPF &amp; Ceramic</span>
+                <span className="text-[9px] sm:text-[10px] font-medium text-[#52615E] leading-tight">Clean Room Bays</span>
               </div>
             </motion.div>
           </div>
@@ -219,52 +219,52 @@ export default function LightHeroSection({ onOpenBooking }: LightHeroSectionProp
           transition={{ delay: 0.4, duration: 0.6 }}
           className="mt-6 sm:mt-7 lg:mt-8"
         >
-          <div className="w-full bg-[#F5EBDD] border border-[#DDD6CB] rounded-2xl lg:rounded-full px-4 sm:px-6 py-3 sm:py-3.5 flex flex-wrap items-center justify-between gap-3 sm:gap-5 shadow-sm">
+          <div className="w-full bg-[#F5EBDD] border border-[#DDD6CB] rounded-2xl lg:rounded-full px-4 sm:px-6 py-3 sm:py-3.5 grid grid-cols-2 min-[540px]:grid-cols-3 sm:flex sm:flex-wrap items-center justify-between gap-3 sm:gap-5 shadow-sm">
             {/* Service 1: Foam Wash */}
-            <div className="flex items-center gap-2.5">
-              <Droplets className="w-5 h-5 text-[#087F75]" />
-              <span className="text-sm font-bold text-[#202C2C]">Foam Wash</span>
+            <div className="flex items-center gap-2">
+              <Droplets className="w-4 h-4 sm:w-5 sm:h-5 text-[#087F75]" />
+              <span className="text-xs sm:text-sm font-bold text-[#202C2C]">Foam Wash</span>
             </div>
 
             <div className="hidden sm:block w-px h-5 bg-[#DDD6CB]" />
 
             {/* Service 2: Ceramic Coating */}
-            <div className="flex items-center gap-2.5">
-              <Gem className="w-5 h-5 text-[#087F75]" />
-              <span className="text-sm font-bold text-[#202C2C]">Ceramic Coating</span>
+            <div className="flex items-center gap-2">
+              <Gem className="w-4 h-4 sm:w-5 sm:h-5 text-[#087F75]" />
+              <span className="text-xs sm:text-sm font-bold text-[#202C2C]">Ceramic Coating</span>
             </div>
 
             <div className="hidden sm:block w-px h-5 bg-[#DDD6CB]" />
 
             {/* Service 3: PPF */}
-            <div className="flex items-center gap-2.5">
-              <ShieldCheck className="w-5 h-5 text-[#087F75]" />
-              <span className="text-sm font-bold text-[#202C2C]">PPF</span>
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#087F75]" />
+              <span className="text-xs sm:text-sm font-bold text-[#202C2C]">PPF Armor</span>
             </div>
 
             <div className="hidden sm:block w-px h-5 bg-[#DDD6CB]" />
 
             {/* Service 4: Bike Wash */}
-            <div className="flex items-center gap-2.5">
-              <Bike className="w-5 h-5 text-[#087F75]" />
-              <span className="text-sm font-bold text-[#202C2C]">Bike Wash</span>
+            <div className="flex items-center gap-2">
+              <Bike className="w-4 h-4 sm:w-5 sm:h-5 text-[#087F75]" />
+              <span className="text-xs sm:text-sm font-bold text-[#202C2C]">Bike Wash</span>
             </div>
 
             <div className="hidden sm:block w-px h-5 bg-[#DDD6CB]" />
 
             {/* Service 5: Accessories */}
-            <div className="flex items-center gap-2.5">
-              <Layers className="w-5 h-5 text-[#087F75]" />
-              <span className="text-sm font-bold text-[#202C2C]">Accessories</span>
+            <div className="flex items-center gap-2">
+              <Layers className="w-4 h-4 sm:w-5 sm:h-5 text-[#087F75]" />
+              <span className="text-xs sm:text-sm font-bold text-[#202C2C]">Accessories</span>
             </div>
 
             {/* 2 Branches Pill */}
-            <div className="w-full sm:w-auto flex justify-center sm:justify-end mt-2 sm:mt-0">
+            <div className="col-span-2 min-[540px]:col-span-3 sm:w-auto flex justify-center sm:justify-end mt-1 sm:mt-0">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-[#FFF9EF] text-[#087F75] font-bold text-xs sm:text-sm border border-[#DDD6CB] shadow-sm transition-colors"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white hover:bg-[#FFF9EF] text-[#087F75] font-bold text-xs sm:text-sm border border-[#DDD6CB] shadow-sm transition-colors"
               >
-                <MapPin className="w-4 h-4 text-[#087F75]" />
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#087F75]" />
                 <span>2 Branches in Bengaluru</span>
               </Link>
             </div>

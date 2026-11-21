@@ -43,14 +43,14 @@ export default function PricingPreview({ onOpenBookingWithService }: PricingPrev
           </div>
 
           {/* Vehicle Category Switcher Pills */}
-          <div className="inline-flex p-1.5 rounded-full bg-white border border-[#DDD6CB] self-start md:self-auto shadow-sm relative">
+          <div className="max-w-full overflow-x-auto no-scrollbar inline-flex p-1 sm:p-1.5 rounded-full bg-white border border-[#DDD6CB] self-start md:self-auto shadow-sm relative">
             {CAR_CATEGORIES.map((cat) => {
               const isSelected = selectedCategory === cat.id;
               return (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`relative z-10 px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-200 ${
+                  className={`relative z-10 whitespace-nowrap px-3 min-[380px]:px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] min-[380px]:text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-200 ${
                     isSelected
                       ? 'text-white'
                       : 'text-[#445452] hover:text-[#202C2C]'

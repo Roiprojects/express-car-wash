@@ -107,10 +107,10 @@ export default function BookingWizardModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#202C2C]/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative w-full max-w-xl rounded-3xl bg-white border border-[#DDD6CB] shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#202C2C]/60 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="relative w-full max-w-xl rounded-2xl sm:rounded-3xl bg-white border border-[#DDD6CB] shadow-2xl overflow-hidden flex flex-col max-h-[92dvh]">
         {/* Header Bar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#DDD6CB] bg-[#FFF9EF]">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-[#DDD6CB] bg-[#FFF9EF]">
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#087F75] animate-pulse" />
             <h3 className="font-serif font-bold text-base sm:text-lg text-[#202C2C] tracking-wide">
@@ -119,7 +119,7 @@ export default function BookingWizardModal({
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-[#52615E] hover:text-[#202C2C] hover:bg-white transition-colors border border-transparent hover:border-[#DDD6CB]"
+            className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-xl text-[#52615E] hover:text-[#202C2C] hover:bg-white active:scale-95 transition-all border border-transparent hover:border-[#DDD6CB]"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -127,7 +127,7 @@ export default function BookingWizardModal({
         </div>
 
         {/* Progress Tracker */}
-        <div className="px-6 pt-4 pb-2 bg-white">
+        <div className="px-4 sm:px-6 pt-3 sm:pt-4 pb-2 bg-white">
           <div className="flex items-center justify-between text-xs sm:text-sm text-[#445452] mb-2">
             <span className="font-bold text-[#202C2C]">Step {step} of 6</span>
             <span className="font-mono text-[#087F75] font-bold">
@@ -148,7 +148,7 @@ export default function BookingWizardModal({
         </div>
 
         {/* Wizard Content Body */}
-        <div className="p-6 max-h-[70vh] overflow-y-auto">
+        <div className="p-4 sm:p-6 overflow-y-auto flex-1">
           {validationError && (
             <div className="mb-4 p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm flex items-center gap-2">
               <AlertCircle className="w-4 h-4 flex-shrink-0" />
@@ -360,7 +360,7 @@ export default function BookingWizardModal({
                     min={new Date().toISOString().split('T')[0]}
                     value={preferredDate}
                     onChange={(e) => setPreferredDate(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] text-sm focus:outline-none focus:border-[#087F75]"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
                   />
                 </div>
 
@@ -371,7 +371,7 @@ export default function BookingWizardModal({
                   <select
                     value={preferredTime}
                     onChange={(e) => setPreferredTime(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] text-sm focus:outline-none focus:border-[#087F75]"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
                   >
                     <option value="08:30 AM">08:30 AM (Early Bird)</option>
                     <option value="10:00 AM">10:00 AM (Morning)</option>
@@ -411,7 +411,7 @@ export default function BookingWizardModal({
                     placeholder="e.g. Rahul Sharma"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
                   />
                 </div>
 
@@ -424,7 +424,7 @@ export default function BookingWizardModal({
                     placeholder="e.g. +91 98765 43210"
                     value={customerPhone}
                     onChange={(e) => setCustomerPhone(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
                   />
                 </div>
 
@@ -437,7 +437,7 @@ export default function BookingWizardModal({
                     placeholder="e.g. Heavy bug stains on front bumper / child seat spill in back..."
                     value={customerNotes}
                     onChange={(e) => setCustomerNotes(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
                   />
                 </div>
               </div>
@@ -509,7 +509,7 @@ export default function BookingWizardModal({
         </div>
 
         {/* Footer Actions */}
-        <div className="flex items-center justify-between px-6 py-4 border-t border-[#DDD6CB] bg-[#FFF9EF]">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-t border-[#DDD6CB] bg-[#FFF9EF] pb-[calc(0.875rem+env(safe-area-inset-bottom,0px))] sm:pb-4">
           {step > 1 ? (
             <button
               type="button"
@@ -517,7 +517,7 @@ export default function BookingWizardModal({
                 setValidationError('');
                 setStep(step - 1);
               }}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-[#202C2C] hover:bg-[#F5EBDD] transition-colors border border-[#DDD6CB] bg-white shadow-sm"
+              className="flex items-center gap-1.5 min-h-[44px] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-[#202C2C] hover:bg-[#F5EBDD] active:scale-95 transition-all border border-[#DDD6CB] bg-white shadow-sm"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back</span>
@@ -530,7 +530,7 @@ export default function BookingWizardModal({
             <button
               type="button"
               onClick={handleNextStep}
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#087F75] text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#06665F] transition-colors shadow-sm"
+              className="flex items-center gap-2 min-h-[44px] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#087F75] text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#06665F] active:scale-95 transition-all shadow-sm"
             >
               <span>Continue</span>
               <ArrowRight className="w-4 h-4" />
@@ -539,7 +539,7 @@ export default function BookingWizardModal({
             <button
               type="button"
               onClick={handleLaunchWhatsApp}
-              className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#087F75] text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#06665F] transition-all duration-300 shadow-md hover:scale-[1.02]"
+              className="flex items-center gap-2 min-h-[46px] px-5 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#087F75] text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#06665F] active:scale-95 transition-all shadow-md"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
               <span>Send WhatsApp Enquiry</span>

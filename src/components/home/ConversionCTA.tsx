@@ -33,7 +33,7 @@ export default function ConversionCTA({ onOpenBooking }: ConversionCTAProps) {
             href={generateQuickWhatsAppUrl('Booking enquiry from Homepage CTA')}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#087F75] text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-[#087F75]/25 hover:bg-[#06665F] transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 min-h-[46px] px-7 py-3.5 rounded-full bg-[#087F75] text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-[#087F75]/25 hover:bg-[#06665F] active:scale-95 transition-all duration-300"
           >
             <MessageSquare className="w-4 h-4 fill-current" />
             <span>Book on WhatsApp</span>
@@ -41,7 +41,7 @@ export default function ConversionCTA({ onOpenBooking }: ConversionCTAProps) {
 
           <button
             onClick={onOpenBooking}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] font-bold text-sm uppercase tracking-wider hover:border-[#087F75] hover:text-[#087F75] transition-colors shadow-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[46px] px-6 py-3.5 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] font-bold text-sm uppercase tracking-wider hover:border-[#087F75] hover:text-[#087F75] active:scale-95 transition-all shadow-sm"
           >
             <Calendar className="w-4 h-4 text-[#087F75]" />
             <span>Interactive Planner</span>
@@ -49,7 +49,7 @@ export default function ConversionCTA({ onOpenBooking }: ConversionCTAProps) {
 
           <a
             href="tel:7022338693"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] hover:text-[#087F75] hover:border-[#087F75] transition-colors font-bold text-sm uppercase tracking-wider shadow-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[46px] px-6 py-3.5 rounded-full bg-white border border-[#DDD6CB] text-[#202C2C] hover:text-[#087F75] hover:border-[#087F75] active:scale-95 transition-all font-bold text-sm uppercase tracking-wider shadow-sm"
           >
             <Phone className="w-4 h-4 text-[#087F75]" />
             <span>Call +91 70223 38693</span>

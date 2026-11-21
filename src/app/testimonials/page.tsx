@@ -137,7 +137,7 @@ export default function TestimonialsPage() {
                     placeholder="e.g. Ramesh K."
                     value={feedbackAuthor}
                     onChange={(e) => setFeedbackAuthor(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
                   />
                 </div>
                 <div>
@@ -149,7 +149,7 @@ export default function TestimonialsPage() {
                     placeholder="e.g. Kia Sonet / TVS Apache"
                     value={feedbackVehicle}
                     onChange={(e) => setFeedbackVehicle(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
                   />
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function TestimonialsPage() {
                   placeholder="e.g. Full Foam Wash &amp; Interior Cleaning"
                   value={feedbackService}
                   onChange={(e) => setFeedbackService(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
                 />
               </div>
 
@@ -204,7 +204,7 @@ export default function TestimonialsPage() {
                   placeholder="How did your car or bike look after the service? Were the staff courteous?"
                   value={feedbackText}
                   onChange={(e) => setFeedbackText(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-sm focus:outline-none focus:border-[#087F75]"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#DDD6CB] text-[#202C2C] placeholder:text-[#52615E] text-base sm:text-sm focus:outline-none focus:border-[#087F75]"
                 />
               </div>
 
