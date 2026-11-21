@@ -78,11 +78,11 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: 'Our signature thorough foam spa treatment. Removes road grime, brake dust, and bug splatters using pH-balanced high-foaming suds that encapsulate dirt particles safely without scratching your clear coat.',
     estimatedDuration: '45 – 60 mins',
     pricing: {
-      small: 400,
-      m_suv: 500,
-      suv_xl: 600,
-      isVerified: false,
-      statusNote: 'Signboard reference rate. Please re-verify latest charged rate upon arrival.',
+      small: 500,
+      m_suv: 600,
+      suv_xl: 700,
+      isVerified: true,
+      statusNote: 'Confirmed workshop baseline rate: ₹500 for hatchbacks and sedans.',
     },
     features: [
       'High-pressure pre-rinse & underbody wash',

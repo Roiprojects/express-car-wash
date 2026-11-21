@@ -37,7 +37,7 @@ export const FAQ_DATA: FAQItem[] = [
     id: 'faq-3',
     category: 'pricing',
     question: 'Why are some prices on the website marked "Price to confirm"?',
-    answer: 'Our physical workshop service board contains handwritten amendments—particularly regarding recent adjustments to full foam washes and specialized bike packages. To maintain absolute integrity and ensure you never experience unexpected billing, we transparently flag unconfirmed rates so our team can provide you with the exact, up-to-date quote over WhatsApp prior to your visit.',
+    answer: 'While core packages such as our Full Car Foam Wash (₹500 baseline) and standard exterior washes are fixed, certain specialized treatments (such as two-wheeler handwritten board adjustments, deep interior extractions with pet hair, or bespoke wraps) depend on vehicle condition. To maintain absolute integrity, we flag unconfirmed rates so our team can provide you with the exact quote over WhatsApp prior to your visit.',
   },
   {
     id: 'faq-4',

@@ -98,7 +98,7 @@ export default function RootLayout({
             '@type': 'Service',
             name: 'Full Car Foam Wash',
           },
-          price: '400',
+          price: '500',
           priceCurrency: 'INR',
         },
         {
