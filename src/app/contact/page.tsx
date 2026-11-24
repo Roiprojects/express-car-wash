@@ -3,7 +3,7 @@
 import React from 'react';
 import { BUSINESS_CONFIG } from '@/data/business';
 import ContactForm from '@/components/contact/ContactForm';
-import { Phone, MessageSquare, Clock, ShieldCheck, Sparkles } from 'lucide-react';
+import { Phone, MessageSquare, Clock, ShieldCheck, Sparkles, Instagram, ArrowUpRight } from 'lucide-react';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
 import { useBooking } from '@/components/layout/AppShell';
 
@@ -93,6 +93,54 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+            </div>
+
+            {/* Follow Us on Instagram */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#DDD6CB] space-y-3.5 shadow-[0_8px_30px_rgba(32,44,44,0.05)]">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#087F75] font-bold">
+                  Social Channel
+                </span>
+                <span className="inline-flex items-center gap-1 text-[11px] font-mono text-[#087F75] bg-[#F5EBDD] px-2.5 py-0.5 rounded-full border border-[#DDD6CB] font-semibold">
+                  Daily Bay Updates
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-serif font-bold text-[#202C2C]">
+                  Follow Us on Instagram
+                </h3>
+                <p className="text-xs sm:text-sm text-[#445452] mt-1 leading-relaxed">
+                  Catch everyday car &amp; bike transformations, active foam washes, and detailing reels fresh from our bays.
+                </p>
+              </div>
+
+              <a
+                href={BUSINESS_CONFIG.social.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={BUSINESS_CONFIG.social.instagram.label}
+                className="flex items-center justify-between p-3.5 sm:p-4 rounded-xl bg-[#FFF9EF] hover:bg-[#F5EBDD] border border-[#DDD6CB] hover:border-[#087F75] text-[#202C2C] transition-all duration-300 group shadow-sm active:scale-[0.99]"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#087F75] text-white flex items-center justify-center font-bold flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                    <Instagram className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono uppercase tracking-wider text-[#52615E] block font-semibold">
+                      Instagram Profile
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-[#202C2C] group-hover:text-[#087F75] transition-colors">
+                      {BUSINESS_CONFIG.social.instagram.handle}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1.5 text-xs font-bold text-[#087F75] uppercase tracking-wider pr-1">
+                  <span className="hidden sm:inline">Follow</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
+              </a>
             </div>
 
             {/* Hours & Minimum Time */}

@@ -43,6 +43,13 @@ export interface BusinessConfig {
     code: string;
     locale: string;
   };
+  social: {
+    instagram: {
+      url: string;
+      handle: string;
+      label: string;
+    };
+  };
 }
 
 export const BUSINESS_NAME = "Express Car Wash";
@@ -99,5 +106,12 @@ export const BUSINESS_CONFIG: BusinessConfig = {
     symbol: "₹",
     code: "INR",
     locale: "en-IN",
+  },
+  social: {
+    instagram: {
+      url: "https://www.instagram.com/expresscarwashcentre/",
+      handle: "@expresscarwashcentre",
+      label: "Follow Express Car Wash on Instagram",
+    },
   },
 };

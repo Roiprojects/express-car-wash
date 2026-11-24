@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { BUSINESS_CONFIG } from '@/data/business';
-import { Phone, MessageSquare, MapPin, Clock, ArrowUpRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { Phone, MessageSquare, MapPin, Clock, ArrowUpRight, ShieldCheck, Sparkles, Instagram } from 'lucide-react';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
 import BrandLogo from '@/components/ui/BrandLogo';
 
@@ -45,7 +45,28 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            {/* Follow Us */}
+            <div className="pt-1">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#202C2C] mb-2.5">
+                Follow Us
+              </h4>
+              <a
+                href={BUSINESS_CONFIG.social.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={BUSINESS_CONFIG.social.instagram.label}
+                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white border border-[#DDD6CB] hover:border-[#087F75] text-[#202C2C] hover:text-[#087F75] transition-all duration-300 shadow-sm group hover:-translate-y-0.5 active:scale-95"
+              >
+                <div className="w-7 h-7 rounded-lg bg-[#F5EBDD] text-[#087F75] group-hover:bg-[#087F75] group-hover:text-white flex items-center justify-center transition-colors duration-300">
+                  <Instagram className="w-4 h-4" />
+                </div>
+                <span className="text-xs sm:text-sm font-semibold tracking-wide">
+                  {BUSINESS_CONFIG.social.instagram.handle}
+                </span>
+              </a>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href={generateQuickWhatsAppUrl('Hello from website footer!')}
                 target="_blank"
