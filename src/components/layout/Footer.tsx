@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { BUSINESS_CONFIG } from '@/data/business';
-import { Phone, MessageSquare, MapPin, Clock, ArrowUpRight, ShieldCheck, Sparkles, Instagram } from 'lucide-react';
+import { Phone, MessageSquare, MapPin, Clock, ArrowUpRight, Sparkles, Instagram, Facebook } from 'lucide-react';
 import { generateQuickWhatsAppUrl } from '@/lib/whatsapp';
 import BrandLogo from '@/components/ui/BrandLogo';
 
@@ -35,35 +35,57 @@ export default function Footer() {
               Professional car and bike washing, detailing, ceramic coating, PPF, wrapping, and accessories — all under one roof across 2 branches in Bengaluru.
             </p>
 
-            <div className="p-4 rounded-2xl bg-white border border-[#DDD6CB] space-y-2 text-xs sm:text-sm shadow-sm">
-              <div className="flex items-center gap-2 text-[#202C2C] font-semibold">
-                <ShieldCheck className="w-4 h-4 text-[#087F75] flex-shrink-0" />
-                <span>Notice on Brand &amp; Network</span>
-              </div>
-              <p className="text-xs text-[#52615E] leading-relaxed">
-                {BUSINESS_CONFIG.legalEntityNotice} Established year 2015 and branch addresses are subject to business confirmation.
-              </p>
-            </div>
-
             {/* Follow Us */}
             <div className="pt-1">
-              <h4 className="text-xs font-bold uppercase tracking-widest text-[#202C2C] mb-2.5">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#202C2C] mb-3">
                 Follow Us
               </h4>
-              <a
-                href={BUSINESS_CONFIG.social.instagram.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={BUSINESS_CONFIG.social.instagram.label}
-                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white border border-[#DDD6CB] hover:border-[#087F75] text-[#202C2C] hover:text-[#087F75] transition-all duration-300 shadow-sm group hover:-translate-y-0.5 active:scale-95"
-              >
-                <div className="w-7 h-7 rounded-lg bg-[#F5EBDD] text-[#087F75] group-hover:bg-[#087F75] group-hover:text-white flex items-center justify-center transition-colors duration-300">
-                  <Instagram className="w-4 h-4" />
-                </div>
-                <span className="text-xs sm:text-sm font-semibold tracking-wide">
-                  {BUSINESS_CONFIG.social.instagram.handle}
-                </span>
-              </a>
+              <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
+                {/* Facebook Button */}
+                <a
+                  href={BUSINESS_CONFIG.social.facebook.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={BUSINESS_CONFIG.social.facebook.label}
+                  className="inline-flex items-center gap-3 p-2 pr-4 rounded-2xl bg-white border border-[#DDD6CB] hover:border-[#1877F2] text-[#202C2C] transition-all duration-300 shadow-sm group hover:-translate-y-0.5 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-[#1877F2] text-white flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-[1.08] transition-transform duration-300 shrink-0">
+                    <Facebook className="w-5 h-5 text-white stroke-[2.5]" />
+                  </div>
+                  <div className="text-left">
+                    <span className="block text-[10px] font-mono uppercase tracking-wider text-[#52615E] font-semibold">
+                      Facebook
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold tracking-tight text-[#202C2C] group-hover:text-[#1877F2] transition-colors">
+                      {BUSINESS_CONFIG.social.facebook.handle}
+                    </span>
+                  </div>
+                </a>
+
+                {/* Instagram Button */}
+                <a
+                  href={BUSINESS_CONFIG.social.instagram.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={BUSINESS_CONFIG.social.instagram.label}
+                  className="inline-flex items-center gap-3 p-2 pr-4 rounded-2xl bg-white border border-[#DDD6CB] hover:border-[#E1306C] text-[#202C2C] transition-all duration-300 shadow-sm group hover:-translate-y-0.5 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#E1306C] focus:ring-offset-2"
+                >
+                  <div
+                    style={{ background: 'linear-gradient(135deg, #833AB4, #C13584, #E1306C, #F77737, #FCAF45)' }}
+                    className="w-11 h-11 rounded-xl text-white flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-[1.08] transition-transform duration-300 shrink-0"
+                  >
+                    <Instagram className="w-5 h-5 text-white stroke-[2.5]" />
+                  </div>
+                  <div className="text-left">
+                    <span className="block text-[10px] font-mono uppercase tracking-wider text-[#52615E] font-semibold">
+                      Instagram
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold tracking-tight text-[#202C2C] group-hover:text-[#E1306C] transition-colors">
+                      {BUSINESS_CONFIG.social.instagram.handle}
+                    </span>
+                  </div>
+                </a>
+              </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-1">

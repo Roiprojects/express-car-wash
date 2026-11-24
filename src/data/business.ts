@@ -49,6 +49,11 @@ export interface BusinessConfig {
       handle: string;
       label: string;
     };
+    facebook: {
+      url: string;
+      handle: string;
+      label: string;
+    };
   };
 }
 
@@ -112,6 +117,11 @@ export const BUSINESS_CONFIG: BusinessConfig = {
       url: "https://www.instagram.com/expresscarwashcentre/",
       handle: "@expresscarwashcentre",
       label: "Follow Express Car Wash on Instagram",
+    },
+    facebook: {
+      url: "https://www.facebook.com/people/Expresscar-Washcentre/pfbid0UJ196QKThtWUe4RU3gQTNHmVkS1o3uUennYvQnican5D8V2p98CuovnbjtUu7PmWl/",
+      handle: "Expresscar Washcentre",
+      label: "Follow Express Car Wash on Facebook",
     },
   },
 };
